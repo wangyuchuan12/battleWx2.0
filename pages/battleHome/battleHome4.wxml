@@ -1,0 +1,60 @@
+<import src="../assembly/selectInput/selectInput.wxml"/>
+
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<import src="../assembly/attrPlug/attrPlug"/>
+<template is="attrPlug" data="{{...attrPlugData}}"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+
+
+<scroll-view class="battleHome" scroll-y>
+  <scroll-view class="battleHomeMenu">
+    <view class="battleHomeMenu9" bindtap='danClick'>
+      <view class="battleHomeMenu9Background"></view>
+      <view class="battleHomeMenu1Name">排位赛</view>
+    </view>
+
+    <view class="battleHomeMenu10" bindtap='pkClick'>
+      <view class="battleHomeMenu10Background"></view>
+      <view class="battleHomeMenu2Name">好友PK</view>
+    </view>
+
+    <view class="battleHomeMenu11" bindtap='mallClick'>
+      <view class="battleHomeMenu11Background"></view>
+      <view class="battleHomeMenu2Name">商城</view>
+    </view>
+
+    <view class="battleHomeMenu12" bindtap='takeoutClick'>
+      <view class="battleHomeMenu12Background"></view>
+      <view class="battleHomeMenu2Name">提现</view>
+    </view>
+    <view class="battleHomeMenu3" bindtap='quickStart'>
+      <view class="battleHomeMenu16Background"></view>
+      <view class="battleHomeMenu3Name">快速开始</view>
+    </view>
+
+    <view class="battleHomeMenu14" bindtap='factoryClick'>
+      <view class="battleHomeMenu14Background"></view>
+      <view class="battleHomeMenu4Name">题目工厂</view>
+    </view>
+
+    <view class="battleHomeMenu15">
+       <view class="battleHomeMenu15Background"></view>
+       <view class="battleHomeMenu6Name">个人空间</view>
+        <view class="danLock" style="top:0px;color:white;">
+          <view class="fa fa-lock danLockContent" style="color:white;"></view>
+       </view>
+    </view>
+
+    <view class="battleHomeMenu13">
+       <view class="battleHomeMenu13Background"></view>
+       <view class="battleHomeMenu7Name">企业空间</view>
+       <view class="danLock" style="top:0px;color:white;">
+          <view class="fa fa-lock danLockContent" style="color:white;"></view>
+       </view>
+    </view>
+
+  </scroll-view>
+</scroll-view>
+
+
+    

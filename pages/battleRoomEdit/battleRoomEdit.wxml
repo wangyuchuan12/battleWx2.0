@@ -1,0 +1,77 @@
+<import src="../assembly/selectInput/selectInput.wxml"/>
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="battleRoomEdit">
+  <view style="position:relative;top:10px;">
+    <template is="selectInput" data="{{...selectInputData}}" style="z-index:100"/>
+  </view>
+  <scroll-view class="battleRoomEditPeriods" scroll-y="true">
+    <view class="battleRoomEditPeriod" style='background:white;padding-top:5px;' bindtap='customClick'>
+      <view class="battleRoomEditPeriodCustomIcon fa fa-plus-square"></view>
+      <view class="battleRoomEditPeriodCustomLabel">自定义</view>
+    </view>
+
+    <block wx:for="{{periods}}" wx:for-item="period">
+      <view class="battleRoomEditPeriod" style="background:white;" wx:if="{{period.id!=selectPeriodId}}" bindtap='periondItemClick' id="{{period.id}}">
+        <view class="battleRoomEditPeriodHead">
+          <image src='{{period.ownerImg}}' class="battleRoomEditPeriodHeadImg"></image>
+          <!--<view class="battleRoomEditPeriodHeadLabel">出题人:</view>
+          <view class="battleRoomEditPeriodHeadNickname">{{period.ownerNickname}}</view>-->
+        </view>
+        <view class="battleRoomEditPeriodContent">
+          <view class="battleRoomEditPeriodContentItem">参与人数:{{period.takepartCount}}</view>
+          <view class="battleRoomEditPeriodContentItem">出题人:{{period.ownerNickname}}</view>
+          <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isDefault==1}}">推荐</view>
+          <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isPublic==1}}">公开</view>
+          <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isPublic==0}}">私有</view>
+          <!--
+          <view class="battleRoomEditPeriodContentItem">正确率:{{period.percent}}%</view>
+          <view class="battleRoomEditPeriodContentItem">难度:低</view>
+          
+          -->
+          
+        </view>
+      </view>
+
+      <view class="battleRoomEditPeriod" wx:else>
+        <view class="battleRoomEditPeriodHead">
+          <image src='{{period.ownerImg}}' class="battleRoomEditPeriodHeadImg"></image>
+           <!--<view class="battleRoomEditPeriodHeadLabel">出题人:</view>
+          <view class="battleRoomEditPeriodHeadNickname">{{period.ownerNickname}}</view>-->
+        </view>
+        <view class="battleRoomEditPeriodContent">
+          <view class="battleRoomEditPeriodContentItem">参与人数:{{period.takepartCount}}</view>
+          <view class="battleRoomEditPeriodContentItem">出题人:{{period.ownerNickname}}</view>
+          <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isDefault==1}}">推荐</view>
+          <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isPublic==1}}">公开</view>
+          <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isPublic==0}}">私有</view>
+          <!--
+          <view class="battleRoomEditPeriodContentItem">正确率:{{period.percent}}%</view>
+          <view class="battleRoomEditPeriodContentItem">难度:低</view>
+          
+          -->
+        </view>
+      </view>
+    </block>
+   
+  </scroll-view>
+  <view class="isPublic" style='display:none;'>
+    <view class="isPublicLable">允许陌生人通过快速加入进入</view>
+     <switch class="isPublicSwitch" checked bindchange='isPublicSwitch' wx:if="{{isPublic==1&&enablePublic==1}}"></switch>
+     <switch class="isPublicSwitch" bindchange='isPublicSwitch' wx:if="{{isPublic==0&&enablePublic==1}}"></switch>
+      <switch class="isPublicSwitch" checked bindchange='isPublicSwitch' wx:if="{{isPublic==1&&enablePublic==0}}" disabled></switch>
+     <switch class="isPublicSwitch" bindchange='isPublicSwitch' wx:if="{{isPublic==0&&enablePublic==0}}" disabled></switch>
+  </view>
+   <view class="battlePeriodManagerQuestionCount">
+    <block wx:for="{{rooms}}" wx:for-item="room">
+        <block wx:if="{{isManager!=1&&room.maxinum<20}}">
+          <view class="battlePeriodManagerQuestionNum" bindtap='roomItemClick' id="{{room.id}}" wx:if="{{room.status==0}}">开{{room.maxinum}}人房间</view>
+          <view class="battlePeriodManagerQuestionNum" bindtap='roomItemClick' id="{{room.id}}" wx:if="{{room.status==1}}" style="background:black;color:white;">开{{room.maxinum}}人房间</view>
+        </block>
+        <block wx:if="{{isManager==1&&room.maxinum<201}}">
+          <view class="battlePeriodManagerQuestionNum" bindtap='roomItemClick' id="{{room.id}}" wx:if="{{room.status==0}}">开{{room.maxinum}}人房间</view>
+          <view class="battlePeriodManagerQuestionNum" bindtap='roomItemClick' id="{{room.id}}" wx:if="{{room.status==1}}" style="background:black;color:white;">开{{room.maxinum}}人房间</view>
+        </block>
+    </block>
+   </view>
+</view>

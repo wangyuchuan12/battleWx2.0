@@ -1,0 +1,40 @@
+<view class="battleRank">
+  <view class="battleRankHeader">
+    <view class="battleRankHeaderGold">
+      <image src="http://ovqk5bop3.bkt.clouddn.com/gold.png" class="battleRankHeaderGoldHat"></image>
+      <image src="{{rankMembers[0].imgUrl}}" class="battleRankHeaderGoldHead"/>
+      <view class="battleRankHeaderGoldRank">NO.1</view>
+      <view class="battleRankHeaderGoldResult">{{rankMembers[0].score}}分 第{{rankMembers[0].stageIndex-1}}/{{rankMembers[0].stageCount}}关
+        <span wx:if="{{rankMembers[0].status==1&&rankMembers[0].loveResidule>0}}" style="color:green;font-size:10px;">进行中</span>
+        <span wx:if="{{rankMembers[0].status==2}}" style="color:red;font-size:10px;">完成关卡</span>
+        <span wx:if="{{rankMembers[0].status!=2&&rankMembers[0].loveResidule<=0}}" style="color:red;font-size:10px;">爱心不足</span>
+      </view>
+      <view class="progressScoreContainerHeaderLoveLife" style="position:absolute;top:110px;left:50%;margin-left:-60px; width:120px;">
+            <view class="personalAttrDataHeaderSmall personalAttrDataHeaderLoveSmall" 
+            wx:for="{{rankMembers[0].loveList}}" wx:for-item="loveItem" wx:if="{{loveItem.type==1}}"></view>
+            <view class="personalAttrDataHeaderSmall personalAttrDataHeaderLoveHollowSmall" wx:for="{{rankMembers[0].loveList}}" wx:for-item="loveItem" wx:if="{{loveItem.type==0}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view class="battleRankMembers" scroll-y>
+
+  
+    <view class="battleRankMember" wx:for="{{rankMembers}}" wx:for-item="member" wx:if="{{index>0}}">
+      <view class="battleRankMemberRank">NO.{{index+1}}</view>
+      <image src="{{member.imgUrl}}" class="battleRankMemberImg"></image>
+      <view class="battleRankMemberContent" style="width:150px;">
+        <view class="battleRankMemberContentNickname">{{member.nickname}}</view>
+        <view class="battleRankMemberContentResult">{{member.score}}分 第{{member.stageIndex-1}}/{{member.stageCount}}关 
+          <span wx:if="{{member.status==1&&member.loveResidule>0}}" style="color:green;font-size:10px;">进行中</span>
+          <span wx:if="{{member.status==2}}" style="color:red;font-size:10px;">完成关卡</span>
+          <span wx:if="{{member.status!=2&&member.loveResidule<=0}}" style="color:red;font-size:10px;">爱心不足</span>
+        </view>
+        <view class="progressScoreContainerHeaderLoveLife" style="width:150px;float:left;">
+              <view class="personalAttrDataHeaderSmall personalAttrDataHeaderLoveSmall" wx:for="{{member.loveList}}" wx:for-item="loveItem" wx:if="{{loveItem.type==1}}"></view>
+              <view class="personalAttrDataHeaderSmall personalAttrDataHeaderLoveHollowSmall" wx:for="{{member.loveList}}" wx:for-item="loveItem" wx:if="{{loveItem.type==0}}"></view>
+          </view>
+      </view>
+    </view>  
+  </scroll-view>
+</view>

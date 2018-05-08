@@ -1,0 +1,28 @@
+.alertPlug{
+  width:80%;
+  height:200px;
+  background:rgba(233,231,206,1);
+  position: absolute;
+  left:50%;
+  top:25vh;
+  margin-left:-40%;
+  border-radius:10px;
+  text-align: center;
+  z-index: 1000000000;
+}
+
+.alertPlugContent{
+  color:rgba(96,82,67,1);
+  position: relative;
+  top:50px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.alertPlugButton{
+  width:100px;
+  top:100px;
+  background:rgba(225,168,50,1);
+  color: white;
+  font-weight: bolder;
+}

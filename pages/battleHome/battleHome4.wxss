@@ -1,0 +1,148 @@
+@import 'battleHome3.wxss';
+
+.battleHomeMenu9{
+  width:55%;
+  height:200px;
+  background:rgba(45,154,242,1);
+  border-radius: 5px;
+  position: absolute;
+  left:3%;
+}
+
+.battleHomeMenu9Background{
+
+  width:100%;
+  height:100%;
+  background: url('http://ovqk5bop3.bkt.clouddn.com/7e5b9fe69a1c41be20a19c5e00dd6d4d.png') no-repeat;
+  background-size: 100% 60%;
+  background-position: 0px 90px;
+  position: absolute;
+}
+
+.battleHomeMenu9Name{
+  color: white;
+  padding-left:20px;
+  padding-top:20px;
+}
+
+.battleHomeMenu10{
+  width:38%;
+  height:60px;
+  background:rgba(45,154,242,1);
+  border-radius: 5px;
+  position: absolute;
+  left:60%;
+}
+
+.battleHomeMenu11{
+  width:38%;
+  height:60px;
+  background:rgba(45,154,242,1);
+  border-radius: 5px;
+  position: absolute;
+  left:60%;
+  top:70px;
+}
+
+.battleHomeMenu12{
+ width:38%;
+  height:60px;
+  background:rgba(45,154,242,1);
+  border-radius: 5px;
+  position: absolute;
+  left:60%;
+  top:140px;
+}
+
+.battleHomeMenu13{
+  width:45%;
+  height:100px;
+  background:rgba(105,187,28,1);
+  position: absolute;
+  left:53%;
+  border-radius: 5px;
+  top:350px;
+}
+
+.battleHomeMenu14{
+  width:45%;
+  height:120px;
+  background:rgba(189,69,128,1);
+  position: absolute;
+  left:53%;
+  border-radius: 5px;
+  top:215px;
+}
+
+.battleHomeMenu10Background{
+  width:50%;
+  height:100%;
+  background: url('http://ovqk5bop3.bkt.clouddn.com/9918fbcd675c5b3a9f0dc8ebbf75c97f.png') no-repeat;
+  background-size: 100% 120%;
+  background-position: 0px 0px;
+  top:0px;
+  position: absolute;
+}
+
+.battleHomeMenu11Background{
+  width:50%;
+  height:60%;
+  background: url('http://p42rx7glw.bkt.clouddn.com/7d52e65a567a903d4d7c33db04557c74.png') no-repeat;
+  background-size: 70% 120%;
+  background-position: 10px 0px;
+  top:10px;
+  position: absolute;
+}
+
+.battleHomeMenu12Background{
+  width:50%;
+  height:60%;
+  background: url('http://ovqk5bop3.bkt.clouddn.com/437135d931492a141161c0ddd9f4df84.png') no-repeat;
+  background-size: 70% 120%;
+  background-position: 10px 0px;
+  top:10px;
+  position: absolute;
+}
+
+.battleHomeMenu2Name{
+  position:absolute;
+  left:30%;
+}
+
+.battleHomeMenu15{
+  width:45%;
+  height:100px;
+  background:rgba(110,79,169,1);
+  position: absolute;
+  border-radius: 5px;
+  top:350px;
+  left:3%;
+}
+
+.battleHomeMenu15Background{
+  width:100%;
+  height:100%;
+  background: url('http://p42rx7glw.bkt.clouddn.com/26476b0a43676beef723fda62e855aac.png') no-repeat;
+  background-size: 50% 80%;
+  background-position: 100% 15px;
+  position: absolute;
+}
+
+.battleHomeMenu14Background{
+  width:100%;
+  height:100%;
+  background: url('http://ovqk5bop3.bkt.clouddn.com/7eadb4ade4e940bad6356848f5336f6b.png') no-repeat;
+  background-size: 90% 80%;
+  background-position: 20px 20px;
+  position: absolute;
+}
+
+.battleHomeMenu13Background{
+  width:100%;
+  height:100%;
+  background: url('http://p42rx7glw.bkt.clouddn.com/238c4af88a7ff618cb45f8ff24f0ccab.png') no-repeat;
+  background-size: 65% 110%;
+  background-position: 50px 0px;
+  position: absolute;
+}
+

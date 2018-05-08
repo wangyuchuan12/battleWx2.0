@@ -1,0 +1,48 @@
+
+  <view class="waitContent">  
+    <view class="waitAnimation">  
+      <image bindtap="luying" animation="{{animationData1}}" class="waitImg" mode="widthFix" src="http://p42rx7glw.bkt.clouddn.com/1361f61b60c8d146dd98f223df611640.png"></image>  
+    </view>  
+    <view class="waitYuanquan" animation="{{animationData2}}">  
+    </view>  
+
+
+  <block wx:for="{{members}}" wx:for-item="member">
+      <image class="danInfoMember8"  
+      wx:if="{{member.index==0}}"src="{{member.imgUrl}}">
+      </image>
+      <image class="danInfoMember2"  wx:if="{{member.index==1}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember3"  wx:if="{{member.index==2}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember4"  wx:if="{{member.index==3}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember5"  wx:if="{{member.index==4}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember6"  wx:if="{{member.index==5}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember7"  wx:if="{{member.index==6}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember8"  wx:if="{{member.index==7}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember9"  wx:if="{{member.index==8}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember10"  wx:if="{{member.index==9}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember11"  wx:if="{{member.index==10}}"src="{{member.imgUrl}}">
+      </image>
+
+      <image class="danInfoMember12"  wx:if="{{member.index==11}}"src="{{member.imgUrl}}">
+      </image>
+
+    </block>
+    </view>

@@ -1,0 +1,21 @@
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="pkMain">
+  <view class="pkMainList">
+    <view class="pkMainItem" bindtap="pkRoomClick">
+      <view class="pkMainItemIcon"></view>
+      <view class="pkMainItemName">多人房间</view>
+    </view>
+
+    <view class="pkMainItem" bindtap="pkClick" style="background:rgba(183,119,255,1)">
+      <view class="pkMainItemIcon" style="background:url('http://ovqk5bop3.bkt.clouddn.com/6941f8ae90de44613108268c07ff8348.png');background-size:100% 100%;"></view>
+      <view class="pkMainItemName">PK战</view>
+    </view>
+  </view>
+
+  <view class="pkMainRoomNum" wx:if="{{createAlert==1}}">
+    <view class="pkMainRoomNumItem" wx:for="{{roomTemplates}}" wx:for-item="roomTemplate" id="{{roomTemplate.id}}" bindtap="pkRoomNumClick">{{roomTemplate.max}}人房间</view>
+
+     <view class="shareAlertPlugClose fa fa-times-circle" bindtap='closeShareAlertPlug'></view>
+  </view>
+</view>

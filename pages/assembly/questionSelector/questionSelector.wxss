@@ -1,0 +1,145 @@
+/* questionSelector.wxss */
+.questionSelector{
+  background:RGBA(44,51,59,1);
+  width:70%;
+  height:50vh;
+  left:50%;
+  position: absolute;
+  top:30vh;
+  margin-left:-39%;
+
+  border:15px solid RGBA(33,39,47,1);
+
+  border-radius:10px;
+
+  z-index: 1000000000000000000000;
+}
+
+.questionSelector2{
+  width:70%;
+  height:50vh;
+  left:50%;
+  position: absolute;
+  top:30vh;
+  margin-left:-39%;
+  border-radius:10px;
+  padding-left:30px;
+  background:RGBA(82,82,82,0.3);
+  z-index: 1000000000000000000000;
+}
+
+.questionSelectorHeader{
+  width:100%;
+
+  text-align: center;
+  position: relative;
+}
+
+.questionSelectorHeader2{
+  width:100%;
+  top:20px;
+  text-align: center;
+  position: relative;
+}
+
+.questionSelectorHeaderList{
+  width:100%;
+  display:block;
+
+  text-align: left;
+}
+
+.questionSelectorHeaderItem{
+  width:65px;
+  height:10vh;
+  display: inline-block;
+  position:relative;
+
+  border:1px solid black;
+}
+
+.questionSelectorHeaderItem2{
+  width:65px;
+  height:65px;
+  display: inline-block;
+  position:relative;
+}
+
+
+.questionSelectorHeaderItemImg{
+  width:100%;
+  height:10vh;
+}
+
+.questionSelectorHeaderItemImg2{
+  width:100%;
+  height:65px;
+}
+
+.questionSelectorHeaderItemText{
+  font-size:10px;
+  width:100%;
+  text-align:center;
+  /*background:RGBA(33,39,47,0.5);*/
+  position:absolute;
+  top:7.5vh;
+  color:white;
+}
+
+.questionSelectorContentList{
+  width:100%;
+  height:37vh;
+}
+
+.questionSelectorContent{
+ 
+  display:block;
+
+  padding-top:10px;
+  
+}
+
+
+.questionSelectorContentItem{
+  width:31%;
+  height:80px;
+  display: inline-block;
+  position:relative;
+
+  border:1px solid black;
+
+}
+
+.questionSelectorContentItem2{
+  width:31%;
+  height:80px;
+  display: inline-block;
+  position:relative;
+}
+
+.questionSelectorContentItemTest{
+  font-size:15px;
+  width:100%;
+  height:20px;
+  text-align:center;
+ //  background:RGBA(33,39,47,0.5);
+  position:absolute;
+  top:60px;
+  color:white;
+  overflow:hidden;
+}
+
+.questionSelectorContentItemImg{
+  width:100%;
+  height:80px;
+}
+
+.questinSelectorCloseButton{
+  width:20px;
+  height:20px;
+  position:absolute;
+  right:-20px;
+  top:-50px;
+  font-size:40px;
+  z-index:100000000000;
+}

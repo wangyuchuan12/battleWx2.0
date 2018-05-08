@@ -1,0 +1,80 @@
+<view class="battleInfoManager" catchtap="">
+
+  <view class="addSubjectImg" bindtap='imgClick' style=''>
+
+    <view class="fa fa-camera addSubjectImgCamera" wx:if="{{isImg==0}}"></view>
+
+    <image src="{{imgUrl}}" 
+    class="addSubjectImgEl" wx:if="{{isImg==1}}"></image>
+  </view>
+
+  <view class="battleTakepartInfo">
+      <view class="battleTakepartInfoTitle">{{battleInfoName}}</view>
+
+      <scroll-view class="battleTakepartInfoContent" scroll-y >
+        {{battleInfoContent}}
+      </scroll-view>
+  </view>
+  <block wx:if="{{subjects.length>0}}">
+    <view class="battleInfoManagerSubjects">
+    
+      <view class="battleInfoManagerSubject" wx:for="{{subjects}}" wx:for-item="subject">
+        <image src="{{subject.imgUrl}}" class="battleInfoManagerSubjectImg"></image>
+        <view class="battleInfoManagerSubjectName">{{subject.name}}</view>
+        <block wx:if="{{subject.status==0}}">
+          <view class="battleInfoManagerSubjectDel fa fa-window-close" bindtap='subjectDelPre' id="pre_{{index}}"></view>
+        </block>
+
+        <block wx:if="{{subject.status==1}}">
+          <view class="battleInfoManagerSubjectDel" catchtap='subjectDelDo' id="do_{{index}}" style="font-size:10px;font-weight:bolder;">删除</view>
+        </block>
+      </view>
+    
+    <!--
+      <view class="battleInfoManagerSubject" bindtap='addSubjectClick'>
+        <view class="fa fa-plus-square battleInfoManagerSubjectAddIcon"></view>
+      </view>
+    -->
+    </view>
+  </block>
+  <!--
+  <block wx:else>
+    <view class="battleInfoManagerSubjects" style='text-align:center;'>    
+      <view class="battleInfoManagerSubject" bindtap='addSubjectClick'>
+        <view class="fa fa-plus-square battleInfoManagerSubjectAddIcon"></view>
+      </view>
+    </view>
+  </block> 
+  --> 
+  <view class="battleInfoManagerPeriods" >
+
+    <view class="battleInfoManagerPeriodAdd" bindtap='addSubjectClick'>添加主题</view>
+    <view class="battleInfoManagerPeriodAdd" bindtap='auditClick'>审题</view>
+    <view class="battleInfoManagerPeriodAdd" bindtap='updateBattleInfoClick'>修改基本信息</view>
+    <view class="battleInfoManagerPeriodAdd" bindtap="addPeriodClick">新建题库</view>
+    
+    
+    <block wx:for="{{periods}}" wx:for-item="period">
+      <view class="battleRoomEditPeriod" id="{{period.id}}" bindtap='periodInfoClick'>
+        <view class="battleRoomEditPeriodHead">
+          <image src='{{period.ownerImg}}' class="battleRoomEditPeriodHeadImg"></image>
+           <!--<view class="battleRoomEditPeriodHeadLabel">出题人:</view>
+          <view class="battleRoomEditPeriodHeadNickname">{{period.ownerNickname}}</view>-->
+        </view>
+        <view class="battleRoomEditPeriodContent">
+          <view class="battleRoomEditPeriodContentItem">参与人数:{{period.takepartCount}}</view>
+          <view class="battleRoomEditPeriodContentItem">出题人:{{period.ownerNickname}}</view>
+          <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isDefault==1}}">推荐</view>
+          <!--
+          <view class="battleRoomEditPeriodContentItem">正确率:{{period.percent}}%</view>
+          <view class="battleRoomEditPeriodContentItem">难度:低</view>
+          
+          -->
+        </view>
+      </view>
+    </block>
+    
+  
+  </view>
+
+</view>

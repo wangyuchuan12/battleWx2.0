@@ -1,0 +1,119 @@
+<import src="../../assembly/baseLayerout/baseLayerout"/>
+
+<template is="baseLayerout" data="{{...baseData}}"/>
+<scroll-view class="editQuestion" scroll-y>
+
+  <view class="questionFactoryAuditButtons">
+    <button class="questionFactoryAuditButton" bindtap='rejectClick'>不通过</button>
+    <button class="questionFactoryAuditButton" bindtap='agreeClick'>通过</button>
+  </view>
+  <view class="questionFactoryAuditItem">出题人:{{auditUsername}}</view>
+  <view class="questionFactoryAuditItem">一级主题：{{battleName}}</view>
+  <view class="questionFactoryAuditItem">二级主题：{{subjectName}}</view>
+  <view class="questionFactoryAuditItem">奖励：智慧豆+{{rewardBean}}</view>
+  <view class="questionFactoryAuditItem">阶段：{{stageIndexes}}</view>
+
+  <view class="addSubjectImg" bindtap='imgClick' style='background:rgba(49,64,93,1);top:10px;'  wx:if="{{imgUrl}}">
+    <image src="{{imgUrl}}" 
+    class="addSubjectImgEl"></image>
+  </view>
+
+
+  <view class="questionFactoryAuditQuestion">{{question}}</view>
+
+  <block wx:if="{{questionType==0}}">
+    <view class="battlePeriodManagerEditSelect" style="margin-bottom:50px;">
+        <view class="battlePeriodManagerEditSelectItem" wx:for="{{selectOptions}}" wx:for-item="selectOption" id="{{selectOption.id}}" bindtap='selectRightOptionClick'>
+          <input class="battlePeriodManagerEditSelectItemInput" 
+          placeholder='请输入选项' bindinput="selectOptionInputChange" value="{{selectOption.content}}" id="{{selectOption.id}}"/>
+          <view class="battlePeriodManagerEditSelectItemIcon fa fa-check-circle" wx:if="{{selectOption.isRight==1}}"></view>
+          <view class="battlePeriodManagerEditSelectItemIcon fa fa-times-circle" style='color:red;'  bindtap='selectRightOptionClick' wx:else></view>
+        </view>
+    </view>
+  </block>
+
+
+  <block wx:if="{{questionType==1}}">
+      <view class="battlePeriodManagerEditBlank" style="margin-bottom:50px;">
+        <view class="battlePeriodManagerEditSelectItem">
+        <input class="battlePeriodManagerEditSelectItemInput" placeholder='请输入答案' bindinput='answerInputChange' value='{{answer}}'/></view>
+      </view>
+  </block>
+
+
+  <block wx:if="{{questionType==2}}">
+    <view class='inputItemFillTerms' style="margin-bottom:50px;">
+      
+        <view class='inputItemFillTermsWorlds'>
+            
+            <block wx:for="{{worlds}}" wx:for-item="world">
+              <view class="inputItemFillTermsWorld"  
+              bindtap="worldClick" id="{{world.id}}">{{world.content}}</view>
+            </block>
+            <view>
+              <view class="inputItemFillTermsWorldPlus" bindtap='worldMinusClick'><span class="fa fa-minus-square"></span></view>
+              <view class="inputItemFillTermsWorldPlus" bindtap='worldPlusClick'><span class="fa fa-plus-square"></span></view>
+            </view>
+        </view>
+
+        <view class='inputItemFillTermsWorldsCheck'>
+          <block wx:for="{{worldChecks}}" wx:for-item="worldCheck" wx:if="{{index<=5}}">
+            <view class="inputItemFillTermsWorldCheckItem" 
+            style='padding-top:0px;color:white;' wx:if="{{worldCheck.status==2}}">
+              <input class="inputItemFillTermsWorldCheckItemInput" 
+              bindblur='worldCheckInputBlur' bindinput='worldCheckInputChange' id="{{worldCheck.id}}" value='{{worldCheck.content}}'/>
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick"  wx:elif="{{worldCheck.status==1}}">
+                {{worldCheck.content}}
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick2"  wx:elif="{{worldCheck.status==0}}" style='background:green'>
+                {{worldCheck.content}}
+            </view>
+          </block>
+        </view>
+        <view class='inputItemFillTermsWorldsCheck'>
+          <block wx:for="{{worldChecks}}" wx:for-item="worldCheck" wx:if="{{index<=11&&index>5}}">
+             <view class="inputItemFillTermsWorldCheckItem"
+             style='padding-top:0px;color:white;' wx:if="{{worldCheck.status==2}}">
+               <input class="inputItemFillTermsWorldCheckItemInput" 
+              bindblur='worldCheckInputBlur' bindinput='worldCheckInputChange' id="{{worldCheck.id}}" value='{{worldCheck.content}}'/>
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick"  wx:elif="{{worldCheck.status==1}}">
+                {{worldCheck.content}}
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick2"  wx:elif="{{worldCheck.status==0}}" style='background:green'>
+                {{worldCheck.content}}
+            </view>
+          </block>
+        </view>
+        <view class='inputItemFillTermsWorldsCheck'>
+          <block wx:for="{{worldChecks}}" wx:for-item="worldCheck" wx:if="{{index<=17&&index>11}}">
+             <view class="inputItemFillTermsWorldCheckItem" 
+             style='padding-top:0px;color:white;' wx:if="{{worldCheck.status==2}}">
+               <input class="inputItemFillTermsWorldCheckItemInput" 
+              bindblur='worldCheckInputBlur' bindinput='worldCheckInputChange' id="{{worldCheck.id}}" value='{{worldCheck.content}}'/>
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick"  wx:elif="{{worldCheck.status==1}}">
+                {{worldCheck.content}}
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick2"  wx:elif="{{worldCheck.status==0}}" style='background:green'>
+                {{worldCheck.content}}
+            </view>
+          </block>
+        </view>
+      </view>
+  </block>
+
+</scroll-view>

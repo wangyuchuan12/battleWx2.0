@@ -1,0 +1,17 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#2f405d",
+  "navigationBarTitleText": "比赛进行中",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "timeSecond": "../assembly/roundProgress/roundProgress",
+    "progressMenu": "../assembly/progressMenuPlug/progressMenuPlug",
+    "luckDraw": "../assembly/luckDrawPlug/luckDrawPlug",
+    "danList": "../assembly/danListPlug/danListPlug",
+    "pk": "../assembly/pkPlug/pkPlug",
+    "memberWait": "../assembly/memberWaitPlug/memberWaitPlug",
+    "questionSelector": "../assembly/questionSelector/questionSelector",
+    "progressScore": "../assembly/progressScorePlug2/progressScorePlug",
+    "homeMenu": "../assembly/homeMenu/homeMenu"
+  }
+}

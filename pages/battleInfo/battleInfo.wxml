@@ -1,0 +1,44 @@
+
+<view class="battleInfo">
+
+  <image src="http://on3s1z2us.bkt.clouddn.com/pass.png" class="passFlag">
+  </image>
+
+  <view class="battleInfoTitle">第<span id="battleInfoBannerRound">五</span>关</view>
+
+  <view class="battleInfoBanner">
+		目标：<span id="battleInfoBannerScore">0</span>分
+	</view>
+
+  <view src="" class="battleInfoDetailImg" id="battleInfoDetailImg"></view>
+
+  <view class="battleInfoDetailName" id="battleInfoDetailName">22</view>
+
+
+  <view class="battleInfoContent">
+		<view class="battleInfoRound">
+      <view class="battleInfoContentTitle" id="round">总得分</view>
+      <view class="battleInfoContentInput">
+        <span class="battleInfoContentInputSportsIcon"></span>
+        <span class="battleInfoContentInputText" id="thisScore"></span>
+      </view>
+    </view>
+
+    <view class="battleInfoRound">
+      <view class="battleInfoContentTitle" id="round">排名</view>
+      <view class="battleInfoContentInput">
+        <span class="battleInfoContentInputRankIcon"></span>
+        <span class="battleInfoContentInputText" id="thisScore"></span>
+      </view>
+    </view>
+  </view>
+
+   <view class="mainViewButtons" style="margin-top:0px;">
+      <view class="mainViewDekornButton" style="display: inline-block;" id="lastButton">上一关</view>
+      <view class="mainViewDekornButton" style="display: inline-block;" id="showResult">查看答题</view>
+      <view class="mainViewDekornButton" style="display: inline-block;" id="dekornButton" bindtap="dekornClick">挑战</view>
+      <!--<div class="mainViewDekornButton" style="display: inline-block;" id="reDekornButton">重新挑战</div>-->
+      <view class="mainViewDekornButton" style="display: inline-block;" id="nextButton">下一关</view>
+	</view>
+</view>
+

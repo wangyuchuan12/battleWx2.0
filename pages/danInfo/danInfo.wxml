@@ -1,0 +1,58 @@
+<scroll-view class="danInfo" scroll-y>
+  <view class="danItem">
+        <image src="{{danImg}}" class="danItemImg"></image>
+        <view class="danItemName">{{danName}}</view>
+  </view>
+
+  <view class="battleHomeContent">
+    <scroll-view class="battleHomeContentList" scroll-y>
+      <block wx:for="{{projects}}" wx:for-item="project">
+        <view class="battleHomeContentItem" id="{{project.id}}" bindtap='battleItemClick'>
+            <image src="{{project.battleImg}}" class="battleHomeContentItem2"></image>
+            <view class="battleHomeContentItem2Name">{{project.battleName}}</view>
+
+            <view class="battleHomeContentItem2NameFooter fa fa-chevron-right" wx:if="{{project.isOpen==0}}"></view>
+
+            <view class="battleHomeContentItem2NameFooter fa fa-chevron-down" wx:if="{{project.isOpen==1}}"></view>
+        </view>
+
+        <view class="battleHomeContentItem2Tool" wx:if="{{project.isOpen==1}}">
+          <view class="battleHomeContentItem2ToolItem" id="{{project.id}}" bindtap='quickStart'><span class="fa fa-sign-in"></span><span style="font-size:10px;padding-left:5px;">闯关</span></view>
+          <view class="battleHomeContentItem2ToolItem" bindtap='myRoomClick'><span class="fa fa-users"></span><span style="font-size:10px;padding-left:5px;">排行榜</span></view>
+          <view class="battleHomeContentItem2ToolItem" id="{{project.id}}" bindtap='myPersonalRoomClick'><span class="fa fa-user-circle"></span><span style="font-size:10px;padding-left:5px;">与好友对战</span></view>
+        </view>
+
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class="danInfoTaskList">
+    <view class="danInfoTaskListTask">任务 5/10</view>
+    <view class="danInfoTaskItem" wx:for="{{tasks}}" wx:for-item="task" bindtap='taskItemClick' id="{{task.id}}">
+      <view class="danInfoTaskItemName">
+        {{task.name}}
+        <span wx:if="{{task.status==0||task.status==1}}" style="font-size:10px;color:green;">
+          进行中
+        </span>
+        <span wx:if="{{task.status==2}}" style="font-size:10px;color:red;">
+          完成
+        </span>
+      </view>
+      <view class="danInfoTaskItemInstruction" style="color:rgba(0,189,255,1);">提示：{{task.instruction}}</view>
+      <view class="danInfoTaskItemFooter">
+        <view class="danInfoTaskItemFooterReward">
+          <span style="font-size:10px;">智慧豆</span>
+          <view class="personalAttrDataHeader  personalAttrDataHeaderBean" style="top:5px;position:relative;"></view>
+          <span style="font-size:10px;">×{{task.rewardBean}}</span>
+          
+          <span style="padding-left:10px;font-size:10px;">经验值</span>
+          <view class="fa fa-star" style="top:2px;left:2px;position:relative;font-size:20px;color:green;"></view>
+          <span style="font-size:10px;padding-left:3px;"> ×{{task.rewardExp}}</span>
+          
+        </view>
+        <view class="danInfoTaskItemFooterButton" wx:if="{{task.status!=2}}">{{task.buttonName}}</view>
+         <view class="danInfoTaskItemFooterButton" style="background:green;" wx:else>领取</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

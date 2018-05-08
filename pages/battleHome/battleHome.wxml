@@ -1,0 +1,154 @@
+<import src="../assembly/selectInput/selectInput.wxml"/>
+
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<import src="../assembly/attrPlug/attrPlug"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<template is="attrPlug" data="{{...attrPlugData}}"/>
+
+
+<view class="shareAlertPlug" wx:if="{{shareAlert==1}}">
+      <view class="shareAlertPlugClose fa fa-times-circle" bindtap='closeShareAlertPlug'></view>
+      <view class="shareAlertPlugBean" 
+      style="background:url('http://ovqk5bop3.bkt.clouddn.com/8575c56292491e63a168bdd5e4694cf3.png');background-size:100% 100%;"></view>
+      <view class="shareAlertPlugContent">开始一对一pk对战</view>
+      <button class="shareAlertPlugButton" open-type='share'>确定</button>
+</view>
+<view class="battleHome">
+  <view class="battleHomeTool" style="">
+
+    <view class="battleHomeToolItem" bindtap='battleManagerClick' wx:if="{{isManager==1}}">
+      <span class="fa fa-database" style="font-size:20px;"></span>
+      <span style="display:block;font-size:10px;">管理</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='pkClick' style="display:none;">
+      <span class="fa fa-space-shuttle" style="font-size:30px;color:yellow;"></span>
+      <span style="display:block;font-size:10px;color:yellow;">好友对战</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='followClick'>
+    <form bindsubmit='submit' report-submit='true'>
+      <contact-button 
+        size="20"
+        form-type="submit" 
+        type="default"
+        size="mini"
+        session-from="weapp">
+      </contact-button>
+    </form>
+
+      <span style="display:block;font-size:10px;">客服</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='takeoutClick'>
+      <span class="fa fa-get-pocket" style="font-size:20px;color:rgba(16,174,255,1);"></span>
+
+      <span style="display:block;font-size:10px;">提现</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='mallClick'>
+      <span class="fa fa-shopping-cart" style="font-size:20px;color:rgba(247,98,96,1);"></span>
+
+      <span style="display:block;font-size:10px;">商城</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='factoryClick'>
+      <span class="fa fa-university" style="font-size:20px;color:rgba(255,190,0,1);"></span>
+
+      <span style="display:block;font-size:10px;">题目工厂</span>
+    </view>
+
+   <view class="battleHomeToolItem" bindtap='createRoomClick'>
+      <span class="fa fa-plus" style="font-size:20px;color:rgba(9,187,7,1);"></span>
+
+      <span style="display:block;font-size:10px;">创建房间</span>
+    </view> 
+    
+  </view>
+  <view class="battleHomeFastEntry">
+    <button class="battleHomeFastEntryItem" bindtap='pkClick'>
+      <span class="fa fa-space-shuttle" style="font-size:40px;"></span>
+      <span style="display:block;font-size:10px;">好友对战</span>
+    </button>
+
+    <!--<button class="battleHomeFastEntryItem" bindtap='randomRoom'>
+      <span class="fa fa-futbol-o" style="font-size:40px;;"></span>
+      <span style="display:block;font-size:10px;">快速开始</span>
+    </button>-->
+    <button class="battleHomeFastEntryItem" bindtap='danClick'>
+      <span class="fa fa-futbol-o" style="font-size:40px;;"></span>
+      <span style="display:block;font-size:10px;">闯关</span>
+    </button>
+  </view>
+  <view class="battleHomeHeader" style='display:none;'>
+    <image src="{{userImgUrl}}" class="battleHomeHeaderImg"></image>
+
+    <block wx:for="{{battles}}" wx:for-item="battle">
+      <view class="battleHomeHeaderSelect" bindtap='selectClick' wx:if="{{battle.id==battleId}}"><span class="battleHomeHeaderSelectSpan1">{{battle.content}}</span><span class="fa fa-chevron-down" style="float:right;right:10px;/"></span></view>
+    </block>
+    <view class="battleHomeHeaderStart" bindtap='randomRoom'>快速开始</view>
+  </view>
+
+  <view class="battleHomeContent">
+
+    <view class="battleHomeContentMyself" bindtap='skipToMyRooms'>
+      <view class="battleHomeContentMyselfIcon fa fa-pagelines"></view>
+      <view class="battleHomeContentMyselfName">我参与的</view>
+      <view class="battleHomeContentMyselfIcon2 fa fa-chevron-right"></view>
+    </view>
+    <scroll-view class="battleHomeContentList" scroll-y>
+      <block wx:for="{{rooms}}" wx:for-item="room">
+        <view class="battleHomeContentItem" id="{{room.id}}" bindtap='itemClick'>
+          <image src="{{room.imgUrl}}" class="battleHomeContentItemImage" style="width:20%;height:50px;"></image>
+          <image src="{{room.smallImgUrl}}" class="battleHomeContentItemSmallImage" style='display:none;'></image>
+          <view class="battleHomeContentItemPersonalName" style="left:34%;top:10px;font-size:15px;">{{room.name}}</view>
+          <view class="battleHomeContentItemFooter" style="left:34%;top:40px;">
+            等待中 {{room.num}}/{{room.maxNum}}
+          </view>
+
+          <view class="roomRedpack" style="margin-top:0px;top:-10px;" wx:if="{{room.isRedpack==1}}" style="display:none;">
+            <view class="roomRedpackBackground">
+            </view>
+            <view class="roomRedPackRewards">
+
+                <view class="roomRedPackRewardsBackground">
+                 
+                  <view style="width:100%;height:50px;text-align:center;padding-top:5px;margin:0 auto;color:white;">总共{{room.redPackNum}}个红包</view>
+                </view>
+                <view class="roomRedPackRewardsBackground2"></view>
+                <view class="roomRedPackRewardsAmount"><span style="font-size:10px;">总金额：</span>{{room.redpackAmount}}<span style="font-size:10px;">元</span></view>
+            </view>
+            <view class="roomRedpackContent">
+                <view style="color: RGBA(252,207,81,1);font-weight:bolder;font-size:15px;padding-left:10px;padding-right:10px;background:white;border-radius:5px;margin-top:10px;left:15px;position:relative;">
+                  <span wx:if="{{room.num<room.maxNum}}">火热进行中</span>
+                  <span wx:else>已爆满</span>
+                </view>
+                <view style="margin-top:5px;">
+                  <view style="text-align:left;color:white;padding-left:5px;">累计：</view>
+                  <view class="roomRedPackReward" style="display:inline-block;margin-top:0px;" wx:if="{{room.redpackMasonry>0}}">
+                      <view class="personalAttrDataHeader personalAttrDataHeaderMasonry"></view>
+                      <view class="roomRedPackRewardNum">×{{room.redpackMasonry}}</view>
+                  </view>
+
+                  <view class="roomRedPackReward" style="display:inline-block;margin-left:10px;margin-top:0px;" wx:if="{{room.redpackBean>0}}">
+                      <view class="personalAttrDataHeader personalAttrDataHeaderBean" style='background-size:30px 30px;background-position:1px 0px;'></view>
+                      <view class="roomRedPackRewardNum">×{{room.redpackBean}}</view>
+                  </view>
+                </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="selectInputList" wx:if="{{selectStatus==1}}">
+    <block wx:for="{{battles}}" wx:for-item="item">
+      <view class="selectInputItem"  bindtap='selectItemClick' wx:if="{{item.status==0}}" id="{{item.id}}">{{item.content}}</view>
+      <view class="selectInputItem" style="background:black;color:white" bindtap='itemClick' wx:else>{{item.content}}</view>
+    </block>
+</view>
+
+
+    

@@ -1,0 +1,7 @@
+.aircraftPlug{
+  width:100px;
+  height:100px;
+  background:url("http://p42rx7glw.bkt.clouddn.com/%E9%A3%9E%E6%9C%BA.png");
+  background-size:100% 100%;
+  position: absolute;
+}

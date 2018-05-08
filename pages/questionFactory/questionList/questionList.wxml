@@ -1,0 +1,92 @@
+
+<view class="questionList">
+  <view class="battlePeriodManagerEditTab" style="background:rgba(49,64,93,1);">
+      <block wx:if="{{status==0}}">
+        <view class="battlePeriodManagerEditTabItem" bindtap="auditCheck" style="background:white;color:black">审核中</view>
+      </block>
+      <block wx:else>
+        <view class="battlePeriodManagerEditTabItem" bindtap="auditCheck">审核中</view>
+      </block>
+
+      <block wx:if="{{status==1}}">
+        <view class="battlePeriodManagerEditTabItem" bindtap="passCheck" style="background:white;color:black">已通过</view>
+      </block>
+
+      <block wx:else>
+        <view class="battlePeriodManagerEditTabItem" bindtap="passCheck">已通过</view>
+      </block>
+
+      <block wx:if="{{status==2}}">
+        <view class="battlePeriodManagerEditTabItem" bindtap='upPassCheck' style="background:white;color:black">未通过</view>
+      </block>
+
+      <block wx:else>
+        <view class="battlePeriodManagerEditTabItem" bindtap='upPassCheck'>未通过</view>
+      </block>
+  </view>
+
+  <view class="questionListButton" bindtap='makeQuestionClick'>出题</view>
+
+
+  <scroll-view scroll-y="true" class="battlePeriodManagerResults" style='height:80vh;'>
+      <view class="questionResultItem" wx:for="{{items}}" wx:for-item="item" id="{{item.id}}" bindtap='itemInfo'>
+        <image src="{{item.imgUrl}}" class="questionResultItemImg" wx:if="{{item.imgUrl}}"></image>
+        <image src="http://7xlw44.com1.z0.glb.clouddn.com/noimg.png" class="questionResultItemImg" wx:else></image>
+
+        <scroll-view class="questionResultItemContent" scroll-y>
+          <view class="questionResultItemContentItem">
+            <span>{{item.question}}</span>
+          </view>
+          <!--
+          <view class="questionResultItemContentItem">
+            <span style="color:green;" wx:if="{{item.answer==item.rightAnswer}}">{{item.answer}}(正确)</span>
+            <span style="color:red;" wx:else>{{item.answer}}(错误)</span>
+          </view>
+          -->
+          <block wx:if="{{item.type==0}}">
+            <view class="questionResultItemContentItem" >
+              
+              <block wx:for="{{item.options}}" wx:for-item="option">
+                <view class="questionResultItemContentItemOption"   style="background-color:green;color:white;" wx:if="{{item.rightAnswer==option}}">{{option}}</view>
+                <view class="questionResultItemContentItemOption"  wx:else>{{option}}</view>
+              </block>
+
+              <view class="questionResultItemContentItemStatus">
+                <span wx:if="{{item.status==0}}">审核中</span>
+                <span wx:if="{{item.status==1}}" style="color:green;">审核通过</span>
+                <span wx:if="{{item.status==2}}" style="color:red">审核不通过</span>
+              </view>
+            </view >
+
+          </block>
+
+          <block wx:elif="{{item.type==1}}">
+            <view class="questionResultItemContentItem">
+              <view class="questionResultItemContentItemAnswer">
+                <span>答案：{{item.rightAnswer}}</span>
+              </view>
+               <view class="questionResultItemContentItemStatus">
+                <span wx:if="{{item.status==0}}">审核中</span>
+                <span wx:if="{{item.status==1}}" style="color:green;">审核通过</span>
+                <span wx:if="{{item.status==2}}" style="color:red">审核不通过</span>
+              </view>
+            </view >
+          </block>
+
+          <block wx:elif="{{item.type==2}}">
+            <view class="questionResultItemContentItem">
+              <view class="questionResultItemContentItemFills">
+                <view class="questionResultItemContentItemFill" wx:for="{{item.rightAnswer}}" wx:for-item="answer">{{answer}}</view>
+              </view>
+               <view class="questionResultItemContentItemStatus">
+                <span wx:if="{{item.status==0}}">审核中</span>
+                <span wx:if="{{item.status==1}}" style="color:green;">审核通过</span>
+                <span wx:if="{{item.status==2}}" style="color:red">审核不通过</span>
+              </view>
+            </view >
+          </block>
+          
+        </scroll-view>
+    </view>
+  </scroll-view>
+</view>

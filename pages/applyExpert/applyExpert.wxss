@@ -1,0 +1,4 @@
+@import '../manager/addSubject/addSubject.wxss';
+.applyExpertArea{
+  width:100%;
+}

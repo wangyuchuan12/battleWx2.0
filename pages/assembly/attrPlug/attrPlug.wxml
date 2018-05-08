@@ -1,0 +1,85 @@
+<template name="attrPlug">
+  <view class="personalAttr" style="display:{{attrDisplay}}">
+
+  <block wx:for="{{beanAnimTargets}}" wx:for-item="beanAnimTarget">
+  <image src="http://otsnwem87.bkt.clouddn.com/bean.png" style="width:30px;height:30px;position:fixed;left:{{beanAnimTarget.left}}px;top:{{beanAnimTarget.top}}px;z-index:100000000000000000;opacity:{{beanAnimTarget.opacity}}" id="beanAnimTarget" animation="{{beanAnimTarget.animation}}" wx:if="{{beanAnimTarget.status==1}}"></image>
+  </block>
+    
+
+    <view class="personalAttrData">
+      <view class="personalAttrDataItem" style="width:20%;">
+          <view style="background:url('http://7xugu1.com1.z0.glb.clouddn.com/light.png');position:absolute;width:{{loveLight.width}}%;height:{{loveLight.height}}%;background-size:100% 100%;"></view>
+
+          <view style="position:absolute;color:RGBA(255,223,68,1);z-index:10000;left:35px;top:{{loveTop}}px;display:{{loveDisplay}}">
+            <span>+</span>
+            <span>{{plusNum}}</span>
+          </view>
+          <view class="personalAttrDataHeader personalAttrDataHeaderLove" style="z-index:1000;position: absolute;top:-1px;"></view>
+                
+          <view id="progressbarLove" style="width:100%;height:20px;border-radius:20px;display:inline-block;top: 0px;vertical-align: top;background-color:RGBA(139,76,32,1)">
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1)" wx:if="{{loveLife<1000}}">
+              {{loveLife}}
+            </view>
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1)" wx:if="{{loveLife>=1000&&loveLife<10000}}">
+              {{loveLife/1000}}千
+            </view>
+
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1)" wx:if="{{loveLife>=10000}}">
+              {{loveLife/10000}}万
+            </view>
+          </view>
+                
+          <view class="personalAttrDataHeader personalAttrDataHeaderPlus" style="left:79%;top:0px;position: absolute;display:none;"></view>
+      </view>
+      <view class="personalAttrDataItem" style="width:30%;">
+          <view style="background:url('http://7xugu1.com1.z0.glb.clouddn.com/light.png');position:absolute;width:{{beanLight.width}}%;height:{{beanLight.height}}%;background-size:100% 100%;"></view>
+
+          <view style="position:absolute;color:RGBA(255,223,68,1);z-index:10000;left:35px;top:{{beanTop}}px;display:{{beanDisplay}}">
+            <span>+</span>
+            <span>{{plusNum}}</span>
+          </view>
+          <view class="personalAttrDataHeader personalAttrDataHeaderBean" style="z-index:1000;position: absolute;top:-1px;" id="beanAttr"></view>
+                
+          <view id="progressbarBean" style="width:100%;height:20px;border-radius:20px;display:inline-block;top: 0px;vertical-align: top;background-color:RGBA(139,76,32,1)">
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1)" wx:if="{{wisdomCount<1000}}">{{wisdomCount}}</view>
+
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1)" wx:if="{{wisdomCount>=1000&&wisdomCount<10000}}">{{wisdomCount/1000}}千</view>
+
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1)" wx:if="{{wisdomCount>=10000}}">{{wisdomCount/10000}}万</view>
+          </view>
+                
+          <view class="personalAttrDataHeader personalAttrDataHeaderPlus" style="left:79%;top:0px;position: absolute;display:none;"></view>
+      </view>
+
+      <view class="personalAttrDataItem" style="width:20%;">
+          <view style="background:url('http://7xugu1.com1.z0.glb.clouddn.com/light.png');position:absolute;width:{{masonryLight.width}}%;height:{{masonryLight.height}}%;background-size:100% 100%;"></view>
+
+          <view style="position:absolute;color:RGBA(255,223,68,1);z-index:10000;left:35px;top:{{masonryTop}}px;display:{{masonryDisplay}}">
+            <span>+</span>
+            <span>{{plusNum}}</span>
+          </view>
+          <view class="personalAttrDataHeader personalAttrDataHeaderMasonry" style="z-index:1000;position: absolute;"></view>
+                
+          <view id="progressbarMasonry" style="width:100%;height:20px;border-radius:20px;display:inline-block;top: 0px;vertical-align: top;background-color:RGBA(139,76,32,1)">
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1)">{{masonry}}</view>
+          </view>
+                
+          <view class="personalAttrDataHeader personalAttrDataHeaderPlus" style="left:79%;top:0px;position: absolute;display:none;"></view>
+      </view>
+      <view class="personalAttrDataItem">
+          <view style="background:url('http://7xugu1.com1.z0.glb.clouddn.com/light.png');position:absolute;width:{{moneyLight.width}}%;height:{{moneyLight.height}}%;background-size:100% 100%;"></view>
+          <view style="position:absolute;color:RGBA(255,223,68,1);z-index:10000;left:35px;top:{{moneyTop}}px;display:{{moneyDisplay}}">
+            <span>+</span>
+            <span>{{plusNum}}</span>
+          </view>
+          <view class="personalAttrDataHeader personalAttrDataHeaderMoney" style="z-index:1000;position: absolute;top:-3px;left:-2px;"></view>
+                
+          <view id="progressbarMoney" style="width:100%;height:20px;border-radius:20px;display:inline-block;top: 0px;vertical-align: top;background-color:RGBA(139,76,32,1)">
+            <view class="progress-label2" id="progressLabel2" style="border-radius:20px;color:RGBA(255,237,109,1);padding-left:20px;">{{amountBalance}}元</view>
+          </view>
+                
+          <view class="personalAttrDataHeader personalAttrDataHeaderPlus" style="left:79%;top:0px;position: absolute;display:none;"></view>
+      </view>
+    </view>
+  </view>
+</template >

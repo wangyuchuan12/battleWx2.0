@@ -1,0 +1,75 @@
+@import '../assembly/baseLayerout/baseLayerout.wxss';
+.battleDekornList{
+  width:100%;
+  height: 100vh;
+  background: url('http://ovqk5bop3.bkt.clouddn.com/84bb0b36daf4c5ba5fffbeff8e137a83.png') no-repeat;
+  background-size: 100% 60%;
+  background-position: 0px 200px;
+  position: relative;
+}
+
+.battleDekornListContent{
+  padding-top:20px;
+}
+.battleDekornItem{
+  width:90%;
+  background: rgba(252,238,199,1);
+  border-radius:10px;
+  margin: 0 auto;
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left:10px;
+}
+
+.battleDekornItemPrice{
+  width:70px;
+  height:70px;
+  border-radius: 100px;
+  background: rgba(89,189,218,1);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.battleDekornItemPriceImg{
+  width:60px;
+  height:60px;
+  top:5px;
+  position: relative;
+}
+
+.battleDekornItemDetail1{
+  display: inline-block;
+  vertical-align: top;
+  color: rgba(150,49,0,1);
+  padding-left:10px;
+}
+
+.battleDekornItemDetail1Name{
+  padding-top:5px;
+  font-size:20px;
+  font-weight: bolder;
+}
+
+.battleDekornItemDetail1Reward{
+  font-size:15px;
+}
+
+.battleDekornItemButton{
+  width:50px;
+  background: rgba(1,128,172,1);
+  position: absolute;
+  border-radius: 0 10px 10px 0;
+  vertical-align: top;
+  right:0px;
+  top:0px;
+  padding-top:30.5px;
+  padding-bottom:30.5px;
+  padding-left:20px;
+  padding-right: 20px;
+  color: white;
+  font-size:20px;
+  font-weight: bolder;
+}

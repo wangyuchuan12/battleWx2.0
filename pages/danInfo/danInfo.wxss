@@ -1,0 +1,62 @@
+@import '../danList/danList.wxss';
+@import '../battleHome/battleHome2.wxss';
+@import '../assembly/attrPlug/attrPlug.wxss';
+.danInfo{
+  background: rgba(49,64,93,1);
+  height: 100vh;
+  width:100%;
+}
+
+.danInfoTaskItem{
+  background: RGBA(37,75,140,1);
+  width:95%;
+  height:100px;
+  margin: 0 auto;
+  padding-left:10px;
+  padding-top:10px;
+  border-radius: 5px;
+  color: white;
+  margin-top:10px;
+}
+
+.danInfoTaskItemFooterReward{
+  display: inline-block;
+  padding-top:10px;
+  padding-left:10px;
+}
+
+.danInfoTaskItemFooter{
+  position: relative;
+}
+
+.danInfoTaskItemInstruction{
+  color: red;
+  font-size:10px;
+  width:70%;
+  padding-left:10px;
+}
+
+.danInfoTaskItemFooterButton{
+  display: block;
+  padding-left:10px;
+  padding-right: 10px;
+  padding-top:5px;
+  padding-bottom: 5px;
+  background: rgba(0,189,255,1);
+  float: right;
+  right: 20px;
+  position: absolute;
+  bottom:6px;
+  border-radius:5px;
+}
+
+.danInfoTaskList{
+  margin-bottom:20px;
+}
+
+.danInfoTaskListTask{
+  padding-left:10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  color:white;
+}

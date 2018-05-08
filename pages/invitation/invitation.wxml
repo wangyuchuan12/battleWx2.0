@@ -1,0 +1,4 @@
+<view class="invitation">
+  <image src="{{imgUrl}}" class="battleTakepartImg"></image>
+  <image class="invitationQcode" src="{{qcodeImgUrl}}"></image>
+</view>

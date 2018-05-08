@@ -1,0 +1,35 @@
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<import src="../assembly/attrPlug/attrPlug"/>
+<template is="attrPlug" data="{{...attrPlugData}}"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="battleDekorn">
+  <view class="battleDekornContent">
+    <view class="battleDekornTitle">{{room.name}}</view>
+    <view class="battleDekornRewards">
+      <view class="battleDekornRewardItem" 
+      wx:for="{{rewards}}" wx:for-item="reward" wx:if="{{reward.rewardBean}}">
+        <view style="display:inline-block;text-align:left;padding-left:20px;">
+          第{{reward.rank}}名
+        </view>:
+        <view style="display:inline-block;width:100px;text-align:left;padding-left:10px;">
+        <block wx:if="{{reward.rewardBean<1000}}">
+          {{reward.rewardBean}}
+        </block>
+
+        <block wx:else>
+          {{reward.rewardBean/1000}}k
+        </block>
+        
+      智慧豆</view>
+      </view>
+    </view>
+    <view class="battleDekornPrompt">已报名{{room.num}}人还需要{{room.mininum-room.num}}人即可开始</view>
+    
+    <view class="battleDekornButton" bindtap='takepartClick' wx:if="{{status!=1}}">
+      我要报名
+      <view>
+        <view class="personalAttrDataHeader personalAttrDataHeaderBean" style="top:7px;position:relative"></view>×{{costBean}}
+      </view>
+  </view>
+    </view>
+</view>

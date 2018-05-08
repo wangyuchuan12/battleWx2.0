@@ -1,0 +1,6 @@
+<view class="battleInfoManagerSubjects">
+    <view class="battleInfoManagerSubject" wx:for="{{subjects}}" wx:for-item="subject" id="{{subject.id}}" bindtap='subjectItemClick'>
+      <image src="{{subject.imgUrl}}" class="battleInfoManagerSubjectImg"></image>
+      <view class="battleInfoManagerSubjectName">{{subject.name}}</view>
+    </view>
+</view>

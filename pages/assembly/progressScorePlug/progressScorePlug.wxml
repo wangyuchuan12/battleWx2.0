@@ -1,0 +1,125 @@
+
+<template name="progressScorePlug">
+  <view class='progressScore'>
+    <view class="progressScoreContainerHeader" wx:if="{{scrollGogal>0}}">
+        
+          <view class="progressScoreContainerHeaderScore">
+            <view class="progressScoreContainerHeaderAllScore">
+                <view class="progressScoreContainerHeaderAllScoreTag">目标</view>
+                <view class="progressScoreContainerHeaderAllScoreContent" id="allScoreDiv"><span id="allScore">{{scrollGogal}}</span>分</view>
+            </view>
+            
+            <view class="progressScoreContainerHeaderAllScore" style="margin-left: 10px;">
+                <view class="progressScoreContainerHeaderAllScoreTag">进度</view>
+                <view class="progressScoreContainerHeaderAllScoreContent" id="thisScoreDiv"><span id="thisScore">{{score}}</span>分</view>
+            </view>
+          </view>
+          
+          <!--  
+          <div class="progressScoreContainerHeaderAllScore" style="margin-top: 10px;">
+            <div class="personalAttrDataHeader personalAttrDataHeaderBean" style="float: left;position: relative;top:4px;"></div>
+            <div class="progressScoreContainerHeaderAllScoreContent" style="position: relative;left:-20px;top:1px;">330000</div>	
+          </div>
+          -->
+          <view class="progressScoreContainerHeaderLoveLife">
+              <view class="personalAttrDataHeaderBig personalAttrDataHeaderLoveBig" id="love1" wx:for="{{loveList}}" wx:for-item="loveItem" wx:if="{{loveItem.type==1}}"></view>
+              <view class="personalAttrDataHeaderBig personalAttrDataHeaderLoveHollowBig" id="love1" wx:for="{{loveList}}" wx:for-item="loveItem" wx:if="{{loveItem.type==0}}"></view>
+          </view>
+          <!--
+          <view class="progressScoreContainerHeader2">
+            <view class="progressScoreContainerHeaderRank">当前名次第<span id="rank"></span>名</view>	
+          </view>
+          -->
+          <view wx:if="{{loveCooling.status==1&&isIncrease==1}}" style="position:relative;top:-10px;">
+            <view class="progressScoreContainerHeaderCooling" style="display:inline-block">
+                <view class="progressScoreContainerHeaderCoolingLabel" style="width:{{loveCooling.schedule/loveCooling.upperLimit*100}}%;"></view>
+                <view class="progressScoreContainerHeaderCoolingContent">
+                  <view class="progressScoreContainerHeaderCoolingContent1">第<font style="color:red;font-weight:bolder;font-size:15px;">{{loveCooling.coolLoveSeq}}</font>颗 ❤️ 正在恢复中</view>
+                  <view class="progressScoreContainerHeaderCoolingContent2">
+                    剩余时间：{{loveCooling.hour}}时{{loveCooling.min}}分{{loveCooling.second}}秒
+                  </view>
+                </view>
+            </view>
+              <view style="width:70px;;background:RGBA(114,80,113,1);vertical-align: top;display:inline-block;color:white;vertical-align:top;border-radius:5px;font-size:10px; padding-top:5px;" bindtap='speedCoolClick'>
+                加速{{loveCooling.speedCoolSecond}}秒钟
+                <view>
+                  <view class="personalAttrDataHeader personalAttrDataHeaderBean" style=""></view>
+                  <span style="vertical-align: top;font-size:15px;">×{{loveCooling.speedCoolBean}}</span>
+                </view>
+              </view>
+
+              <view style="width:70px;;background:RGBA(114,80,113,1);vertical-align: top;display:inline-block;color:white;vertical-align:top;border-radius:5px;font-size:10px; padding-top:5px;margin-left:1px;" bindtap='supplyLoveClick'>
+                补充爱心
+                <view>
+                  <view class="personalAttrDataHeader personalAttrDataHeaderLove" style=""></view>
+                  <span style="vertical-align: top;font-size:15px;">×1</span>
+                </view>
+              </view>
+          </view>
+    </view>
+
+    <scroll-view scroll-y scroll-top="{{containerScrollTop}}" scroll-with-animation="true" scroll-into-view="toDom{{currentDom}}" id = "progressScoreContainer" style="position: relative;height:100vh" bindscroll="scrollEvent"> 
+      
+      <view class="progressScore" id="progressScore">
+            <view class="progressScoreBar">
+                <view class="trajectory">
+                  <block wx:for="{{targets}}" wx:for-item="target">
+
+                    <view style="left:{{target.left}}%;top:{{target.top}}px;width:20px;height:20px;" class="trajectoryLi" id="toDom{{target.index}}">
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/bean1.png');background-size:100% 100%;"  wx:key="id" wx:if="{{target.type==0 && target.beanNum ==1}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/bean2.png');background-size:100% 100%;"  wx:key="id" wx:if="{{target.type==0 && target.beanNum ==2}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/bean3.png');background-size:100% 100%;"  wx:key="id" wx:if="{{target.type==0 && target.beanNum ==3}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/bean4.png');background-size:100% 100%;"  wx:key="id" wx:if="{{target.type==0 && target.beanNum ==4}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/bean7.png');background-size:100% 100%;" wx:key="id" wx:if="{{target.type==0 && target.beanNum ==7}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/love.png')no-repeat;background-size:100% 50%;width:50px;height:50px;"  wx:key="id" wx:if="{{target.type==1}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/star.png')no-repeat;background-size:50% 50%;width:100px;height:100px;background-position:-10px -20px;"  wx:if="{{target.type==2}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/bean3.png');background-size:100% 100%;"  wx:key="id" wx:if="{{target.type==0 && target.beanNum ==3}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/shares2.png')no-repeat;background-size:100% 100%;" wx:key="id" wx:if="{{target.type==3}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/potion.png')no-repeat;background-size:100% 100%;" wx:key="id" wx:if="{{target.type==4}}">
+                      </view>
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/mushroom2.png')no-repeat;background-size:100% 100%;"  wx:key="id" wx:if="{{target.type==5}}">
+                      <image src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epYAyfqvOYtDOHbVOiarUdRpTUhibd9WZu7bLEYpJwcmicVJW4bNyjBh3aUknKOClJIribshZAwyCL38g/0" class="" style="width:10px;height:10px;top:-10px;position:absolute;border-radius:20px;"></image>
+                      </view>
+
+
+                      <view class="trajectoryLi" style="background:url('http://p5ihbm53g.bkt.clouddn.com/house.png')no-repeat;background-size:100% 100%;" wx:key="id" wx:if="{{target.type==6}}">
+                      <image src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epYAyfqvOYtDOHbVOiarUdRpTUhibd9WZu7bLEYpJwcmicVJW4bNyjBh3aUknKOClJIribshZAwyCL38g/0" class="" style="width:10px;height:10px;top:-10px;position:absolute;border-radius:20px;"></image>
+                      </view>
+
+                    </view>
+
+                  </block>
+
+                    <block wx:for="{{positions}}" wx:for-item="position">
+                      <view  class="fromDom"  id="fromDom" 
+                        style="background: url('{{position.imgUrl}}');background-size:100% 100%;position:absolute;z-index: 1001;left:{{position.left}}px;top:{{position.top}}px;" animation="{{position.animationData}}" wx:if="{{position.isMy==1}}"></view>
+
+                        <view  class="fromDom"  id="fromDom" 
+                        style="background: url('{{position.imgUrl}}');background-size:100% 100%;position:absolute;z-index: 1000;left:{{position.left}}px;top:{{position.top}}px;" animation="{{position.animationData}}" wx:else></view>
+                    </block>
+                </view> 
+            </view>
+      </view>
+    </scroll-view>
+  </view>
+
+</template>

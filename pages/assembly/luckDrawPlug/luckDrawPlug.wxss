@@ -1,0 +1,56 @@
+@import '../baseLayerout/baseLayerout.wxss';
+.luckDraw{
+  width:100%;
+  height:100vh;
+  position: fixed;
+  z-index: 10000000001;
+  top:15vh;
+}
+
+.luckDrawItems{
+  position: relative;
+  width:100%;
+  background:green;
+}
+
+.luckDrawItem{
+  width:20%;
+  height:70px;
+  background:RGBA(82,82,82,0.3);
+  position: absolute;
+}
+
+.luckDrawItemImg{
+  width:100%;
+  height:60px;
+  margin:  0px;
+}
+
+.luckDrawItemName{
+  color: white;
+  background:RGBA(82,82,82,0.3);
+  text-align: center;
+  margin: 0px;
+  top:-5px;
+}
+
+.luckDrawItemBig{
+  width:41%;
+  height: 180px;
+  position: absolute;
+}
+
+.luckDrawItemBigImg{
+  width:100%;
+  height:140px;
+}
+
+.luckDrawButton{
+  width:120px;
+  height:120px;
+  background: url("http://p42rx7glw.bkt.clouddn.com/94d6a75c09bd82a3df805f124357bba9.png");
+  background-size:100% 100%;
+  position: relative;
+  margin: 0 auto;
+  top:350px;
+}

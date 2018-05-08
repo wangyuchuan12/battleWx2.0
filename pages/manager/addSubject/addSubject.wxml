@@ -1,0 +1,17 @@
+<view class="addSubject">
+  <view class="addSubjectImg" bindtap='imgClick'>
+
+    <view class="fa fa-camera addSubjectImgCamera" wx:if="{{isImg==0}}"></view>
+
+    <image src="{{imgUrl}}" 
+    class="addSubjectImgEl" wx:if="{{isImg==1}}"></image>
+  </view>
+
+
+
+  <view class="addSubjectInput">
+    <input placeholder='名称' class="addSubjectInputEl" bindinput="nameInputChange"/>
+  </view>
+
+  <view class="addSubjectButton" bindtap='submitClick'>确定</view>
+</view>

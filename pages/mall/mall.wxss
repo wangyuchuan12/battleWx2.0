@@ -1,0 +1,125 @@
+@import '../assembly/baseLayerout/baseLayerout.wxss';
+@import '../assembly/attrPlug/attrPlug.wxss';
+.mall{
+  width:100%;
+  background: url('http://7xlw44.com1.z0.glb.clouddn.com/bg.jpg')no-repeat;
+  height:100vh;
+  background-position: 100% 0px;
+  background-size:140% 100%;
+}
+
+.mallContent{
+  width:90%;
+  height:100vh;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mallTabList{
+  padding-top:50px;
+}
+
+.mallTabItem{
+  display: inline-block;
+  width:100px;
+  background:rgba(9,52,0,0.4);
+  padding-top:10px;
+  padding-bottom:10px;
+  color: rgba(245,202,0,1);
+  border-radius: 5px;
+}
+
+
+.mallGoods{
+  text-align: left;
+  margin-left:3%;
+  position: relative;
+
+  padding-top:20px;
+}
+.mallGood{
+  width:45%;
+  height:30vh;
+  background-color:RGBA(255,241,197,1);
+  border-radius:10px;
+  position: relative;
+  display: inline-block;
+  margin: 2px;
+  text-align: center;
+  margin-left:1%;
+}
+
+.mallGoodBackground{
+  width:100%;
+  height:100%;
+  position: absolute;
+  background:url('http://7xlw44.com1.z0.glb.clouddn.com/2ac77142d0e3930c3c1b343c6c98a055.png')no-repeat;
+  background-size:80% 70%;
+  background-position: 40% 2%;
+  z-index:1;
+}
+
+.mallGoodContent{
+  width:100%;
+  height:100%;
+  position: absolute;
+  z-index:2;
+}
+
+.mallGoodButton{
+  width:50%;
+  background:RGBA(239,85,3,1);
+  border-radius:5px;
+  margin: 0 auto;
+  color: white;
+  padding-top:5px;
+  padding-bottom:5px;
+  top:-5px;
+  position: relative;
+}
+
+.mallGoodNum{
+  color:RGBA(221,60,7,1);
+  font-weight: bolder;
+  top:-10px;
+  position: relative;
+  font-size:20px;
+}
+
+.mallGoodImg{
+  width:40%;
+  height:50%;
+  margin-top:10%;
+ 
+}
+
+.mallGoodIcon{
+  display:inline-block;
+  height:15px;
+  width:15px;
+}
+
+.mallGoodPrice{
+  display:inline-block;
+  width:30px;
+  height:10px;
+}
+
+.iconRMB{
+  background:url('http://7xugu1.com1.z0.glb.clouddn.com/fe0ce2b3ca6f535e63515d8df158c159.png')no-repeat;
+  background-size:100% 100%;
+  background-position: 0px 2px;
+}
+
+.iconMasonry{
+  background:url('http://otsnwem87.bkt.clouddn.com/e33bf825f5d9b459be556b4e16b9e011.png');
+  background-size:175% 178%;
+  background-position: 0px 3px;
+}
+
+.iconBean{
+  background:url('http://otsnwem87.bkt.clouddn.com/bean.png');
+  background-size:100% 120%;
+  background-position: 0px 0px;
+}

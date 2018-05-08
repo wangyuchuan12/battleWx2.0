@@ -1,0 +1,3 @@
+<template name="toastOutPlug">
+<view class="toastOutPlug" style="font-size:{{fontSize}}px;z-index:40000000000;" animation="{{toastOutAnimation}}" wx:if="{{isShow}}">{{content}}</view>
+</template>

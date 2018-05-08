@@ -1,0 +1,67 @@
+<view class="danInfo3">
+  <view class="danInfoReward">
+    <view class="danInfoRewardBanner">{{name}}</view>
+    <view class="danInfoRewardTitle" wx:if="{{places>1}}">前{{places}}名通过</view>
+    <view class="danInfoRewardTitle" wx:else>胜利者通过</view>
+    <view class="danInfoRewardContent">
+      <view class="danInfoRewardContentItem" wx:for="{{rewards}}" wx:for-item="reward">第{{reward.rank}}名:<view style="display:inline-block;width:50px;">{{reward.rewardBean}}</view>智慧豆</view>
+    </view>
+  </view>
+
+  
+  <view class="danInfoRewardWait" wx:if="{{timeDiffer>0}}">开始剩余时间：{{remainderHour}}:{{remainderMin}}:{{remainderSecond}}</view>
+  <view class="danInfoRewardWait" wx:if="{{timeDiffer<=0&&num<mininum}}">还差{{mininum-num}}人</view>
+  <view class="danInfoRewardWait" wx:if="{{timeDiffer<=0&&roomStatus==1&&num>=mininum}}">比赛进行中</view>
+  
+
+  <view class="danInfoRewardWait" wx:if="{{roomStatus==3}}">比赛已经结束</view>
+
+  <view class="danInfoCircleList">
+    <view class="danInfoCircle"></view>
+    <view class="danInfoCircle2"></view>
+    <view class="danInfoCircle3"></view>
+    <view class="danInfoCircle4"></view>
+    <view class="danInfoTarget1" animation='{{dotAnData1}}'></view>
+
+    <view class="danInfoTarget2" animation='{{dotAnData2}}'></view>
+
+  <block wx:for="{{members}}" wx:for-item="member">
+    <image class="danInfoMember1"  
+    wx:if="{{member.index==0}}"src="{{member.imgUrl}}">
+    </image>
+    <image class="danInfoMember2"  wx:if="{{member.index==1}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember3"  wx:if="{{member.index==2}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember4"  wx:if="{{member.index==3}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember5"  wx:if="{{member.index==4}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember6"  wx:if="{{member.index==5}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember7"  wx:if="{{member.index==6}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember8"  wx:if="{{member.index==7}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember9"  wx:if="{{member.index==8}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember10"  wx:if="{{member.index==9}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember11"  wx:if="{{member.index==10}}"src="{{member.imgUrl}}">
+    </image>
+
+    <image class="danInfoMember12"  wx:if="{{member.index==11}}"src="{{member.imgUrl}}">
+    </image>
+
+  </block>
+  </view>
+</view>

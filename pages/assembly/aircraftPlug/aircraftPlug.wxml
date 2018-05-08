@@ -1,0 +1,4 @@
+<template name="aircraftPlug">
+  <view class="aircraftPlug" animation="{{aircraftAnimation}}" style="position:absolute;right:0px;top:0px;z-index:40000000000" wx:if="{{isDisplay}}">
+  </view>
+</template>

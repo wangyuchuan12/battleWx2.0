@@ -1,0 +1,174 @@
+<import src="../assembly/progressScorePlug/progressScorePlug.wxml"/>
+<import src="../assembly/questionSelector/questionSelector.wxml"/>
+<import src="../assembly/questionSelector/questionSelector2.wxml"/>
+<import src="../assembly/progressScoreMemberPlug/progressScoreMemberPlug.wxml"/>
+<import src="../assembly/questionResult/questionResult.wxml"/>
+<import src="../assembly/beanNotEnoughAlertPlug/beanNotEnoughAlertPlug.wxml"/>
+<import src="../assembly/baseLayerout/baseLayerout.wxml"/>
+<import src="../assembly/attrPlug/attrPlug"/>
+<import src="../assembly/alertPlug/alertPlug.wxml"/>
+<import src="../assembly/aircraftPlug/aircraftPlug.wxml"/>
+<import src="../assembly/toastOutPlug/toastOutPlug.wxml"/>
+<import src="../assembly/questionInputPlug/questionInputPlug.wxml"/>
+
+
+<memberWait wx:if="{{mode==2}}" id="memberWait" bind:waitEnd="waitEnd"></memberWait>
+<pk wx:if="{{mode==7}}" id="pk" bind:pkRoomStart="pkRoomStart"></pk>
+<danList wx:if="{{mode==6}}" id="danList" bind:danTakepart="danTakepart"></danList>
+
+<homeMenu wx:if="{{mode==5}}" bind:toPlay="toPlay" bind:toDanList="toDanList" bind:toPk="toHomePk"></homeMenu>
+
+<!--
+<progressMenu wx:if="{{mode==5}}" bind:toPlay="toPlay" bind:toDanList="toDanList" bind:toPk="toHomePk"></progressMenu>
+-->
+<luckDraw id="luckDraw" wx:if="{{mode==4}}" bind:initDraws="initDraws" bind:drawStop="drawStop">
+</luckDraw>
+<questionSelector id="questionSelector" bind:selectComplete="selectComplete" wx:if="{{mode==3}}"></questionSelector>
+
+<view style="position:fixed;z-index:90000000000;background:green;">
+  <template is="baseLayerout" data="{{...baseData}}"/>
+</view>
+<view style="position:absolute;z-index:30000000000" wx:if="{{mode!=1}}">
+  <template is="attrPlug" data="{{...attrPlugData}}"/>
+</view>
+
+<view style="background:url('http://p7z4mg4io.bkt.clouddn.com/back2.png');width:100px;height:100px;position:absolute;z-index:30000000001;background-size:100% 100%;top:40px;" wx:if="{{mode==4||mode==6||mode==7}}" bindtap='toBack'>
+</view>
+
+<template is="alertPlug" data="{{...alertPlugData}}"/>
+
+<template is="aircraftPlug" data="{{...aircraftPlugData}}"/>
+
+<template is="toastOutPlug" data="{{...toastOutPlugData}}"/>
+<template is="beanNotEnoughAlertPlug" data="{{...beanNotEnoughAlertPlugData}}"/>
+
+<view class="shareAlertPlug" wx:if="{{shareAlert==1}}">
+  <view class="shareAlertPlugClose fa fa-times-circle" bindtap='closeShareAlertPlug'></view>
+  <view class="shareAlertPlugLove"></view>
+  <view class="shareAlertPlugContent">您的爱心不足，分享到微信群，补充一颗爱心</view>
+  <button class="shareAlertPlugButton" open-type='share'>分享</button>
+</view>
+
+
+
+<view class="displayPanel" wx:if="{{displayPanel==1}}">
+ <view class="shareAlertPlugClose fa fa-times-circle" bindtap='closeDisplayPanel'></view>
+  <view class="">第{{questionData.stageIndex}}关</view>
+  <view class="">答对{{questionData.rightCount}}题</view>
+  <view class="">答错{{questionData.wrongCount}}题</view>
+  <view class="">前进{{questionData.process*10}}米</view>
+  <view class="">智慧豆:+{{questionData.rewardBean}}</view>
+  <view class="">经验:+{{questionData.addExp}}</view>
+    <block wx:if="{{selectorType==0}}">
+      <view class="" style="background:RGBA(255,255,255,0.5);margin:0 auto;margin-top:20px;width:80%;border-radius:10px;" bindtap="showQuestionResult">查看答题结果     </view>
+
+    <view class="" style="background:RGBA(4,190,2,1);;margin:0 auto;margin-top:10px;width:80%;border-radius:10px;" bindtap="startSelector" wx:if="{{isLast==0}}">下一关 </view>
+
+    <view class="gray" style="background:RGBA(4,190,2,0.5);;margin:0 auto;margin-top:10px;width:80%;border-radius:10px;" wx:if="{{isLast==1}}">已答完</view>
+   </block>
+  </view>
+
+<view>
+
+
+
+  <view style="position:absolute;width:100%;height:100%;z-index:10000000;display:{{questionResultDisplay}};">
+    <template is="questionResult" data="{{...questionResultPlugData}}"></template>
+   
+  </view>
+
+
+  <view style="position:absolute;width:100%;height:100%;z-index:10000">
+  <template is="progressScoreMemberPlug" data="{{...progressScoreMemberData}}"></template>
+  </view>
+
+  <view style="position:absolute;width:100%;height:100%;">
+    <template is="progressScorePlug" data="{{...progressScoreData}}"></template>
+  </view>
+
+  <view class="progressScoreButtons" style="z-index:1000000000;display:none;">
+   <!--
+    <view class="progressScoreStartButton" bindtap='startSelector' wx:if="{{isLast==0}}"></view>
+   
+    <view class="progressScoreStartButton gray" style="background:RGBA(4,190,2,0.9);"  wx:if="{{isLast==1}}">开始</view>
+    -->
+    <!--
+    <view class="progressScoreRankButton" style="" bindtap="skipToRank"></view>
+    -->
+    <view class="progressPkButton" style="color:RGBA(35,57,86,1);" bindtap="skipToPk"></view>
+
+    <view class="progressRandomButton" style="color:RGBA(102,0,7,1);" bindtap="skipToLuck"></view>
+
+    <view class="progressPassButton" style="" bindtap="skipDanList"></view>
+    
+    <view class="progressScoreRecordButton" style="background:RGBA(255,255,255,0.5);color:black;display:none;">分享</view>
+
+    
+
+    <view class="progressScoreMallButton" style="background:RGBA(13,161,255,0.8);color:white;" bindtap='mallClick'>
+      <view class="fa fa-shopping-cart" style="font-size:30px;display:inline-block"></view>
+      <view style="font-size:10px;font-weight: bold">商城</view>
+    </view>
+
+    <view class="progressScoreHomeButton" style="background:RGBA(13,161,255,0.8);color:white;" bindtap='homeClick'>
+      <view class="fa fa-home" style="font-size:30px;display:inline-block"></view>
+      <view style="font-size:10px;font-weight: bold">主页</view>
+    </view>
+    
+    <!--
+    <view class="progressScoreBackButton" bindtap='skipToTakepart'></view>
+    -->
+  </view>
+
+  <view class="progressScoreInput" wx:if="{{mode==1}}" style=" z-index: 1000000000;position:fixed;">
+    <view style="position:absolute;width:100%;text-align:center;">
+      <timeSecond id='timeSecond'>
+      </timeSecond>
+    </view>
+    <view class="progressScoreInputSubjectHeader" wx:if="{{questionData.imgUrl}}">
+      <image class="progressScoreInputSubjectHeaderImg" 
+      src="{{questionData.imgUrl}}"></image>
+      <view class="progressScoreInputSubjectHeaderContent">{{questionData.content}}</view>
+   </view>
+
+  <view class="progressScoreInputSubjectHeader" wx:else>
+    <view class="progressScoreInputSubjectHeaderContentNoImg">
+      {{questionData.content}}
+    </view>
+  </view>
+
+  <view style="bottom:10px;position:absolute;width:100%;z-index:1000000002">  
+  <template is="inputOptions" data="{{...questionInputData}}"></template>
+  </view>
+  </view>
+
+  <view class="resultRanks" wx:if="{{isRankShow}}" style='z-index:900000000'>
+    <view class="resultRanksTitle">排行榜</view>
+    <view class="resultRanksContent">
+      <view class="resultRankItem">
+        <view class="resultRankItemRank">1</view>
+        <view class="resultRankItemName">川川</view>
+
+        <view class="resultRankItemScore">30分</view>
+        <view class="resultRankItemReward">智慧豆+1</view>
+      </view>
+
+      <view class="resultRankItem">
+        <view class="resultRankItemRank">1</view>
+        <view class="resultRankItemName">川川</view>
+
+        <view class="resultRankItemScore">30分</view>
+        <view class="resultRankItemReward">智慧豆+1</view>
+      </view>
+
+      <view class="resultRankItem">
+        <view class="resultRankItemRank">1</view>
+        <view class="resultRankItemName">川川</view>
+
+        <view class="resultRankItemScore">30分</view>
+        <view class="resultRankItemReward">智慧豆+1</view>
+      </view>
+    </view>
+  </view>
+
+</view>

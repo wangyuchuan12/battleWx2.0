@@ -1,0 +1,224 @@
+@import '../../assembly/questionResult/questionResult.wxss';
+@import '../../assembly/questionInputPlug/questionInputPlug.wxss';
+@import '../addSubject/addSubject.wxss';
+.battlePeriodManager{
+  background:RGBA(44,51,59,1);
+  width:100%;
+  min-height:100vh;
+}
+.battlePeriodManagerButtonn{
+  width:21%;
+  text-align: center;
+
+  display:inline-block;
+  
+}
+
+.battlePeriodManagerButtonnIcon{
+  color:RGBA(15,181,241,1);
+
+  font-size:30px;
+}
+
+.battlePeriodManagerButtonnText{
+  font-size:10px;
+  color:white;
+}
+
+.battlePeriodManagerSubject{
+  text-align: center;
+  width:50px;
+  height:60px;
+  margin: 10px;
+  display:inline-block;
+  position: relative;
+}
+
+.battlePeriodManagerSubjectImg{
+  width:50px;
+  height:100%;
+}
+
+
+.battlePeriodManagerSubjectText{
+  font-size:10px;
+
+  position: relative;
+
+  top:-20px;
+
+  background:RGBA(33,39,47,0.5);
+
+  color:white;
+
+  border-radius: 10px;
+}
+
+.battlePeriodManagerStage{
+  background:white;
+
+  color:black;
+  display:inline-block;
+
+  padding-left:10px;
+
+  padding-right:10px;
+
+  padding-top:5px;
+
+  padding-bottom:5px;
+
+  border-radius:10px;
+
+  margin-left:10px;
+
+  font-size:10px;
+}
+
+.battlePeriodManagerStages{
+  height: 20vh;
+  width:100%;
+  position:relative;
+}
+
+.battlePeriodManagerButtonns{
+  height:10vh;
+}
+
+.battlePeriodManagerSubjects{
+  height:15vh;
+  position: relative;
+}
+
+.battlePeriodManagerResults{
+  height: 50vh;
+}
+
+.battlePeriodManagerEditTab{
+  width:100%;
+  background:black;
+  text-align: center;
+}
+
+.battlePeriodManagerEditTabItem{
+  display:inline-block;
+  width:32%;
+  text-align: center;
+  border:1px solid RGBA(33,39,47,1);
+  color:white;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.battlePeriodManagerEditSelect{
+  text-align: center;
+  width:100%;
+  position: relative;
+}
+
+.battlePeriodManagerEditSelectItem{
+  background-color:white;
+  padding-top:10px;
+  padding-bottom:10px;
+  width:90%;
+  border-radius:5px; 
+  margin: 0 auto;
+  margin-top:10px;
+  position: relative;
+}
+
+.battlePeriodManagerEditSelectItemInput{
+  width:100%;
+  height:100%;
+  font-size:20px;
+  text-align: center;
+  display:inline-block;
+  position: relative;
+  top:2px;
+}
+
+.battlePeriodManagerEditSelectItemIcon{
+  position: absolute;
+  width:50px;
+  height:50px;
+  top:2px;
+  right:5px;
+  line-height: 50px;
+
+  font-size:30px;
+
+  color:green;
+}
+
+.battlePeriodManagerQuestion{
+  background:RGBA(44,51,59,1);
+  width:90%;
+
+  position: relative;
+
+  margin: 0 auto;
+  
+  padding-top:10px;
+
+  color:white;
+
+  height:50px;
+
+  border-top:1px solid RGBA(33,39,47,1);
+
+}
+
+.inputItemFillTermsWorldCheckItemInput{
+  width:100%;
+  height:100%;
+  background:red;
+}
+
+.battlePeriodManagerQuestionCountTitle{
+  padding-top:20px;
+  color:black;
+
+  font-size:10px;
+
+  padding-left:10px;
+}
+
+.battlePeriodManagerQuestionCount{
+  width:100%;
+  text-align: center;
+
+  padding-top:10px;
+}
+
+.battlePeriodManagerQuestionNum{
+  background:white;
+  color:black;
+  width:48%;
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:10px;
+  display:inline-block;
+  border: 1px solid RGBA(44,51,59,1);
+}
+
+.inputItemFillTermsWorldPlus{
+  display:inline-block;
+  font-size:50px;
+  margin-left:10px;
+  margin-right:10px;
+  vertical-align: top;
+  position:relative;
+  top:-10px;
+}
+
+.inputItemFillTermsWorlds{
+  height:100px;
+}
+
+.subjectNum{
+  position: absolute;
+  color:blue;
+  z-index: 10000000000;
+  top:0px;
+  left:40px;
+}

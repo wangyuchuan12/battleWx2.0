@@ -1,0 +1,74 @@
+@import '../addSubject/addSubject.wxss';
+@import '../../assembly/attrPlug/attrPlug.wxss';
+
+
+.redPackEdit{
+  padding-bottom:50px;
+}
+.redPackEditAmountList{
+  width:100%;
+}
+
+.redPackEditAmountItem{
+  width:80px;
+  height:100px;
+  display: inline-block;
+  border-radius:20px;
+  margin: 2px;
+  position: relative;
+}
+
+.redPackEditAmountType{
+  padding-left:10px;
+  padding-top:10px;
+}
+
+.redPackEditAmountItemClose{
+  background:url('http://7xlw44.com1.z0.glb.clouddn.com/f372c6d20121702699d9e44c4cef7927.png');
+  background-size:100px 250px;
+  background-position: -10px -40px;
+}
+
+.redPackEditAmountItemOpen{
+  background:url('http://7xlw44.com1.z0.glb.clouddn.com/f372c6d20121702699d9e44c4cef7927.png');
+  background-size:100px 250px;
+  background-position: -10px -150px;
+}
+
+.redPackEditAmountItemLabel{
+  position: absolute;
+  left:50%;
+  margin-left:-25px;
+  top:5px;
+  color: white;
+}
+
+.redPackEditAmountRewardItem{
+  display: inline-block;
+  margin: 10px;
+}
+
+.redPackEditAmountRewardItemNum{
+  display: inline-block;
+  color:black;
+}
+
+.redPackEditItem{
+  border-top:2px solid RGBA(247,247,247,1);
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.redPackEditItemLabel{
+  padding-left:10px;
+}
+
+.redPackEditItemSwitch{
+  padding-left:10px;
+}
+
+.redPackEditButton{
+  background:green;
+  color: white;
+  margin-top:20px;
+}

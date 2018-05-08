@@ -1,0 +1,165 @@
+@import '../assembly/progressScorePlug/progressScorePlug.wxss';
+.battleRank{
+  display: flex;
+  flex-flow:wrap;
+  height: 100vh;
+}
+.battleRankHeader{
+  width:100%;
+  height:27vh;
+
+  position: relative;
+
+  text-align: center;
+
+  border-bottom:1px solid RGBA(228,239,249,1);
+
+}
+
+.battleRankHeaderGold{
+  position: relative;
+
+  width:100%;
+}
+
+.battleRankHeaderGoldHat{
+  width:100px;
+  height:80px;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  z-index:20;
+  left:50%;
+  margin-left:-50px;
+
+  top:-10px;
+}
+
+.battleRankHeaderGoldHead{
+  width:50px;
+  height:50px;
+  margin: 0 auto;
+  border-radius: 50px;
+  display: block;
+  top:40px;
+  z-index: 1;
+  position: absolute;
+  left:50%;
+  margin-left:-25px;
+}
+
+.battleRankHeaderGoldRank{
+  position: absolute;
+  top:30px;
+  left:10px;
+
+  width:40px;
+
+  height:20px;
+
+  background:red;
+
+  color:white;
+
+  font-size:15px;
+
+  border-radius:0 10px 10px 0;
+
+  padding-top:2px;
+}
+
+.battleRankHeaderGoldResult{
+  position: absolute;
+
+  color: RGBA(103,65,27,1);
+
+  width:100%;
+
+  text-align: center;
+
+  top:90px;
+
+}
+
+.battleRankMember{
+  width:100%;
+
+  border-bottom:1px solid RGBA(228,239,249,1);
+
+  padding-bottom:20px;
+}
+
+.battleRankMembers{
+  height:67vh;
+}
+
+.battleRankMemberRank{
+  display: inline-block;
+  vertical-align: top;
+
+  padding-top:20px;
+
+  padding-left:20px;
+
+  color: RGBA(103,65,27,1);
+}
+
+.battleRankMemberImg{
+  width:50px;
+  height: 50px;
+
+  border-radius:50px;
+
+  display: inline-block;
+
+  margin-left:20px;
+
+  margin-top:10px;
+}
+
+.battleRankMemberContent{
+  display: inline-block;
+
+  position: relative;
+
+  vertical-align: top;
+
+  padding-top:10px;
+
+  padding-left:15px;
+}
+
+.battleRankMemberContentNickname{
+  font-size: 15px;
+  color: RGBA(103,65,27,1);
+}
+
+.battleRankMemberContentResult{
+  font-size: 15px;
+  color: RGBA(103,65,27,1);
+  width:300px;
+}
+
+.personalAttrDataHeaderSmall{
+	width:15px;
+	height:20px;
+	display: inline-block;
+	color: black;
+	font-size: 8px;
+	overflow: hidden;
+	vertical-align: middle;
+	padding-left: 8px;
+	padding-top: 2px;
+	font-weight: bolder;
+}
+.personalAttrDataHeaderLoveSmall{
+	background: url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveSolid.png")no-repeat;
+	background-size:20px 20px;
+	background-position:0px 0px;
+}
+
+.personalAttrDataHeaderLoveHollowSmall{
+	background: url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveHollow.png")no-repeat;
+	background-size:15px 13px;
+	background-position:2px 4px;
+}

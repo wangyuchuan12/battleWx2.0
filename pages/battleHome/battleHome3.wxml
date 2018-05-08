@@ -1,0 +1,127 @@
+<import src="../assembly/selectInput/selectInput.wxml"/>
+
+<import src="../assembly/alertPlug/alertPlug.wxml"/>
+
+<import src="../assembly/beanNotEnoughAlertPlug/beanNotEnoughAlertPlug.wxml"/>
+
+<import src="../assembly/aircraftPlug/aircraftPlug.wxml"/>
+
+<import src="../assembly/toastOutPlug/toastOutPlug.wxml"/>
+
+<import src="../assembly/baseLayerout/baseLayerout"/>
+
+<import src="../assembly/attrPlug/attrPlug"/>
+
+<!--
+<view style="position:fixed;z-index:1000;width:100%;" >
+  <template is="memberWaitPlug" data="{{...memberWaitData}}"/>
+</view>
+-->
+<template is="attrPlug" data="{{...attrPlugData}}"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<template is="alertPlug" data="{{...alertPlugData}}"/>
+
+<template is="beanNotEnoughAlertPlug" data="{{...beanNotEnoughAlertPlugData}}"/>
+
+<template is="toastOutPlug" data="{{...toastOutPlugData}}"/>
+
+<template is="aircraftPlug" data="{{...aircraftPlugData}}"/>
+
+
+<view class="shareAlertPlug" wx:if="{{shareAlert==1}}">
+      <view class="shareAlertPlugClose fa fa-times-circle" bindtap='closeShareAlertPlug'></view>
+      <view class="shareAlertPlugBean" 
+      style="background:url('http://ovqk5bop3.bkt.clouddn.com/8575c56292491e63a168bdd5e4694cf3.png');background-size:100% 100%;"></view>
+      <view class="shareAlertPlugContent">开始一对一pk对战</view>
+      <button class="shareAlertPlugButton" open-type='share'>确定</button>
+</view>
+<scroll-view class="battleHome" scroll-y>
+  <scroll-view class="battleHomeMenu" style="height:700px;">
+    <view class="battleHomeMenu1" bindtap='danClick'>
+      <view class="battleHomeMenu1Background"></view>
+      <view class="battleHomeMenu1Name">闯关</view>
+    </view>
+    <view class="battleHomeMenu2"  bindtap='pkClick'>
+      <view class="battleHomeMenu2Background"></view>
+      <view class="battleHomeMenu2Name">好友对战</view>
+    </view>
+    <view class="battleHomeMenu3" bindtap='quickStart'>
+      <view class="battleHomeMenu16Background"></view>
+      <view class="battleHomeMenu3Name">快速开始</view>
+    </view>
+    <view class="battleHomeMenu4">
+      <view class="battleHomeMenu18Background"></view>
+      <view class="battleHomeMenu4Name">个人中心</view>
+
+      <view class="danLock" style="top:0px;color:white;">
+          <view class="fa fa-lock danLockContent" 
+          style="color:white;">
+          </view>
+       </view>
+    </view>
+    <view class="battleHomeMenu5" bindtap='rankClick'>
+       <view class="battleHomeMenu17Background"></view>
+       <view class="battleHomeMenu6Name" id="rankId">排行榜</view>
+        <!--<view class="danLock" style="top:0px;color:white;">
+          <view class="fa fa-lock danLockContent" style="color:white;"></view>
+       </view>
+       -->
+    </view>
+
+    <view class="battleHomeMenu6">
+       <view class="battleHomeMenu6Background"></view>
+       <view class="battleHomeMenu7Name">福利模式</view>
+       <view class="danLock" style="top:0px;color:white;">
+          <view class="fa fa-lock danLockContent" 
+          style="color:white;">
+          </view>
+       </view>
+    </view>
+
+     <view class="battleHomeMenu7"  bindtap='takeoutClick'>
+       <view class="battleHomeMenu7Background"></view>
+       <view class="battleHomeMenu5Name">提现</view>
+    </view>
+
+    <view class="battleHomeMenu8"  bindtap='mallClick'>
+       <view class="battleHomeMenu8Background"></view>
+       <view class="battleHomeMenu5Name">商城</view>
+    </view>
+  </scroll-view>
+
+  <view class="customerService" wx:if="{{csIsShow}}">
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:0px;left:0px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:0px;left:20px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:0px;left:40px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:0px;left:60px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:0px;left:80px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:0px;left:100px;opacity:0">  
+    </contact-button>
+
+    <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:20px;left:0px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:20px;left:20px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:20px;left:40px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:20px;left:60px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:20px;left:80px;opacity:0">  
+    </contact-button>
+     <contact-button type="default-light" size="12" session-from="weapp" style="position:absolute;top:20px;left:100px;opacity:0">  
+    </contact-button>
+    <image class="customerServiceImg" src="http://p42rx7glw.bkt.clouddn.com/7a928df20d7c736840eab682e729fde4.png"></image>
+    <view class="customerServiceContent">
+      <view class="">答题闯关比赛</view>
+      <view style="font-size:20px;top:-5px;">小助手</view>
+    </view>
+  </view>
+</scroll-view>
+
+
+    

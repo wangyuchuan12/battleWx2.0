@@ -1,0 +1,98 @@
+@import '../../assembly/attrPlug/attrPlug.wxss';
+.roomRedpack{
+  width:90%;
+  height:100px;
+  border-radius:10px 10px 10px 10px;
+  background:RGBA(248,195,47,1);
+  margin: 0 auto;
+  position: relative;
+  margin-top:50px;
+}
+
+.roomRedpackBackground{
+  width:95%;
+  height:50px;
+  top:48px;
+  left:5px;
+  position: absolute;
+  border-radius:40%/100% 100% 0px 0px;
+  background-color: RGBA(252,207,81,1);
+}
+
+.roomRedPackRewards{
+  position: absolute;
+  z-index: 100;
+
+  width:100px;
+  height:100px;
+
+  background:white;
+  border-radius: 10px;
+
+  top:-15px;
+
+  left:20px;
+
+  text-align: left;
+
+}
+
+.roomRedPackReward{
+  text-align: left;
+}
+
+.roomRedPackRewardNum{
+  color: white;
+  display: inline-block;
+}
+
+.roomRedPackRewardsBackground{
+  width:100px;
+  height:50px;
+  background:RGBA(252,136,81,1);
+  border-radius: 50%/0 0 100% 100%;
+  top:10px;
+  position: absolute;
+}
+
+.roomRedPackRewardsBackground2{
+  background:RGBA(252,136,81,1);
+  width:100px;
+  height:20px;
+  border-radius:10px;
+  position: absolute;
+  top:0px;
+}
+
+.roomRedPackRewardsAmount{
+  color: RGBA(252,136,81,1);
+  font-size:20px;
+  position: absolute;
+  top:60px;
+  width:100%;
+  text-align: center;
+}
+
+.roomRedpackContent{
+  position: absolute;
+  left:130px;
+}
+
+.roomRedPackRewardsImgHeader{
+  position: absolute;
+  width:50px;
+  height:50px;
+  border-radius:50px;
+  z-index:20;
+  left:26px;
+  top:-10px;
+}
+
+.roomRedpackDetail{
+  position: absolute;
+  right:10px;
+  color: white;
+  font-size:10px;
+  top:20px;
+  font-weight: bolder;
+}

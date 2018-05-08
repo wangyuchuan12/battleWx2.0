@@ -1,0 +1,2 @@
+@import '../addSubject/addSubject.wxss';
+@import '../battlePeriodManager/battlePeriodManager.wxss';

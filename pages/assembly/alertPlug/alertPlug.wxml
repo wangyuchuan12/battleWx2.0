@@ -1,0 +1,6 @@
+<template name="alertPlug">
+  <view class="alertPlug" wx:if="{{isShow}}" style="z-index:20000000000;">
+    <view class="alertPlugContent">{{content}}</view>
+    <button class="alertPlugButton" bindtap='alertPlugConfirmClick'>确定</button>
+  </view>
+</template>

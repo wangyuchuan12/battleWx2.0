@@ -1,0 +1,60 @@
+<import src="../../assembly/baseLayerout/baseLayerout.wxml"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="roomEdit">
+  <view class="addSubjectImg" bindtap='imgClick'>
+    <image src="{{imgUrl}}" class="addSubjectImgEl"></image>
+  </view>
+
+  <button bindtap='skipToRoom'>进入房间</button>
+
+  <view class="formItem" bindtap='nameClick'>
+    <view class="formItemLabel">名称</view>
+    <view class="formItemContent">{{name}}</view>
+    <view class="fa fa-angle-right formItemFooter"></view>
+  </view>
+
+  <view class="formItem" bindtap='instructionClick'>
+    <view class="formItemLabel">简介</view>
+    <view class="formItemContent">{{instruction}}</view>
+    <view class="fa fa-angle-right formItemFooter"></view>
+  </view>
+
+  <view class="formItem" bindtap='redPackListClick'>
+    <view class="formItemLabel">红包</view>
+    <view class="formItemContent">数量:{{redPackNum}}</view>
+    <view class="fa fa-angle-right formItemFooter" wx:if="{{isManager==1}}"></view>
+  </view>
+
+  <view class="formItem" bindtap='membersClick'>
+    <view class="formItemLabel">成员</view>
+    <view class="formItemContent">{{num}}/{{maxinum}}</view>
+    <!--<view class="fa fa-angle-right formItemFooter"></view>-->
+  </view>
+
+  <view class="labelList" wx:if="{{isManager==1}}">
+    <view class="switchLabel">
+      <view class="switchLabelTitle">是否可搜索</view>
+      <switch class="switchLabelSwitch" bindchange='searchSwitch' checked wx:if="{{isSearchInit==1}}"></switch>
+      <switch class="switchLabelSwitch" bindchange='searchSwitch' wx:else></switch>
+    </view>
+
+    <view class="switchLabel">
+      <view class="switchLabelTitle">是否显示</view>
+      <switch class="switchLabelSwitch" bindchange='displaySwitch' checked wx:if="{{isDisplayInit==1}}"></switch>
+      <switch class="switchLabelSwitch" bindchange='displaySwitch'  wx:else></switch>
+    </view>
+  </view>
+
+  <view class="editForm" wx:if="{{editModel==1}}">
+    <view class="editFormLabel">{{editFormLabel}}</view>
+    <block wx:if="{{editType==0}}">
+      <input class="editFormInput" value="{{editFormValue}}" bindinput='editFormValueChange'></input>
+    </block>
+
+    <block wx:if="{{editType==1}}">
+      <textarea  style="background:white;padding-left:10px;padding-top:10px;width:100%;" value="{{editFormValue}}" bindinput='editFormValueChange'></textarea>
+    </block>
+    <button class="editFormButton" bindtap='editSubmitClick'>确定</button>
+  </view>
+</view>
+

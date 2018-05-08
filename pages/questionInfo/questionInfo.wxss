@@ -1,0 +1,55 @@
+/* questionInfo.wxss */
+@import '../assembly/questionInputPlug/questionInputPlug.wxss';
+.subjectContainer{
+	background: RGBA(48,48,56,0.8);
+	width:100%;
+  min-height:100vh;
+  max-height:150vh;
+
+  padding-bottom:20px;
+}
+
+.subjectHeader{
+	width:95%;
+	margin: 0 auto;
+	padding-top: 10px;
+	text-align: center;
+	font-size: 30px;
+	color: window;
+}
+
+.subjectHeaderImg{
+	width:90%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.subjectHeaderImgQuestion{
+	font-size: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+  padding-left:30px;
+
+  padding-right:40px;
+
+  text-align: left;
+}
+
+
+
+.progress{
+  width:80%;
+  margin: 0 auto;
+}
+
+.subjectHeaderNoImg{
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  padding-top:120px;
+  padding-bottom:40px;
+  padding-left:20px;
+  padding-right:20px;
+  font-size:30px;
+}

@@ -1,0 +1,77 @@
+<view class="luckDraw">
+  <view class="luckDrawItems">
+
+    <block wx:for="{{luckDraws}}" wx:for-item="luckDraw">
+      <view class="luckDrawItemBig" style="left:29%;top:109px;" wx:if="{{luckDraw.level==currentLevel}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemBigImg"></image>
+      </view>
+    </block>
+    <block wx:for="{{luckDraws}}" wx:for-item="luckDraw">
+      <view class="luckDrawItem" style="left:8.5%;top:10px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==1}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:29%;top:10px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==2}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:49.5%;top:10px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==3}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:70%;top:10px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==4}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:70%;top:99px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==5}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:70%;top:188px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==6}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:70%;top:277px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==7}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:49.5%;top:277px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==8}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:29%;top:277px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==9}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:8.5%;top:277px;background:{{luckDraw.color}};"wx:if="{{luckDraw.level==10}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:8.5%;top:188px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==11}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+
+      <view class="luckDrawItem" style="left:8.5%;top:99px;background:{{luckDraw.color}};" wx:if="{{luckDraw.level==12}}">
+        <image src="{{luckDraw.imgUrl}}" class="luckDrawItemImg"></image>
+        <view class="luckDrawItemName">{{luckDraw.name}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!--
+  <view class="luckDrawButton" bindtap='startDrawClick' wx:if="{{isRun==0}}"></view>
+
+  <view class="luckDrawButton gray"wx:if="{{isRun==1}}"></view>
+  -->
+</view>

@@ -1,0 +1,305 @@
+<import src="../../assembly/baseLayerout/baseLayerout.wxml"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="battlePeriodManager">
+  
+  <view class="battlePeriodManagerButtonns">
+  <block wx:if="{{model==0}}">
+    <view class="battlePeriodManagerButtonn" bindtap='stageManagerClick' wx:if="{{isManager==1}}">
+      <view class="battlePeriodManagerButtonnIcon fa fa-leaf"></view>
+      <view class="battlePeriodManagerButtonnText">关卡管理</view>
+    </view>
+
+    <view class="battlePeriodManagerButtonn" bindtap="addQuestionClick">
+      <view class="battlePeriodManagerButtonnIcon fa fa-pencil-square-o"></view>
+      <view class="battlePeriodManagerButtonnText">新增题目</view>
+    </view>
+
+
+    <view class="battlePeriodManagerButtonn" bindtap="startUpPeriodClick">
+      <view class="battlePeriodManagerButtonnIcon fa fa-play-circle"></view>
+      <view class="battlePeriodManagerButtonnText">启动题库</view>
+    </view>
+  </block>
+
+  <block wx:if="{{model==1}}">
+
+    <view class="battlePeriodManagerButtonn" bindtap='saveQuetionCancelClick'>
+      <view class="battlePeriodManagerButtonnIcon fa fa-chevron-circle-left"></view>
+      <view class="battlePeriodManagerButtonnText">取消</view>
+    </view>
+
+     <view class="battlePeriodManagerButtonn" bindtap='saveQuestionClick'>
+      <view class="battlePeriodManagerButtonnIcon fa fa-floppy-o"></view>
+      <view class="battlePeriodManagerButtonnText">保存</view>
+    </view>
+
+    <view class="battlePeriodManagerButtonn" wx:if="{{saveModel==1}}" bindtap='deleteQuestionClick'>
+      <view class="battlePeriodManagerButtonnIcon fa fa-trash"></view>
+      <view class="battlePeriodManagerButtonnText">删除</view>
+    </view>
+  </block>
+
+  <block wx:if="{{model==2}}">
+
+    <view class="battlePeriodManagerButtonn" bindtap='saveQuetionCancelClick'>
+      <view class="battlePeriodManagerButtonnIcon fa fa-chevron-circle-left"></view>
+      <view class="battlePeriodManagerButtonnText">取消</view>
+    </view>
+
+    <view class="battlePeriodManagerButtonn" bindtap="addStageClick">
+      <view class="battlePeriodManagerButtonnIcon fa fa-plus-circle"></view>
+      <view class="battlePeriodManagerButtonnText">新增</view>
+    </view>
+     
+  </block>
+  </view>
+
+
+  <scroll-view class="battlePeriodManagerStages" scroll-y>
+
+    <block wx:for="{{stages}}" wx:for-item="stage">
+      <view class="battlePeriodManagerStage" style="background:green;color:white" wx:if="{{stage.id==selectStageId}}">第{{stage.index}}关</view>
+      <view class="battlePeriodManagerStage" bindtap="stageItemClick" wx:else id="{{stage.id}}">第{{stage.index}}关</view>
+    </block>
+  </scroll-view>
+
+  <scroll-view class="battlePeriodManagerSubjects" scroll-x style="white-space:nowrap;display:flex;" wx:if="{{model==1||model==0}}">
+    <block wx:for="{{subjects}}" wx:for-item="subject">
+      <block wx:if="{{subject.id==selectSubjectId}}">
+        
+          <view class="battlePeriodManagerSubject" style='border:1px solid red;'>
+            <image src="{{subject.imgUrl}}" class="battlePeriodManagerSubjectImg"></image>
+            <view class="battlePeriodManagerSubjectText">{{subject.name}}</view>
+            
+            <block wx:for="{{questionNumData}}" wx:for-item="numItem">
+              <block wx:if="{{numItem.subjectId==selectSubjectId && numItem.stageId==selectStageId}}">
+                <view class="subjectNum">{{numItem.num}}</view>
+              </block>
+            </block>
+          </view>
+        
+      </block>
+
+      <block wx:else>
+        <view class="battlePeriodManagerSubject" bindtap='subjectItemClick' id="{{subject.id}}">
+          <image src="{{subject.imgUrl}}" class="battlePeriodManagerSubjectImg"></image>
+          <view class="battlePeriodManagerSubjectText">{{subject.name}}</view>
+
+          <block wx:for="{{questionNumData}}" wx:for-item="numItem">
+              <block wx:if="{{numItem.subjectId==subject.id && numItem.stageId==selectStageId}}">
+                <view class="subjectNum">{{numItem.num}}</view>
+              </block>
+          </block>
+       
+        </view>
+
+      </block>
+
+    </block>
+  </scroll-view>
+
+<block wx:if="{{model==1}}">
+  <scroll-view style="height: 50vh;position:relative;" scroll-y>
+
+  <view class="addSubjectImg" bindtap='imgClick' style='background:RGBA(44,51,59,1);border-top:1px solid RGBA(33,39,47,1);'>
+
+    <view class="fa fa-camera addSubjectImgCamera" wx:if="{{isImg==0}}"></view>
+
+    <image src="{{imgUrl}}" 
+    class="addSubjectImgEl" wx:if="{{imgUrl}}"></image>
+
+    <image src="http://7xlw44.com1.z0.glb.clouddn.com/noimg.png" 
+    class="addSubjectImgEl" wx:if="{{!imgUrl&&edit==1}}"></image>
+  </view>
+
+  <input class="battlePeriodManagerQuestion" placeholder='请输入问题' bindinput='questionInputChange' value="{{question}}"></input>
+
+  <view class="battlePeriodManagerEdit">
+    <view class="battlePeriodManagerEditTab">
+      <block wx:if="{{questionType==0}}">
+        <view class="battlePeriodManagerEditTabItem" bindtap="switchSelect" style="background:white;color:black">选项卡</view>
+      </block>
+      <block wx:else>
+        <view class="battlePeriodManagerEditTabItem" bindtap="switchSelect">选项卡</view>
+      </block>
+
+      <block wx:if="{{questionType==1}}">
+        <view class="battlePeriodManagerEditTabItem" bindtap="switchBlank" style="background:white;color:black">填空</view>
+      </block>
+
+      <block wx:else>
+        <view class="battlePeriodManagerEditTabItem" bindtap="switchBlank">填空</view>
+      </block>
+
+      <block wx:if="{{questionType==2}}">
+        <view class="battlePeriodManagerEditTabItem" bindtap='switchFillTerms' style="background:white;color:black">填词</view>
+      </block>
+
+      <block wx:else>
+        <view class="battlePeriodManagerEditTabItem" bindtap='switchFillTerms'>填词</view>
+      </block>
+    </view>
+  
+    
+    <block wx:if="{{questionType==0}}">
+      <view class="battlePeriodManagerEditSelect">
+        <view class="battlePeriodManagerEditSelectItem" wx:for="{{selectOptions}}" wx:for-item="selectOption" id="{{selectOption.id}}" bindtap='selectRightOptionClick'>
+          <input class="battlePeriodManagerEditSelectItemInput" 
+          placeholder='请输入选项' bindinput="selectOptionInputChange" value="{{selectOption.content}}" id="{{selectOption.id}}"/>
+          <view class="battlePeriodManagerEditSelectItemIcon fa fa-check-circle" wx:if="{{selectOption.isRight==1}}"></view>
+          <view class="battlePeriodManagerEditSelectItemIcon fa fa-times-circle" style='color:red;'  bindtap='selectRightOptionClick' wx:else></view>
+        </view>
+      </view>
+    </block>
+    
+    
+    <block wx:if="{{questionType==1}}">
+      <view class="battlePeriodManagerEditBlank">
+        <view class="battlePeriodManagerEditSelectItem">
+        <input class="battlePeriodManagerEditSelectItemInput" placeholder='请输入答案' bindinput='answerInputChange' value='{{answer}}'/></view>
+      </view>
+    </block>
+    
+
+    <block wx:if="{{questionType==2}}">
+      <view class='inputItemFillTerms'>
+      
+        <view class='inputItemFillTermsWorlds'>
+            
+            <block wx:for="{{worlds}}" wx:for-item="world">
+              <view class="inputItemFillTermsWorld"  
+              bindtap="worldClick" id="{{world.id}}">{{world.content}}{{world.id}}</view>
+            </block>
+            <view>
+              <view class="inputItemFillTermsWorldPlus" bindtap='worldMinusClick'><span class="fa fa-minus-square"></span></view>
+              <view class="inputItemFillTermsWorldPlus" bindtap='worldPlusClick'><span class="fa fa-plus-square"></span></view>
+            </view>
+        </view>
+
+        <view class='inputItemFillTermsWorldsCheck'>
+          <block wx:for="{{worldChecks}}" wx:for-item="worldCheck" wx:if="{{index<=5}}">
+            <view class="inputItemFillTermsWorldCheckItem" 
+            style='padding-top:0px;color:white;' wx:if="{{worldCheck.status==2}}">
+              <input class="inputItemFillTermsWorldCheckItemInput" 
+              bindblur='worldCheckInputBlur' bindinput='worldCheckInputChange' id="{{worldCheck.id}}" value='{{worldCheck.content}}'/>
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick"  wx:elif="{{worldCheck.status==1}}">
+                {{worldCheck.content}}
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick2"  wx:elif="{{worldCheck.status==0}}" style='background:green'>
+                {{worldCheck.content}}
+            </view>
+          </block>
+        </view>
+        <view class='inputItemFillTermsWorldsCheck'>
+          <block wx:for="{{worldChecks}}" wx:for-item="worldCheck" wx:if="{{index<=11&&index>5}}">
+             <view class="inputItemFillTermsWorldCheckItem"
+             style='padding-top:0px;color:white;' wx:if="{{worldCheck.status==2}}">
+               <input class="inputItemFillTermsWorldCheckItemInput" 
+              bindblur='worldCheckInputBlur' bindinput='worldCheckInputChange' id="{{worldCheck.id}}" value='{{worldCheck.content}}'/>
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick"  wx:elif="{{worldCheck.status==1}}">
+                {{worldCheck.content}}
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick2"  wx:elif="{{worldCheck.status==0}}" style='background:green'>
+                {{worldCheck.content}}
+            </view>
+          </block>
+        </view>
+        <view class='inputItemFillTermsWorldsCheck'>
+          <block wx:for="{{worldChecks}}" wx:for-item="worldCheck" wx:if="{{index<=17&&index>11}}">
+             <view class="inputItemFillTermsWorldCheckItem" 
+             style='padding-top:0px;color:white;' wx:if="{{worldCheck.status==2}}">
+               <input class="inputItemFillTermsWorldCheckItemInput" 
+              bindblur='worldCheckInputBlur' bindinput='worldCheckInputChange' id="{{worldCheck.id}}" value='{{worldCheck.content}}'/>
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick"  wx:elif="{{worldCheck.status==1}}">
+                {{worldCheck.content}}
+            </view>
+
+            <view class="inputItemFillTermsWorldCheckItem"  id="{{worldCheck.id}}"
+            bindtap="worldCheckClick2"  wx:elif="{{worldCheck.status==0}}" style='background:green'>
+                {{worldCheck.content}}
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+
+
+  </view>
+
+  </scroll-view>
+</block>
+
+<block wx:if="{{model==0}}">
+  <scroll-view scroll-y="true" class="battlePeriodManagerResults">
+      <view class="questionResultItem" wx:for="{{items}}" wx:for-item="item" id="{{item.id}}" bindtap='itemInfo'>
+        <image src="{{item.imgUrl}}" class="questionResultItemImg" wx:if="{{item.imgUrl}}"></image>
+        <image src="http://7xlw44.com1.z0.glb.clouddn.com/noimg.png" class="questionResultItemImg" wx:else></image>
+
+        <scroll-view class="questionResultItemContent" scroll-y>
+          <view class="questionResultItemContentItem">
+            <span>{{item.question}}</span>
+          </view>
+          <!--
+          <view class="questionResultItemContentItem">
+            <span style="color:green;" wx:if="{{item.answer==item.rightAnswer}}">{{item.answer}}(正确)</span>
+            <span style="color:red;" wx:else>{{item.answer}}(错误)</span>
+          </view>
+          -->
+          <block wx:if="{{item.type==0}}">
+            <view class="questionResultItemContentItem" >
+              
+              <block wx:for="{{item.options}}" wx:for-item="option">
+                <view class="questionResultItemContentItemOption"   style="background-color:green;color:white;" wx:if="{{item.rightAnswer==option}}">{{option}}</view>
+                <view class="questionResultItemContentItemOption"  wx:else>{{option}}</view>
+              </block>
+            </view >
+
+          </block>
+
+          <block wx:elif="{{item.type==1}}">
+            <view class="questionResultItemContentItem">
+              <view class="questionResultItemContentItemAnswer">
+                <span>{{item.rightAnswer}}</span>
+              </view>
+            </view >
+          </block>
+
+          <block wx:elif="{{item.type==2}}">
+            <view class="questionResultItemContentItem">
+              <view class="questionResultItemContentItemFills">
+                <view class="questionResultItemContentItemFill" wx:for="{{item.rightAnswer}}" wx:for-item="answer">{{answer}}</view>
+              </view>
+            </view >
+          </block>
+          
+        </scroll-view>
+      </view>
+
+    </scroll-view>
+  </block>
+
+  <block wx:if="{{model==2}}">
+   <!-- <view class="battlePeriodManagerQuestionCountTitle">选择题目数量</view> -->
+    <view class="battlePeriodManagerQuestionCount">
+      <block wx:for="{{questionNums}}" wx:for-item="questionNum">
+        <view class="battlePeriodManagerQuestionNum"  id="{{questionNum.id}}" bindtap='questionNumClick' 
+        wx:if="{{questionNum.num!=selectQuestionNum}}">{{questionNum.num}}</view>
+        <view class="battlePeriodManagerQuestionNum"  id="{{questionNum.id}}" bindtap='questionNumClick' style="background:red;"
+        wx:else>{{questionNum.num}}</view>
+      </block>
+    </view>
+  </block>
+</view>

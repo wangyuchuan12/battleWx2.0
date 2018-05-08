@@ -1,0 +1,42 @@
+<view class="expertList">
+  <view class="expertListTools">
+    <view class="expertListTool" bindtap='addPeriodClick'>
+      <view class="expertListToolIcon fa fa-plus-circle"></view>
+      <view class="expertListToolFont">新增</view>
+    </view>
+  </view>
+  <scroll-view  style="height:80vh;" scroll-y="true">
+      <block wx:for="{{periods}}" wx:for-item="period">
+        <view class="battleRoomEditPeriod" style="background:white;" wx:if="{{period.id!=selectPeriodId}}" bindtap='periondItemClick' id="{{period.id}}">
+          <view class="battleRoomEditPeriodHead">
+            <image src='{{period.ownerImg}}' class="battleRoomEditPeriodHeadImg"></image>
+            <view class="battleRoomEditPeriodHeadLabel">出题人:</view>
+            <view class="battleRoomEditPeriodHeadNickname">{{period.ownerNickname}}</view>
+          </view>
+          <view class="battleRoomEditPeriodContent">
+            <view class="battleRoomEditPeriodContentItem">参与人数:{{period.takepartCount}}</view>
+            <view class="battleRoomEditPeriodContentItem">正确率:{{period.percent}}%</view>
+            <view class="battleRoomEditPeriodContentItem">难度:低</view>
+            <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isDefault==1}}">推荐</view>
+          </view>
+        </view>
+        
+
+        <!--<view class="battleRoomEditPeriod" wx:else>
+          <view class="battleRoomEditPeriodHead">
+            <image src='{{period.ownerImg}}' class="battleRoomEditPeriodHeadImg"></image>
+            <view class="battleRoomEditPeriodHeadLabel">出题人:</view>
+            <view class="battleRoomEditPeriodHeadNickname">{{period.ownerNickname}}</view>
+          </view>
+          <view class="battleRoomEditPeriodContent">
+            <view class="battleRoomEditPeriodContentItem">参与人数:{{period.takepartCount}}</view>
+            <view class="battleRoomEditPeriodContentItem">正确率:{{period.percent}}%</view>
+            <view class="battleRoomEditPeriodContentItem">难度:低</view>
+            <view class="battleRoomEditPeriodContentItem" style="color:red;font-size:10px;" wx:if="{{period.isDefault==1}}">推荐</view>
+          </view>
+        </view>
+        -->
+      </block>
+    
+    </scroll-view>
+  </view>

@@ -1,0 +1,9 @@
+@import '../battleTakepart/battleTakepart.wxss';
+
+.invitationQcode{
+  width:200px;
+  height:200px;
+  position: absolute;
+  right:10px;
+  top:10px;
+}

@@ -1,0 +1,29 @@
+<view class="progressMenuPlug">
+  <view class="progressMenuPlugItems">
+    <view class="progressMenuPlugItem" bindtap="toPlay">
+      <image class="progressMenuPlugItemImg" src="http://p7z4mg4io.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.png" mode="widthFix"></image>
+      <view class="progressMenuPlugItemName">PLAY</view>
+    </view>
+
+    <view class="progressMenuPlugItem" bindtap='toPk'>
+      <image class="progressMenuPlugItemImg" src="http://p7z4mg4io.bkt.clouddn.com/%E5%AF%B9%E6%88%98.png" mode="widthFix"></image>
+      <view class="progressMenuPlugItemName">PK</view>
+    </view>
+    
+    <view class="progressMenuPlugItem" bindtap='toDanList'>
+      <image class="progressMenuPlugItemImg" src="http://p7z4mg4io.bkt.clouddn.com/%E9%97%AF%E5%85%B3.png" mode="widthFix"></image>
+      <view class="progressMenuPlugItemName">闯关</view>
+    </view>
+
+    <!--
+    <view class="progressMenuPlugItem" bindtap='toRank'>
+      <image class="progressMenuPlugItemImg" src="http://p7z4mg4io.bkt.clouddn.com/%E6%8E%92%E8%A1%8C%E6%A6%9C.png" mode="widthFix"></image>
+      <view class="progressMenuPlugItemName">排行榜</view>
+    </view>
+    -->
+    <view class="progressMenuPlugItem" bindtap='toMall'>
+      <image class="progressMenuPlugItemImg" src="http://p7z4mg4io.bkt.clouddn.com/%E5%95%86%E5%9F%8E.png" mode="widthFix"></image>
+      <view class="progressMenuPlugItemName">商城</view>
+    </view>
+  </view>
+</view>

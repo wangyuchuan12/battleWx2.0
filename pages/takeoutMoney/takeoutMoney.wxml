@@ -1,0 +1,30 @@
+<import src="../assembly/baseLayerout/baseLayerout.wxml"/>
+
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="takeoutMoneyBackground"></view>
+<view class="takeoutMoney">
+  <view class="takeoutMoneyHeader">
+    <image src="{{headImg}}" class="takeoutMoneyHeaderImg"></image>
+    <view class="takeoutMoneyHeaderInfo">
+      <view class="takeoutMoneyHeaderInfoAmount">余额：{{account.amountBalance}}元</view>
+    </view>
+  </view>
+
+  <view class="takeoutMoneyContent">
+    <view class="takeoutMoneyContentRecord" wx:for="{{entries}}" wx:for-item="entry" id="{{entry.id}}" bindtap='entryClick'>{{entry.amount}}元</view>
+  </view>
+
+  <view class="takeoutMoneyCount">本月你还能提现{{account.canTakeOutCount}}次</view>
+
+  <view class="takeoutMoneyDetails">
+    <view class="takeoutMoneyDetailItem" wx:for="{{records}}" wx:for-item="record">
+      <view style="display:inline-block;padding-left:10px;">
+        <view class="takeoutMoneyDetailItemType">提现<span style="color:green;font-size:10px;padding-left:10px;">金额已到账（如未到账可能有延迟）</span></view>
+        <view class="takeoutMoneyDetailItemTime">{{record.createAt}}</view>
+      </view>
+      <view class="takeoutMoneyDetailItemAmount">{{record.amount}}元</view>
+    </view>
+  </view>
+
+  
+</view>

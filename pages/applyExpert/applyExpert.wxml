@@ -1,0 +1,34 @@
+<import src="../assembly/baseLayerout/baseLayerout.wxml"/>
+
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="addSubject">
+  <view class="addSubjectInput" style='border-top:1px solid RGBA(201,201,201,1);'>
+    <input placeholder='请输入微信账号，方便交流' class="addSubjectInputEl" bindinput="wechatInputChange"/>
+  </view>
+
+   <view class="addSubjectInput">
+    <input placeholder='手机号码' class="addSubjectInputEl" bindinput='phonenumberInputChange' type='number' />
+  </view>
+
+  <view class="addSubjectInput">
+    <input placeholder='验证码' class="addSubjectInputEl" bindinput="codeInputChange" type='number' style='width:45%;display:inline-block;vertical-align: top' />
+    <button style="display:inline-block;width:45%;font-size:15px;vertical-align: top;top:-6px;height:100%;padding-top:5px;" bindtap='vPhonenumberClick' wx:if="{{vEnable==1}}">获取验证码</button>
+
+    <button disabled='true' style="display:inline-block;width:45%;font-size:15px;vertical-align: top;top:-6px;height:100%;padding-top:5px;" wx:if="{{vEnable==0}}" >{{remainingTime}}s后重新获取</button>
+  </view>
+
+  <view class="applyExpertArea">
+    <textarea style="border-bottom:1px solid RGBA(201,201,201,1);padding-left:20px;padding-top:10px;width:95%;" placeholder='简介，把你个人的情况详细说明，会根据你的情况判断审核结果'    bindinput='introduceInputChange'></textarea>
+  </view>
+
+  <radio-group style="margin-top:10px;padding-left:20px;border-bottom:1px solid RGBA(201,201,201,1);padding-bottom:10px;display:none;">
+    <label class="radio">
+      <radio value="0">男</radio>
+    </label>
+    <label class="radio">
+      <radio value="1">女</radio>
+    </label>
+  </radio-group>
+
+  <view class="addSubjectButton" bindtap='submitClick'>确定</view>
+</view>

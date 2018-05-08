@@ -1,0 +1,46 @@
+<view class="roomRedpacks">
+ 
+  <button bindtap='sendRedpack'>发红包</button>
+  <view class="roomRedpack" wx:for="{{redPacks}}" wx:for-item="redPack">
+     <view class="roomRedpackBackground">
+     </view>
+     <view class="roomRedPackRewards">
+
+        <view class="roomRedPackRewardsBackground">
+          <image class="roomRedPackRewardsImgHeader" src="{{redPack.senderImg}}"></image>
+        </view>
+        <view class="roomRedPackRewardsBackground2"></view>
+        <view class="roomRedPackRewardsAmount">{{redPack.amount}}<span style="font-size:10px;">元</span></view>
+        <!--<view class="roomRedPackReward">
+            <view class="personalAttrDataHeader personalAttrDataHeaderMoney" style="background-size:30px 30px;"></view>
+            <view class="roomRedPackRewardNum">×5</view>
+        </view>
+
+        <view class="roomRedPackReward">
+            <view class="personalAttrDataHeader personalAttrDataHeaderMasonry"></view>
+            <view class="roomRedPackRewardNum">×5</view>
+        </view>
+
+        <view class="roomRedPackReward">
+            <view class="personalAttrDataHeader personalAttrDataHeaderLove" style='background-size:30px 30px;background-position:1px 2px;'></view>
+            <view class="roomRedPackRewardNum">×5</view>
+        </view>-->
+     </view>
+     <view class="roomRedpackContent">
+
+        <view class="roomRedPackReward">
+            <view class="personalAttrDataHeader personalAttrDataHeaderMasonry"></view>
+            <view class="roomRedPackRewardNum">×{{redPack.masonryNum}}</view>
+        </view>
+
+        <view class="roomRedPackReward">
+            <view class="personalAttrDataHeader personalAttrDataHeaderBean" style='background-size:30px 30px;background-position:1px 2px;'></view>
+            <view class="roomRedPackRewardNum">×{{redPack.beanNum}}</view>
+        </view>
+     </view>
+
+     <view class="roomRedpackDetail">
+        还剩：{{redPack.receiveNum}}/{{redPack.num}}
+     </view>
+  </view>
+</view>

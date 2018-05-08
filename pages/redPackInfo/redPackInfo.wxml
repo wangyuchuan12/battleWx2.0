@@ -1,0 +1,48 @@
+<scroll-view class="redPacketInfo" scroll-y>
+  <view class="redPacketInfoHeader">
+  </view>
+  
+    <image src="{{senderImg}}" class="redPacketInfoHeaderImg"></image>
+    <view class="redPacketInfoContent">
+      <view class="redPacketInfoContentNickname">{{senderName}}的红包</view>
+        <block wx:for="{{distributions}}" wx:for-item="distribution" wx:if="{{distribution.isMy==1}}">
+          <view class="redPacketInfoContentMoney">
+            <span class="redPacketInfoContentMoneyAmount">{{distribution.amount}}</span>元
+            <view>
+              <block wx:if="{{distribution.beanNum>0}}">
+                <view class="personalAttrDataHeader personalAttrDataHeaderBean" style="background-position:0px 1px;"></view>+{{distribution.beanNum}}
+              </block>
+              <block wx:if="{{distribution.mastonryNum>0}}">
+                <view class="personalAttrDataHeader personalAttrDataHeaderMasonry"></view>+{{distribution.mastonryNum}}
+              </block>
+            </view>
+          </view>
+        </block>
+    </view>
+  
+
+  <view class="redPacketInfoListInfo">已领取 {{receiveNum}}/{{num}}</view>
+  <view class="redPacketInfoList">
+    <view class="redPacketInfoItem" wx:for="{{distributions}}" wx:for-item="distribution">
+      <image src="{{distribution.imgUrl}}" class="redPacketInfoItemImg"></image>
+      <view class="redPacketInfoItemUser">
+        <view class="redPacketInfoItemUserNickname">{{distribution.nickname}}</view>
+        <view class="redPacketInfoItemUserTime">{{distribution.receiveTime}}</view>
+      </view>
+
+      <view class="redPacketInfoItemAmount">
+        <view>
+          {{distribution.amount}}元
+        </view>
+        <view>
+          <block wx:if="{{distribution.beanNum>0}}">
+            <view class="personalAttrDataHeader personalAttrDataHeaderBean" style="background-position:0px 1px;"></view>+{{distribution.beanNum}}
+          </block>
+          <block wx:if="{{distribution.mastonryNum>0}}">
+            <view class="personalAttrDataHeader personalAttrDataHeaderMasonry"></view>+{{distribution.mastonryNum}}
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

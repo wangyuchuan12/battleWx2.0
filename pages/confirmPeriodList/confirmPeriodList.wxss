@@ -1,0 +1,25 @@
+@import '../battleRoomEdit/battleRoomEdit.wxss';
+
+.expertList{
+  background: RGBA(48,48,56,1);
+  height:100vh;
+}
+
+.expertListTools{
+  width:100%;
+  height:80px;
+  text-align: center;
+}
+
+.expertListTool{
+  font-size:40px;
+  color:white;
+  top:10px;
+  position:relative;
+  text-align: center;
+}
+
+.expertListToolFont{
+  font-size:10px;
+  font-weight: bolder;
+}

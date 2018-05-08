@@ -1,0 +1,10 @@
+<view class="roomManager">
+  <view class="roomManagerList">
+    <view class="roomManagerItem" wx:for="{{rooms}}" wx:for-item="room" bindtap='roomItemClick' id="{{room.id}}">
+
+      <view class="roomManagerItemInfoName">{{room.name}}</view>
+      <image class="roomManagerItemImgBig" src="{{room.imgUrl}}"></image>
+      <image class="roomManagerItemImgSmall" src="{{room.smallImgUrl}}"></image>
+    </view>
+  </view>
+</view>

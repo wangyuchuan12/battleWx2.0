@@ -1,0 +1,60 @@
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="rankBattle">
+
+  <view class="firstRank">
+      <image class="firstRankImg" src="{{firstMemberInfo.headImg}}"></image>
+      <view class="firstRanknickname">{{firstMemberInfo.nickname}}占领了封面</view>
+  </view>
+  <image class="rankBattleImg" src="{{firstMemberInfo.coverUrl}}"></image>
+
+  <view class="rankBattleTabList">
+    <block wx:if="{{type==0}}">
+      <view class="rankBattleTabItem" style='background:white;'><span class="fa fa-user-circle-o"></span>好友排名</view>
+      <view class="rankBattleTabItem" bindtap='allRank'><span class="fa fa-users"></span>世界排名</view>
+    </block>
+
+    <block wx:if="{{type==1}}">
+      <view class="rankBattleTabItem" bindtap='frendRank'><span class="fa fa-user-circle-o"></span>好友排名</view>
+      <view class="rankBattleTabItem" style='background:white;'><span class="fa fa-users"></span>世界排名</view>
+    </block>
+  </view>
+
+  <scroll-view class="rankBattleRanks" scroll-y>
+    <view class="rankBattleRank">
+      <image class="rankBattleRankImg" src="{{memberInfo.headImg}}" style="width:10px;height:50px;border-radius:60px;"></image>
+      <view class="rankBattleRankName">{{memberInfo.nickname}}
+        <block wx:if="{{frendRank&&type==0}}"> 第{{frendRank}}名</block>
+        <block wx:if="{{allRank&&type==1}}"> 第{{allRank}}名</block>
+      </view>
+
+      <view class="rankBattleCoverLabel" style="display:none;">点击设置我的封面</view>
+
+
+      <view class="rankBattleRankScore" wx:if="{{memberInfo.score==null||memberInfo.score==''}}">0分</view>
+      <view class="rankBattleRankScore" wx:else>{{memberInfo.score}}分</view>
+    </view>
+
+    <view class="rankBattleRank" wx:for="{{frendMembers}}" wx:for-item="member" wx:if="{{type==0}}">
+      <view class="rankBattleRankNum">{{index+1}}</view>
+      <image class="rankBattleRankImg" src="{{member.headImg}}"></image>
+      <view class="rankBattleRankName">{{member.nickname}}</view>
+      <view class="rankBattleRankScore">{{member.score}}分</view>
+    </view>
+
+    <view class="rankBattleRank" wx:for="{{allMembers}}" wx:for-item="member" wx:if="{{type==1}}">
+      <view class="rankBattleRankNum">{{index+1}}</view>
+      <image class="rankBattleRankImg" src="{{member.headImg}}"></image>
+      <view class="rankBattleRankName">{{member.nickname}}</view>
+      <view class="rankBattleRankScore">{{member.score}}分</view>
+    </view>
+
+    
+  </scroll-view>
+
+  <view class="rankBattleButtons">
+    <button class="rankBattleButton" style="background:white;color:black;width:40%;" open-type='share'>邀请</button>
+    <view class="rankBattleButton" style="background:white;color:black;width:30%;display:none;">群比赛</view>
+    <button class="rankBattleButton" style="width:46%" bindtap='takepartClick'>开始答题</button>
+  </view>
+</view>

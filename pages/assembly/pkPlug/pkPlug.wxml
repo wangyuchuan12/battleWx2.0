@@ -1,0 +1,55 @@
+<view class="pkRoom">
+  <view class="pkRoomTitle">
+    <block wx:if="{{roomStatus==0||roomStatus==1}}">
+      等待中...
+    </block>
+    <block wx:if="{{roomStatus==2}}">
+      战斗中
+    </block>
+    <block wx:if="{{roomStatus==3}}">
+      战斗已经结束
+    </block>
+  </view>
+  <view class="pkRoomUsers">
+    <view class="pkRoomUser" wx:if="{{homeStatus==1||homeStatus==2||homeStatus==3}}">
+      <image src="{{homeUserImgurl}}" class="pkRoomUserImg"></image>
+      <block wx:if="{{role==0&&isObtain==1}}">
+        <view class="pdRoomUserButton" wx:if="{{homeStatus==1}}" bindtap='doReady'>准备</view>
+        <view class="pdRoomUserButton" wx:elif="{{homeStatus==2&&(roomStatus==0||roomStatus==1)}}" bindtap='doReady'>取消准备</view>
+        <view class="pkRoomUserLabel" wx:elif="{{homeStatus==3}}">战斗中</view>
+      </block>
+      <block wx:else>
+        <view class="pkRoomUserLabel" wx:if="{{homeStatus==1}}">等待中...</view>
+        <view class="pkRoomUserLabel" wx:elif="{{homeStatus==2&&(roomStatus==0||roomStatus==1)}}">已准备</view>
+        <view class="pkRoomUserLabel" wx:elif="{{homeStatus==3}}">战斗中</view>
+        <view class="pkRoomUserLabel" wx:elif="{{roomStatus==3}}">已结束</view>
+      </block>
+    </view>
+
+    <button class="pkRoomUser" style="height:170px;" open-type='share' wx:else>
+      <view class="pkRoomUserPlus fa fa-plus">＋</view>
+      <view class="pkRoomUserLabel">邀请</view>
+    </button>
+    <image src="http://ovqk5bop3.bkt.clouddn.com/8575c56292491e63a168bdd5e4694cf3.png" class="pkRoomUserPkImg"></image> 
+    
+    <view class="pkRoomUser" wx:if="{{beatStatus==1||beatStatus==2||beatStatus==3}}">
+      <image src="{{beatUserImgurl}}" class="pkRoomUserImg"></image>
+      <block wx:if="{{role==1&&isObtain==1}}">
+        <view class="pdRoomUserButton" wx:if="{{beatStatus==1}}" bindtap='doReady'>准备</view>
+        <view class="pdRoomUserButton" wx:elif="{{beatStatus==2}}" bindtap='doReady'>取消准备</view>
+        <view class="pkRoomUserLabel" wx:elif="{{beatStatus==3}}">战斗中</view>
+      </block>
+      <block wx:else>
+        <view class="pkRoomUserLabel" wx:if="{{beatStatus==1}}">等待中...</view>
+        <view class="pkRoomUserLabel" wx:elif="{{beatStatus==2&&(roomStatus==0||roomStatus==1)}}">已准备</view>
+        <view class="pkRoomUserLabel" wx:elif="{{beatStatus==3}}">战斗中</view>
+        <view class="pkRoomUserLabel" wx:elif="{{roomStatus==3}}">已结束</view>
+      </block>
+    </view>
+
+    <button class="pkRoomUser" style="height:170px;" open-type='share' wx:else>
+      <view class="pkRoomUserPlus fa fa-plus">＋</view>
+      <view class="pkRoomUserLabel">邀请</view>
+    </button>
+  </view>
+</view>

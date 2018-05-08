@@ -1,0 +1,268 @@
+@import '../assembly/questionSelector/questionSelector.wxss';
+
+@import '../assembly/progressScorePlug/progressScorePlug.wxss';
+
+@import '../assembly/questionResult/questionResult.wxss';
+
+@import '../assembly/attrPlug/attrPlug.wxss';
+
+@import '../assembly/beanNotEnoughAlertPlug/beanNotEnoughAlertPlug.wxss';
+
+@import '../assembly/progressScoreMemberPlug/progressScoreMemberPlug.wxss';
+@import '../assembly/baseLayerout/baseLayerout.wxss';
+@import '../assembly/alertPlug/alertPlug.wxss';
+
+@import '../assembly/aircraftPlug/aircraftPlug.wxss';
+
+@import '../assembly/toastOutPlug/toastOutPlug.wxss';
+
+.progressScoreButtons{
+  position: fixed;
+  bottom:10px;
+  right:10px;
+  width:100%;
+  height:100%;
+}
+
+.progressScoreStartButton{
+  position: absolute;
+  right:10px;
+  bottom:10px;
+  width:70px;
+  height:70px;
+  border-radius:100px;
+  line-height: 70px;
+  text-align: center;
+  background:url("http://p42rx7glw.bkt.clouddn.com/4bc7ff5e5a5e18a5b625e25baf7f815c.png");
+  background-size:100% 100%;
+  color:white;
+}
+
+.progressScoreRankButton{
+  position: absolute;
+  right:15px;
+  bottom:70px;
+  width:50px;
+  height:50px;
+  text-align: center;
+  background:url("http://p5iui0egp.bkt.clouddn.com/%E6%8E%92%E4%BD%8D.png");
+  background-size:100% 100%;
+  color:white;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.progressPkButton{
+  position: absolute;
+  left:5px;
+  bottom:260px;
+  width:60px;
+  height:60px;
+  text-align: center;
+  background:url("http://p5iui0egp.bkt.clouddn.com/%E5%AF%B9%E6%88%98.png");
+  background-size:100% 100%;
+  z-index:30000000000;
+}
+
+.progressRandomButton{
+  position: absolute;
+  left:5px;
+  bottom:135px;
+  width:60px;
+  height:60px;
+  text-align: center;
+  background:url("http://p5iui0egp.bkt.clouddn.com/%E9%9A%8F%E6%9C%BA.png");
+  background-size:100% 100%;
+}
+
+.progressPassButton{
+  position: absolute;
+  left:5px;
+  bottom:200px;
+  width:60px;
+  height:60px;
+  text-align: center;
+  background:url("http://p5iui0egp.bkt.clouddn.com/%E9%97%AF%E5%85%B3.png");
+  background-size:100% 100%;
+}
+
+.progressScoreMallButton{
+  position: absolute;
+  left:20px;
+  bottom:10px;
+  width:50px;
+  height:50px;
+  text-align: center;
+  border-radius:100px;
+  background:RGBA(76,76,76,0.5);
+  color:white;
+}
+
+.progressScoreHomeButton{
+  position: absolute;
+  left:90px;
+  bottom:10px;
+  width:50px;
+  height:50px;
+  text-align: center;
+  border-radius:100px;
+  background:RGBA(76,76,76,0.5);
+  color:white;
+}
+
+.redPackImgButton{
+  width:50px;
+  height:50px;
+  position: absolute;
+  right:150px;
+  bottom:10px;
+  text-align: center;
+}
+
+.redPackImgButtonImg{
+  width:100%;
+  height:100%;
+}
+
+.progressScoreRecordButton{
+  position: absolute;
+  right:65px;
+  bottom:65px;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  text-align: center;
+  border-radius:100px;
+  background:RGBA(76,76,76,0.5);
+  color:white;
+}
+
+.progressScoreBackButton{
+  position: absolute;
+  right:70px;
+  bottom:10px;
+  width:50px;
+  height:50px;
+  background:url("http://p5iui0egp.bkt.clouddn.com/%E9%80%80%E5%87%BA.png");
+  background-size:100% 100%;
+  color:white;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.closeButton{
+  background:red;
+}
+
+.displayPanel{
+  width:200px;
+  top:45vh;
+  left:50%;
+  margin-left:-100px;
+  position: absolute;
+  background:RGBA(82,82,82,0.3);
+  z-index: 1000000000;
+  color:white;
+  border-radius:20px;
+  text-align: center;
+  padding-top:30px;
+  padding-bottom:10px;
+  line-height: 30px;
+}
+
+.rewardBean{
+  position: fixed;
+  z-index:10000000000;
+  text-align: center;
+  width:100%;
+}
+
+.rewardBeanImg{
+  width:100px;
+  height:100px;
+}
+
+.rewardBeanPlus{
+  color: RGBA(255,252,20,1);
+  font-size:40px;
+  vertical-align: top;
+  line-height: 100px;
+}
+
+.rewardBeanHead{
+  color: RGBA(255,252,20,1);
+  font-size:50px;
+  font-weight: bolder;
+}
+
+.shareAlertPlug{
+  position: fixed;
+  z-index:10000000000;
+  width:250px;
+  height:250px;
+  border-radius: 10px;
+  left:50%;
+  margin-left:-125px;
+  background:RGBA(47,119,196,1);
+  top:30vh;
+  text-align: center;
+}
+
+.shareAlertPlugButton{
+  position: absolute;
+  bottom:10px;
+  width:100px;
+  background:RGBA(47,119,196,1);
+  border:2px solid white;
+  color:white;
+  left:50%;
+  margin-left:-50px;
+}
+
+.shareAlertPlugLove{
+  background: url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveSolid.png");
+  width:100px;
+  height:100px;
+  background-size:100% 100%;
+  position: absolute;
+  left:50%;
+  margin-left: -50px;
+}
+
+.shareAlertPlugBean{
+  background: url("http://otsnwem87.bkt.clouddn.com/bean.png");
+  width:100px;
+  height:100px;
+  background-size:100% 100%;
+  position: absolute;
+  left:50%;
+  margin-left: -50px;
+}
+
+.shareAlertPlugContent{
+  top:100px;
+  position: absolute;
+  text-align: center;
+  width:90%;
+  left:50%;
+  margin-left:-45%;
+  color: white;
+}
+
+.shareAlertPlugContent2{
+  top:140px;
+  position: absolute;
+  text-align: center;
+  width:90%;
+  left:50%;
+  margin-left:-45%;
+  color: white;
+}
+
+.shareAlertPlugClose{
+  font-size:30px;
+  position: absolute;
+  right:10px;
+  top:10px;
+  color: white;
+}

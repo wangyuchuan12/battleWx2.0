@@ -1,0 +1,17 @@
+<import src="../assembly/questionInputPlug/questionInputPlug.wxml"/>
+<import src="../assembly/baseLayerout/baseLayerout.wxml"/>
+
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="subjectContainer">
+  <view class="subjectHeader" wx:if="{{imgUrl}}">
+    <image class="subjectHeaderImg" src="{{imgUrl}}"></image>
+    <view class="subjectHeaderImgQuestion">{{content}}</view>
+  </view>
+
+  <view class="subjectHeaderNoImg" wx:else>
+    <view class="subjectHeaderImgQuestionNoImg">{{content}}</view>
+  </view>
+
+  <progress percent="{{percent}}" show-info class="progress"/>
+  <template is="inputOptions" data="{{...questionInputData}}"></template>
+</view>

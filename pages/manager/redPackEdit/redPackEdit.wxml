@@ -1,0 +1,107 @@
+<import src="../../assembly/baseLayerout/baseLayerout.wxml"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="redPackEdit">
+  <view class="redPackEditAmountType">请选择红包的大小</view>
+  <view class="redPackEditAmountList">
+    <block wx:for="{{redPacks}}" wx:for-item="redPack">
+      <view class="redPackEditAmountItem redPackEditAmountItemClose"  bindtap='redPackClick' id="{{redPack.id}}" wx:if="{{redPack.status==0}}">
+        <view class="redPackEditAmountItemLabel">{{redPack.name}}</view>
+      </view>
+      <view class="redPackEditAmountItem redPackEditAmountItemOpen"  bindtap='redPackClick' id="{{redPack.id}}" wx:if="{{redPack.status==1}}">
+        <view class="redPackEditAmountItemLabel">{{redPack.name}}</view>
+      </view>
+    </block>
+  </view>
+
+  <block wx:for="{{redPacks}}" wx:for-item="redPack">
+    <view class="redPackEditAmountReward" wx:if="{{redPack.id==typeId}}">
+      <view class="redPackEditAmountRewardItem">
+          <view class="personalAttrDataHeader personalAttrDataHeaderMasonry"></view>
+        <view class="redPackEditAmountRewardItemNum">×{{redPack.masonryNum}}</view>
+      </view>
+
+      <view class="redPackEditAmountRewardItem">
+        <view class="personalAttrDataHeader personalAttrDataHeaderBean"></view>
+        <view class="redPackEditAmountRewardItemNum">×{{redPack.beanNum}}</view>
+      </view>
+
+      <view class="redPackEditAmountRewardItem">
+        <view class="personalAttrDataHeader personalAttrDataHeaderMoney"></view>
+        <view class="redPackEditAmountRewardItemNum">×{{redPack.amount}}元</view>
+      </view>
+
+      <view class="redPackEditAmountRewardItem" style="font-size:10px;">
+        红包数量:{{redPack.num}}
+      </view>
+    </view>
+  </block>
+
+  
+
+  <view class="redPackEditItem">
+    <view class="redPackEditItemLabel">选择通关要求</view>
+    <picker bindchange="bindPickerChange"  range="{{stage.data}}" index="{{stage.index}}">
+        <view style="color:red;padding-left:10px;padding-top:10px;">
+            {{stage.data[stage.index]}}
+        </view>
+    </picker>
+  </view>
+
+  <view class="redPackEditItem">
+    <view class="redPackEditItemLabel">是否需要人数满足</view>
+    <switch class="redPackEditItemSwitch" bindchange='roomMeetChange'></switch>
+    <view class="addSubjectInput" wx:if="{{roomMeet.isRoomMeet==1}}">
+      <input placeholder='数量' class="addSubjectInputEl" type='number' bindinput='roomMeetNumInputChange'/>
+    </view>
+  </view>
+
+   <view class="redPackEditItem">
+    <view class="redPackEditItemLabel">是否有房间进程要求</view>
+    <switch class="redPackEditItemSwitch" bindchange='roomProcessMeetChange'></switch>
+    <view class="addSubjectInput" wx:if="{{roomProcessMeet.isRoomProcessMeet==1}}">
+      <input placeholder='房间进程' class="addSubjectInputEl" type='number' bindinput='roomProcessMeetInputChange'/>
+    </view>
+  </view>
+
+  <view class="redPackEditItem">
+    <view class="redPackEditItemLabel">是否有房间分数要求</view>
+    <switch class="redPackEditItemSwitch" bindchange='roomScoreMeetChange'></switch>
+    <view class="addSubjectInput" wx:if="{{roomScoreMeet.isRoomScoreMeet==1}}">
+      <input placeholder='房间分数' class="addSubjectInputEl" type='number' bindinput='roomScoreMeetInputChange'/>
+    </view>
+  </view>
+
+  <view class="redPackEditItem">
+    <view class="redPackEditItemLabel">是否有个人分数要求</view>
+    <switch class="redPackEditItemSwitch" bindchange='personalScoreMeetChange'></switch>
+    <view class="addSubjectInput" wx:if="{{personalScoreMeet.isPersonalScoreMeet==1}}">
+      <input placeholder='个人分数' class="addSubjectInputEl" type='number' bindinput='personalScoreMeetInputChange'/>
+    </view>
+  </view>
+
+  <view class="redPackEditItem">
+    <view class="redPackEditItemLabel">是否有个人进程要求</view>
+    <switch class="redPackEditItemSwitch" bindchange='personalProcessMeetChange'></switch>
+    <view class="addSubjectInput" wx:if="{{personalProcessMeet.isPersonalProcessMeet==1}}">
+      <input placeholder='个人进程' class="addSubjectInputEl" type='number' bindinput='personalProcessMeetInputChange'/>
+    </view>
+  </view>
+
+  <view class="redPackEditItem" style="display:none;">
+    <view class="redPackEditItemLabel">参加支付智慧豆</view>
+    <switch class="redPackEditItemSwitch" bindchange='takepartBeanChange'></switch>
+    <view class="addSubjectInput" wx:if="{{isTakepartBean}}">
+      <input placeholder='智慧豆数量' class="addSubjectInputEl" type='number' bindinput='takepartBeanInputChange'/>
+    </view>
+  </view>
+
+  <view class="redPackEditItem" style="display:none;">
+    <view class="redPackEditItemLabel">参加支付砖石</view>
+    <switch class="redPackEditItemSwitch" bindchange='takepartMasonryChange'></switch>
+    <view class="addSubjectInput" wx:if="{{isTakepartMasonry}}">
+      <input placeholder='砖石数量' class="addSubjectInputEl" type='number' bindinput='takepartMasonryInputChange'/>
+    </view>
+  </view>
+
+  <button class="redPackEditButton" bindtap='submit'>发红包</button>
+</view>

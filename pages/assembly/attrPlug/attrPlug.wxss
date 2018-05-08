@@ -1,0 +1,88 @@
+.personalAttr{
+	position: fixed;
+	width:100%;
+  z-index: 2;
+  padding-left:10px;
+  top:10px;
+}
+
+.personalAttrData{
+	display: inline-block;
+	width:100%;
+	vertical-align: top;
+}
+
+.personalAttrDataItem{
+  width:23%;
+	height:20px;
+	display: inline-block;
+	position: relative;
+}
+
+.personalAttrDataItem>span{
+  font-size: 20px;
+	color:RGBA(139,76,32,1);
+}
+
+.personalAttrDataHeader{
+	width:30px;
+	height:30px;
+	display: inline-block;
+	color: black;
+	font-size: 8px;
+	overflow: hidden;
+	vertical-align: middle;
+	padding-top: 2px;
+	font-weight: bolder;
+}
+
+
+.personalAttrDataHeaderExp{
+	background: url("http://7xlw44.com1.z0.glb.clouddn.com/0aab5e187e98ef1070b67bd33dc9e3eb.png")no-repeat;
+	background-size:20px 20px;
+	background-position:3px 2px;
+}
+
+.personalAttrDataHeaderLove{
+	background: url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveSolid.png")no-repeat;
+	background-size:37px 35px;
+	background-position:-4px -5px;
+}
+
+.personalAttrDataHeaderPlus{
+	background: url("http://7xugu1.com1.z0.glb.clouddn.com/plus.png")no-repeat;
+	background-size:20px 20px;
+	background-position:0px 0px;
+}
+
+.progress-label2{
+    position: absolute;
+    text-align:left;
+    padding-left:30px;
+    top:0px;
+    width:100%;
+    font-weight: bold;
+    color:RGBA(77,209,255,1);
+    font-size: 15px;
+    padding-bottom: 1px;
+}
+
+.personalAttrDataHeaderBean{
+	background: url("http://otsnwem87.bkt.clouddn.com/bean.png")no-repeat;
+	background-size:30px 30px;
+	background-position:0px -5px;
+}
+
+.personalAttrDataHeaderMasonry{
+	background: url("http://otsnwem87.bkt.clouddn.com/e33bf825f5d9b459be556b4e16b9e011.png")no-repeat;
+	background-size:35px 40px;
+	background-position:4px 0px;
+	height: 15px;
+	position: relative;
+}
+
+.personalAttrDataHeaderMoney{
+	background: url("http://otsnwem87.bkt.clouddn.com/2a5d913a968687eec03d21c1bb88aa36.png")no-repeat;
+	background-size:20px 20px;
+	background-position:0px 3px;
+}

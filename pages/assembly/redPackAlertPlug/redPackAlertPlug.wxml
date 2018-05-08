@@ -1,0 +1,30 @@
+<!--questionSelector.wxml-->
+<template name="redPackAlertPlug">
+  <view class="redPackAlertPlug" style="display:{{display}}">
+    <view class="fa fa-times redPackAlertPlugClose" bindtap="redPacketAlertCloseClick"></view>
+    <view class="redPackAlertPlugList">
+     <view class="redPackAlertPlugItem" style="font-size:10px;" wx:if="{{roomMeet.isRoomMeet==1||roomProcessMeet.isRoomProcessMeet==1||personalProcessMeet.isPersonalProcessMeet==1||roomScoreMeet.isRoomScoreMeet==1||personalScoreMeet.isPersonalScoreMeet==1}}">领取条件：</view>
+      <view class="redPackAlertPlugItem" wx:if="{{roomMeet.isRoomMeet==1}}">{{roomMeet.roomMeetIndex}}.参与房间>{{roomMeet.roomMeetNum}}</view>
+      <view class="redPackAlertPlugItem" wx:if="{{roomProcessMeet.isRoomProcessMeet==1}}">
+        {{roomProcessMeet.roomProcessIndex}}.房间距离>{{roomProcessMeet.roomProcessMeet*10}}
+      </view>
+      <view class="redPackAlertPlugItem" wx:if="{{personalProcessMeet.isPersonalProcessMeet==1}}">
+        {{personalProcessMeet.personalProcessIndex}}.我的距离>{{personalProcessMeet.personalProcessMeet*10}}
+      </view>
+
+       <view class="redPackAlertPlugItem" wx:if="{{roomScoreMeet.isRoomScoreMeet==1}}">
+        {{roomScoreMeet.roomScoreIndex}}.房间分数>{{roomScoreMeet.roomScoreMeet}}
+      </view>
+
+       <view class="redPackAlertPlugItem" wx:if="{{personalScoreMeet.isPersonalScoreMeet==1}}">
+        {{personalScoreMeet.personalScoreIndex}}.我的分数>{{personalScoreMeet.personalScoreMeet}}
+      </view>
+    </view>
+
+    <image src="{{imgUrl}}" class="redPackAlertPlugImage"></image>
+
+    <view class="redPackAlertPlugNickname">{{nickname}}</view>
+
+    <view class="redPackAlertPlugButton" bindtap='openRedPackClick'>领取</view>
+  </view>
+</template>

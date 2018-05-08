@@ -1,0 +1,6 @@
+<view class="container">
+    <dialog id='dialog'>
+    </dialog>
+    
+    <button type="primary" bindtap="showDialog"> ClickMe! </button>
+</view>

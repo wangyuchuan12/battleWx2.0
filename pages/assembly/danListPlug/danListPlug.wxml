@@ -1,0 +1,105 @@
+<view class="danList">
+  
+  <view class="battleHomeHeader">
+    <image src="{{headimgurl}}" class="battleHomeHeaderImg"></image>
+    <view class="battleHomeHeaderContent">
+      <view class="battleHomeHeaderContentItem1">{{nickname}}</view>
+      <view class="battleHomeHeaderContentItem3">
+          段位：<block wx:if="{{danName}}">{{danName}}</block>
+               <block wx:else>原始人</block>
+      </view>
+      <view class="battleHomeHeaderContentItem2" style="display:none;">
+        <span>LV.{{level}}</span>
+       <progress percent="{{member.percent}}" class="battleHomeProgress"/>
+      </view>
+    </view>
+  </view>
+  <view class="danListAlert"  wx:if="{{isDanAlert}}">
+    <view class="danListInfo">
+      <view class="danListInfoHeader">{{alertDan.danName}}</view>
+      <view class="danListInfoContent">
+        <image src="{{alertDan.imgUrl}}" class="danListInfoContentImg"></image>
+        <view class="danListInfoContentRank" wx:if="{{alertDan.signCount==0}}">未参与</view>
+        <view class="danListInfoContentRank" wx:elif="{{alertDan.status==2}}">重新开始</view>
+         <view class="danListInfoContentRank" wx:elif="{{alertDan.status==3}}">闯关失败，重新报名</view>
+      </view>
+      <view class="danListInfoButtons">
+        <view class="danListInfoButton" style="background:rgba(255,145,173,1)" bindtap='signClick'>
+          报名
+          <block wx:if="{{alertDan.costBean>0}}">
+            <view class="personalAttrDataHeader personalAttrDataHeaderBean" style=""></view>
+            ×{{alertDan.costBean}}
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="danListAlertMask" bindtap='danListAlertMaskClick'></view>
+  </view>
+  <view class="battleHomeTool" style="display:none;">
+
+    <view class="battleHomeToolItem" bindtap='battleManagerClick' wx:if="{{isManager==1}}">
+      <span class="fa fa-database" style="font-size:20px;"></span>
+      <span style="display:block;font-size:10px;">管理</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='pkClick' style="display:none;">
+      <span class="fa fa-space-shuttle" style="font-size:30px;color:yellow;"></span>
+      <span style="display:block;font-size:10px;color:yellow;">好友对战</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='followClick'>
+      <contact-button 
+        type="default-light" 
+        size="20"
+        session-from="weapp">
+      </contact-button>
+
+      <span style="display:block;font-size:10px;">客服</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='takeoutClick'>
+      <span class="fa fa-get-pocket" style="font-size:20px;color:rgba(16,174,255,1);"></span>
+
+      <span style="display:block;font-size:10px;">提现</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='mallClick'>
+      <span class="fa fa-shopping-cart" style="font-size:20px;color:rgba(247,98,96,1);"></span>
+
+      <span style="display:block;font-size:10px;">商城</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='factoryClick'>
+      <span class="fa fa-university" style="font-size:20px;color:rgba(255,190,0,1);"></span>
+
+      <span style="display:block;font-size:10px;">题目工厂</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='createRoomClick'>
+      <span class="fa fa-plus" style="font-size:20px;color:rgba(9,187,7,1);"></span>
+
+      <span style="display:block;font-size:10px;">创建房间</span>
+    </view>
+    
+  </view>
+  <scroll-view class="danListContent" 
+  bindscrolltoupper="upper" bindscrolltolower="lower"       bindscroll="scroll" scroll-top="{{scrollTop}}" scroll-with-animation="true"
+  scroll-into-view="{{currentDanId}}" scroll-y>
+    <block wx:for="{{dans}}" wx:for-item="dan">
+      <view id="dan_{{dan.id}}">
+        <view class="danItem"  bindtap='danItemClick' id="{{dan.id}}">
+          <view class="danLock" wx:if="{{dan.status==0}}">
+            <view class="fa fa-lock danLockContent"></view>
+          </view>
+
+          <view class="danItemFree" wx:if="{{dan.status==0}}">未开启</view>
+          <view class="danItemIn" wx:if="{{dan.status==1}}">进行中</view>
+          <view class="danItemSuccess" wx:if="{{dan.status==2}}">成功</view>
+          <view class="danItemFail" wx:if="{{dan.status==3}}">失败</view>
+          <image src="{{dan.imgUrl}}" class="danItemImg"></image>
+          <view class="danItemName">{{dan.name}}</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

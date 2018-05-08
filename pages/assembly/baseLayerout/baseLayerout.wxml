@@ -1,0 +1,41 @@
+<!--baseLayerout.wxml-->
+
+<template name="baseLayerout" hidden="true">
+  <view class="preLoad" wx:if="{{preProcess<100}}" style="background:url('http://ovqk5bop3.bkt.clouddn.com/bg.jpeg');background-size:100% 100%;">
+    <progress class="preLoadProgress" color='red;' percent='{{preProcess}}' style="position:fixed;"></progress>
+  </view>
+  <view style="width:100%;height:100%;position:fixed;z-index:9000000000000;" wx:if="{{!hiddenLoading}}">
+    <loading hidden="{{hiddenLoading}}">
+      <block wx:if="{{!loadMsg}}">
+        请等待...
+      </block>
+      <block wx:else>
+        {{loadMsg}}
+      </block>
+    </loading>
+  </view>
+  <toast duration="{{toastDuration}}" bindchange="hideToast" hidden="{{hiddenToast}}" style="width:100px;height:100px;">{{toastMsg}}</toast>
+  <view class="fullAlert" style="display:{{fullAlertDisplay}}">
+    <view class="fullAlertlight" animation="{{fullAlertAnimation}}">
+      
+    </view>
+    <view class="fullAlertReward">
+      <view class="fullAlertBean"></view>
+      <view class="fullAlertNum">奖励 ×{{fullAlertRewardBeanNum}}</view>
+    </view>
+
+    <view class="fullAlertReward" style="top:250px;">
+      <view class="fullAlertBean" style="background:url('http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveSolid.png');background-size:100% 100%;"></view>
+      <view class="fullAlertNum" style="color:red;top:25px;">奖励 ×{{fullAlertRewardLoveNum}}</view>
+    </view>
+
+    <view class="fullAlertTitle">{{fullAlertTitle}}</view>
+
+    <view class="fullAlertTitle2">{{fullAlertTitle2}}</view>
+
+    <view class="fullAlertButton" bindtap='fullAlertButtonClick'>{{fullAlertButton}}</view>
+  </view>
+
+  <view class="againButton" style="display:{{againButtonDisplay}}" bindtap='againButtonClick'>{{againButton}}</view>
+  
+</template>

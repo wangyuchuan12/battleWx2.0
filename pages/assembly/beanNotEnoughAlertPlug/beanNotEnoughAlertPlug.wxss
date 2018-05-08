@@ -1,0 +1,61 @@
+.beanNotEnoughAlertPlug{
+  text-align: center;
+  position: absolute;
+  top:40vh;
+  width:100%;
+  z-index: 1000000000;
+}
+.beanNotEnoughAlertPlugBrow{
+  width:30%;
+  height:150px;
+  background: url("http://p42rx7glw.bkt.clouddn.com/9ef7f8ce3be1100030f12108ade151b1.png");
+  background-size:100% 100%;
+  display: inline-block;
+  position: relative;
+}
+.beanNotEnoughAlertPlugPanel{
+  width:50%;
+  height:150px;
+  background:rgba(233,231,206,1);
+  display: inline-block;
+  border-radius: 10px;
+  vertical-align: top;
+  position: relative;
+  text-align: center;
+}
+
+.beanNotEnoughAlertPlugPanelTitle{
+  color: rgba(241,137,82,1);
+  font-size:20px;
+  font-weight: bolder;
+  position: relative;
+}
+
+.beanNotEnoughAlertPlugPanelContent{
+  color:rgba(72,50,29,1);
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+.beanNotEnoughAlertPlugPanelButton1{
+  width:40%;
+  height:50px;
+  border-radius: 10px;
+  background:rgba(0,132,207,1);
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+  margin: 5px;
+}
+.beanNotEnoughAlertPlugPanelButton2{
+  width:40%;
+  height:50px;
+  border-radius: 10px;
+  background:rgba(237,186,9,1);
+  display: inline-block;
+  font-size: 20px;
+  line-height: 50px;
+  color: white;
+  margin: 5px;
+}

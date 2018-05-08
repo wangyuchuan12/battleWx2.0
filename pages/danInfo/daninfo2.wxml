@@ -1,0 +1,47 @@
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<scroll-view class="danInfo" scroll-y>
+
+  <view class="danInfoReward">
+    <view class="danInfoRewardBanner">{{name}}</view>
+    <view class="danInfoRewardTitle" wx:if="{{places>1}}">前{{places}}名通过</view>
+    <view class="danInfoRewardTitle" wx:else>胜利者通过</view>
+    <view class="danInfoRewardContent">
+      <view class="danInfoRewardContentItem" wx:for="{{rewards}}" wx:for-item="reward">第{{reward.rank}}名:<view style="display:inline-block;width:50px;">{{reward.rewardBean}}</view>智慧豆</view>
+    </view>
+  </view>
+
+  
+  <view class="danInfoRewardWait" wx:if="{{timeDiffer>0}}">开始剩余时间：{{remainderHour}}:{{remainderMin}}:{{remainderSecond}}</view>
+  <view class="danInfoRewardWait" wx:if="{{timeDiffer<=0&&num<mininum}}">还差{{mininum-num}}人</view>
+  <view class="danInfoRewardWait" wx:if="{{timeDiffer<=0&&roomStatus==1&&num>=mininum}}">比赛进行中</view>
+  
+
+  <view class="danInfoRewardWait" wx:if="{{roomStatus==3}}">比赛已经结束</view>
+
+  <view class="danInfoButton" bindtap='takepartClick' wx:if="{{status==0||status==2||status==1}}">
+    <span wx:if="{{status==0&&roomStatus!=3}}">参加</span>
+    <span wx:elif="{{status==1&&roomStatus!=3}}">开始</span>
+    <span wx:elif="{{roomStatus==3}}">重新开始</span>
+  </view>
+
+  <view class="danInfoMembers">
+    <block wx:if="{{members.length!=2}}">
+      <view class="danInfoMember" wx:for="{{members}}" wx:for-item="member">
+        <image src="{{member.imgUrl}}" class="danInfoMemberImg"></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="danInfoMember">
+        <image src="{{members[0].imgUrl}}" class="danInfoMemberImg"></image>
+      </view>
+
+      <image class="danInfoMemberVsImg" src="http://ovqk5bop3.bkt.clouddn.com/8575c56292491e63a168bdd5e4694cf3.png"></image>
+
+      <view class="danInfoMember">
+        <image src="{{members[1].imgUrl}}" class="danInfoMemberImg"></image>
+      </view>
+    </block>
+  </view>
+ 
+</scroll-view>

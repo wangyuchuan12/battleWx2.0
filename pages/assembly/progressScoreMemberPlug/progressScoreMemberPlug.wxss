@@ -1,0 +1,95 @@
+/* progressScoreMemberPlug.wxss */
+
+.progressScoreContainerHeaderMembers{
+  width:100%;
+  text-align: center;
+  padding-top:35px;
+  position: relative;
+
+}
+
+.progressScoreContainerHeaderMemberProgress{
+  position: absolute;
+  top:43px;
+  width:100%;
+}
+
+.progressScoreContainerHeaderRoom{
+  width:90%;
+  margin: 0 auto;
+  top:-10px;
+  position: relative;
+}
+
+.progressScoreContainerHeaderRoomProcess{
+  width:100%;
+}
+
+.progressScoreContainerHeaderMembersVsImg{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  vertical-align: top;
+  padding-top:20px;
+}
+
+.progressScoreContainerHeaderMemberImgLoves{
+  width:95%;
+  height:50px;
+  position: absolute;
+  top:-7px;
+  left:4px;
+  overflow:hidden;
+}
+.progressScoreContainerHeaderMemberImgLove{
+  width:10px;
+  height:10px;
+  background:url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveSolid.png")no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+.progressScoreContainerHeaderMemberImgHollowLove{
+  width:10px;
+  height:10px;
+  background:url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveHollow.png")no-repeat;
+  background-size: 75% 60%;
+  background-position: 2px 2px;
+  display: inline-block;
+}
+
+.progressScoreContainerHeaderMemberBigDeath{
+  position: absolute;
+  z-index: 10000000000;
+  background:white;
+  font-size: 25px;
+  padding-left:10px;
+  padding-right:10px;
+
+  bottom:40px;
+  left:10px;
+
+
+  transform:rotate(7deg);
+  -ms-transform:rotate(7deg); 	/* IE 9 */
+  -moz-transform:rotate(7deg); 	/* Firefox */
+  -webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+  -o-transform:rotate(7deg); 	/* Opera */
+}
+
+.progressScoreContainerHeaderMemberDeath{
+  position: absolute;
+  z-index: 10000000000;
+  background:white;
+  font-size: 10px;
+  padding-left:10px;
+  padding-right:10px;
+  bottom:30px;
+  left:5px;
+  transform:rotate(7deg);
+  -ms-transform:rotate(7deg); 	/* IE 9 */
+  -moz-transform:rotate(7deg); 	/* Firefox */
+  -webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+  -o-transform:rotate(7deg); 	/* Opera */
+}
+

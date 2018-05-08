@@ -1,0 +1,215 @@
+@import 'daninfo2.wxss';
+.danInfo3{
+  width:100%;
+  height:100vh;
+  background: rgba(255,173,0,1);
+  position: relative;
+  text-align: center;
+}
+
+.danInfoCircleList{
+  width:350px;
+  height:350px;
+  position: relative;
+  left:50%;
+  margin-left:-175px;
+}
+
+.danInfoCircle{
+  width:300px;
+  height:300px;
+  border:1px solid white;
+  left:50%;
+  margin-left: -150px;
+  border-radius: 300px;
+  position: absolute;
+  top:20px;
+}
+
+.danInfoCircle2{
+  width:200px;
+  height:200px;
+  border:1px solid white;
+  left:50%;
+  margin-left: -100px;
+  border-radius: 300px;
+  position: absolute;
+  top:70px;
+}
+
+.danInfoCircle3{
+  width:100px;
+  height:100px;
+  border:1px solid white;
+  left:50%;
+  margin-left: -50px;
+  border-radius: 300px;
+  position: absolute;
+  top:120px;
+}
+
+.danInfoTarget1{
+  width:20px;
+  height:20px;
+  background: white;
+  top:30px;
+  left:27%;
+  border-radius: 20px;
+  position: absolute;
+}
+
+.danInfoTarget2{
+  width:20px;
+  height:20px;
+  background: white;
+  top:90px;
+  left:27%;
+  border-radius: 20px;
+  position: absolute;
+}
+
+.danInfoTarget3{
+  width:20px;
+  height:20px;
+  background: white;
+  top:205px;
+  left:53%;
+  border-radius: 20px;
+  position: absolute;
+}
+
+
+.danInfoCircle4{
+  width:10px;
+  height:10px;
+  border:1px solid white;
+  left:50%;
+  margin-left: -5px;
+  border-radius: 300px;
+  position: absolute;
+  top:165px;
+
+}
+
+.danInfoHead{
+  color: white;
+}
+
+.danInfoMember1{
+  width:70px;
+  height:70px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+}
+
+.danInfoMember2{
+  width:50px;
+  height:50px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:50px;
+  top:80px;
+}
+
+.danInfoMember3{
+  width:40px;
+  height:40px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:100px;
+  top:200px;
+}
+
+.danInfoMember4{
+  width:50px;
+  height:50px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:200px;
+  top:150px;
+}
+
+.danInfoMember5{
+  width:50px;
+  height:50px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:250px;
+  top:100px;
+}
+
+.danInfoMember6{
+  width:40px;
+  height:40px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:130px;
+  top:120px;
+}
+
+.danInfoMember7{
+  width:55px;
+  height:55px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:130px;
+  top:260px;
+}
+
+.danInfoMember8{
+  width:70px;
+  height:70px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:200px;
+  top:320px;
+}
+
+.danInfoMember9{
+  width:20px;
+  height:20px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:100px;
+  top:300px;
+}
+
+.danInfoMember10{
+  width:30px;
+  height:30px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:170px;
+  top:200px;
+}
+
+.danInfoMember11{
+  width:50px;
+  height:50px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:220px;
+  top:230px;
+}
+
+.danInfoMember12{
+  width:50px;
+  height:50px;
+  border-radius: 70px;
+  position: absolute;
+  opacity:0.5;
+  left:50px;
+  top:230px;
+}
+

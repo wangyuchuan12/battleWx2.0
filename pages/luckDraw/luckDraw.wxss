@@ -1,0 +1,56 @@
+@import '../assembly/baseLayerout/baseLayerout.wxss';
+.luckDraw{
+  width:100%;
+  height:100vh;
+  /*background:url("http://p42rx7glw.bkt.clouddn.com/52ddf152a38f111730c332226aa0428f.jpg");
+  background-size:100% 100%;*/
+
+  background:#FBE5CD;
+}
+
+.luckDrawItems{
+  position: relative;
+  width:100%;
+  background:green;
+}
+
+.luckDrawItem{
+  width:20%;
+  height:70px;
+  background: rgba(24,149,165,1);
+  position: absolute;
+}
+
+.luckDrawItemImg{
+  width:100%;
+  height:60px;
+  margin:  0px;
+}
+
+.luckDrawItemName{
+  color: white;
+  background: rgba(174,99,16,1);
+  text-align: center;
+  margin: 0px;
+}
+
+.luckDrawItemBig{
+  width:41%;
+  height: 180px;
+  position: absolute;
+}
+
+.luckDrawItemBigImg{
+  width:100%;
+  height:140px;
+}
+
+.luckDrawButton{
+  width:120px;
+  height:120px;
+  background: url("http://p42rx7glw.bkt.clouddn.com/94d6a75c09bd82a3df805f124357bba9.png");
+  background-size:100% 100%;
+  position: relative;
+  margin: 0 auto;
+  top:350px;
+}

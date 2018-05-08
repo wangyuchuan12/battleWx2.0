@@ -1,0 +1,190 @@
+<import src="../assembly/redPackAlertPlug/redPackAlertPlug.wxml"/>
+
+<import src="../assembly/baseLayerout/baseLayerout.wxml"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+
+<template is="redPackAlertPlug" data="{{...redPackAlertPlugData}}"/>
+
+<view class="welfare">
+  
+  <scroll-view class="welfareBody" scroll-y>
+
+    <view class="welfareHead">
+
+      
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-pie-chart"></span>
+          <span style="font-size:10px;">房间人数</span>
+        </view>
+        <view class="welfareHeadItemContent">{{num}}/{{maxinum}}</view>
+      </view>
+
+
+
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-bar-chart"></span>
+          <span style="font-size:10px;">我的排名</span>
+        </view>
+        <view class="welfareHeadItemContent">第{{rank}}名</view>
+      </view>
+
+
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-fighter-jet"></span>
+          <span style="font-size:10px;">关卡</span>
+        </view>
+        <view class="welfareHeadItemContent">第{{stageIndex}}/{{stageCount}}关</view>
+      </view>
+      
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-bullhorn"></span>
+          <span style="font-size:10px;">消息</span>
+        </view>
+        <view class="welfareHeadItemContent">0条</view>
+      </view>
+     
+
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-user-circle"></span>
+          <span style="font-size:10px;">我的分数</span>
+        </view> 
+        <view class="welfareHeadItemContent">{{score}}分</view>
+      </view>
+
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-car"></span>
+          <span style="font-size:10px;">房间距离</span>
+        </view>
+        <view class="welfareHeadItemContent">{{roomProcess*10}}米</view>
+      </view>
+
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-bicycle"></span>
+          <span style="font-size:10px;">我的距离</span>
+        </view>
+        <view class="welfareHeadItemContent">{{process*10}}米</view>
+      </view>
+
+      <view class="welfareHeadItem">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-users"></span>
+          <span style="font-size:10px;">房间分数</span>
+        </view>
+        <view class="welfareHeadItemContent">{{roomScore}}分</view>
+      </view>
+
+      <view class="welfareHeadItem" bindtap='welfareTakeoutClick' style="background:green;">
+        <view class="welfareHeadItemLabel">
+          <span class="fa fa-get-pocket"></span>
+          <span style="font-size:10px;">提现</span>
+        </view>
+        <view class="welfareHeadItemContent">{{amount}}元</view>
+      </view>
+
+    </view>
+
+  
+
+  <view class="welfareContentButtons">
+    <view class="welfareContentButton" bindtap='startClick'>开始战斗</view>
+  </view>
+    
+  <scroll-view class="welfareContent">
+    <view class="welfareRedPaperStage" wx:for="{{stages}}" wx:for-item="stage">
+        <view class="welfareRedPaperStageLabel" wx:if="{{stage.stageIndex}}">第{{stage.stageIndex}}关</view>
+        <view class="welfareRedPaperStageLabel" wx:else>无关卡要求</view>
+        <view style="width:100%;background:RGBA(82,82,82,0.7);height:100px;position:absolute;z-index:10000;padding-top:10px;text-align:center;" wx:if="{{stage.stageIndex&&stage.stageIndex>stageIndex-1}}">
+          <span class="fa fa-lock" style="font-size:50px;color:black;display:block"></span>
+          <span style="font-size:10px;color:black;display:block">第{{stage.stageIndex}}关未解锁</span>
+        </view>
+        <scroll-view style="white-space:nowrap;display:flex;height:100px;width:100%;position:relative;padding-left:10px;text-align:center;" scroll-x>
+          <block  wx:for="{{stage.redpacks}}" wx:for-item="redPack">
+          <view class="welfareRedPaperStageItem gray"  bindtap='redPackClick' id="{{redPack.id}}" wx:if="{{redPack.isReceived}}">
+            <view class="roomRedPackRewards" style="top:0px;left:0px;">
+                <view class="roomRedPackRewardsBackground">
+                  <image class="roomRedPackRewardsImgHeader" src="{{redPack.senderImg}}"></image>
+                </view>
+                <view class="roomRedPackRewardsBackground2"></view>
+                <view class="roomRedPackRewardsAmount" style="top:50px;">
+                  <view style=""><span style="font-size:10px;">总金额：</span>{{redPack.amount}}<span style="font-size:10px;">元</span></view>
+                  <view style="backgrund:black;position:relative;top:-10px;"><span style="font-size:10px;color:black;">已领取{{redPack.receiveNum}}/{{redPack.num}}</span></view>
+                </view>
+            </view>
+          </view>
+
+
+          <view class="welfareRedPaperStageItem"  bindtap='redPackClick' id="{{redPack.id}}" wx:elif="{{redPack.receiveNum<redPack.num}}">
+            <view class="roomRedPackRewards" style="top:0px;left:0px;">
+                <view class="roomRedPackRewardsBackground">
+                  <image class="roomRedPackRewardsImgHeader" src="{{redPack.senderImg}}"></image>
+                </view>
+                <view class="roomRedPackRewardsBackground2"></view>
+                <view class="roomRedPackRewardsAmount" style="top:50px;">
+                  <view style=""><span style="font-size:10px;">总金额：</span>{{redPack.amount}}<span style="font-size:10px;">元</span></view>
+                  <view style="backgrund:black;position:relative;top:-10px;"><span style="font-size:10px;color:black;">已领取{{redPack.receiveNum}}/{{redPack.num}}</span></view>
+                </view>
+            </view>
+          </view>
+
+
+          <view class="welfareRedPaperStageItem gray"  bindtap='redPackClick' id="{{redPack.id}}" wx:else>
+            <view class="roomRedPackRewards" style="top:0px;left:0px;">
+                <view class="roomRedPackRewardsBackground">
+                  <image class="roomRedPackRewardsImgHeader" src="{{redPack.senderImg}}"></image>
+                </view>
+                <view class="roomRedPackRewardsBackground2"></view>
+                <view class="roomRedPackRewardsAmount" style="top:50px;">
+                  <view style=""><span style="font-size:10px;">总金额：</span>{{redPack.amount}}<span style="font-size:10px;">元</span></view>
+                  <view style="backgrund:black;position:relative;top:-10px;"><span style="font-size:10px;color:black;">已领完</span></view>
+                </view>
+            </view>
+          </view>
+        </block>
+        </scroll-view>
+    </view>
+
+    <view class="welfareRedPaperList" style="display:none">
+      <block wx:for="{{redPacks}}" wx:for-item="redPack">
+        <view class="welfareRedPaperItem gray" bindtap='redPackClick' id="{{redPack.id}}" wx:if="{{redPack.isReceived}}">
+          <image class="welfareRedPaperItemImg" src="{{redPack.senderImg}}"></image>
+          <view class="welfareRedPaperItemContent">
+          </view>
+
+           <span style="font-size:10px;color:white;position:absolute;top:70px;left:50%;display:block;width:100px;margin-left:-50px;">已领取</span>
+        </view>
+
+        <view class="welfareRedPaperItem" bindtap='redPackClick' id="{{redPack.id}}" wx:elif="{{redPack.receiveNum<redPack.num}}">
+          <image class="welfareRedPaperItemImg" src="{{redPack.senderImg}}"></image>
+          <view class="welfareRedPaperItemContent">
+          </view>
+
+          <span style="font-size:10px;color:white;position:absolute;top:70px;left:50%;display:block;width:100px;margin-left:-50px;">{{redPack.receiveNum}}/{{redPack.num}}</span>
+        </view>
+
+        <view class="welfareRedPaperItem gray" bindtap='redPackClick' id="{{redPack.id}}" wx:else>
+          <image class="welfareRedPaperItemImg" src="{{redPack.senderImg}}"></image>
+          <view class="welfareRedPaperItemContent">
+          </view>
+
+          <span style="font-size:10px;color:white;position:absolute;top:70px;left:50%;display:block;width:100px;margin-left:-50px;">红包已领完</span>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <scroll-view class="welfareRecord" scroll-y>
+    <view wx:for="{{roomRecords}}" wx:for-item="record">
+      <image src="{{record.imgUrl}}" class="welfareRecordImage"></image>
+      <view class="welfareRecordTime">{{record.happenTime}}</view>
+      <view class="welfareRecordContent">{{record.log}}</view>
+    </view>
+  </scroll-view>
+  </scroll-view>
+</view>

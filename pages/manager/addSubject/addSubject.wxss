@@ -1,0 +1,58 @@
+.addSubjectImg{
+  background-color:RGBA(240,240,242,1);
+  width:100%;
+  min-height:150px;
+  max-height:1000px;
+  text-align: center;
+  position: relative;
+}
+
+.addSubjectImgCamera{
+  color: RGBA(201,201,201,1);
+  font-size:50px;
+  position: relative;
+  top:50px;
+}
+
+.addSubjectInput{
+  width:100%;
+  height:50px;
+  border-bottom:1px solid RGBA(201,201,201,1);
+  padding-top:10px;
+}
+
+.addSubjectInputEl{
+  height:40px;
+  color:black;
+  padding-left:20px;
+}
+
+.addSubjectButton{
+  background:RGBA(255,164,4,1);
+
+  width:90%;
+
+  border-radius:10px;
+
+  margin: 0 auto;
+
+  margin-top:20px;
+
+  padding-top:14px;
+
+  padding-bottom:14px;
+
+  text-align: center;
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight: bolder;
+}
+
+.addSubjectImgEl{
+  max-width:100%;
+  margin: 0 auto;
+  position: relative;
+}

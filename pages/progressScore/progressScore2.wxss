@@ -1,0 +1,95 @@
+@import 'progressScore.wxss';
+@import '../assembly/questionInputPlug/questionInputPlug.wxss';
+@import '../assembly/memberWaitPlug/memberWaitPlug.wxss';
+.progressScoreInput{
+  width:100%;
+  height: 100vh;
+  z-index: 50000000000;
+  background:rgba(129,148,170,0.5);
+  position: fixed;
+}
+
+.progressScoreInputSubjectHeader{
+  width:100%;
+  height:200px;
+}
+
+.progressScoreInputSubjectHeaderImg{
+  width:100%;
+  height:40vh;
+}
+
+.progressScoreInputSubjectHeaderNoImg{
+  width:100%;
+  height:200px;
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+
+.progressScoreInputSubjectHeaderContent{
+  color: white;
+  font-size:20px;
+  text-align: center;
+  padding-left:20px;
+  padding-right: 20px;
+}
+
+
+.progressScoreInputSubjectHeaderContentNoImg{
+  color: white;
+  font-size:30px;
+  text-align: center;
+  padding-left:20px;
+  padding-right: 20px;
+  padding-top:70px;
+}
+.resultRanks{
+  position: fixed;
+  z-index: 5000000000;
+  width:80%;
+  height: 80vh;
+  margin-left:10%;
+  border-radius: 10px;
+  top:10vh;
+}
+
+.resultRankItem{
+  background: rgba(209,234,249,1);
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-top: 10px;
+  border-radius:5px;
+}
+
+.resultRanksTitle{
+  width:100%;
+  background: rgba(48,188,238,1);
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.resultRankItemRank{
+  display: inline-block;
+  width:20%;
+  color: rgba(94,61,13,1);
+  text-align: center;
+  font-weight: bolder;
+}
+
+.resultRankItemName{
+  display: inline-block;
+  width:20%;
+}
+
+.resultRankItemScore{
+  display: inline-block;
+  width:30%;
+}
+
+.resultRankItemReward{
+  display: inline-block;
+  width:30%;
+}

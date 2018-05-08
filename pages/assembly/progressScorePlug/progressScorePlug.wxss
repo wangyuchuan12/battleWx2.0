@@ -1,0 +1,228 @@
+
+@import '../attrPlug/attrPlug.wxss';
+.progressScore{
+  width:100%;
+  min-height: 100vh;
+  background:green;
+}
+
+.progressScoreContainerHeader{
+	position: absolute;
+	
+	width: 100%;
+	
+	height: 50px;
+	
+	z-index: 1000000;
+	
+	text-align: center;
+
+  top:50px;
+  
+}
+
+.progressScoreContainerHeaderLoveLife{
+	margin: 0 auto;
+  width:300px;
+}
+
+.progressScoreContainerHeaderScore{
+  margin-top:80px;
+}
+
+.progressScoreContainerHeaderAllScore{
+	display: inline-block;
+	
+	background-color: RGBA(81,60,50,1);
+	
+	border-radius:25px;
+	
+	position: relative;
+}
+
+.progressScoreContainerHeaderAllScoreTag{
+	background: RGBA(174,41,28,1);
+	color: white;
+	font-size: 15px;
+	
+	width:50px;
+	
+	height: 25px;
+	
+	text-align: center;
+	border-radius:20px;
+	
+	display: inline-block;
+	
+	vertical-align: top;
+	
+	padding-top: 2px;
+	
+	position:relative;
+}
+
+.progressScoreContainerHeaderAllScoreContent{
+	display: inline-block;
+	
+	height: 25px;
+	
+	color: RGBA(245,224,151,1);
+	
+	font-size: 20px;
+	
+	position: relative;
+	
+	vertical-align: top;
+	
+	width:90px;
+	top:-2px;
+}
+
+.progressScoreContainerHeader2{
+	text-align: center;
+	width:100%;
+	
+	position: relative;
+	top:-10px;
+}
+
+.progressScoreContainerHeaderRank{
+	font-size: 30px;
+	color:black;
+	
+	font-weight: bolder;
+}
+
+.personalAttrDataHeaderBig{
+	width:50px;
+	height:50px;
+	display: inline-block;
+	color: black;
+	font-size: 8px;
+	overflow: hidden;
+	vertical-align: middle;
+	padding-left: 8px;
+	padding-top: 2px;
+	font-weight: bolder;
+}
+.personalAttrDataHeaderLoveBig{
+	background: url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveSolid.png")no-repeat;
+	background-size:50px 50px;
+	background-position:0px -5px;
+}
+
+.personalAttrDataHeaderLoveHollowBig{
+	background: url("http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveHollow.png")no-repeat;
+	background-size:35px 28px;
+	background-position:7px 5px;
+}
+
+
+.progressScore{
+	width: 100%;
+	height:100%;
+	margin: 0px;	
+}
+
+.progressScoreBar{
+	overflow: auto;
+/*	-webkit-overflow-scrolling:touch;
+	-webkit-overflow:auto;*/
+	width: 100%;
+	height: 2000px;
+	background: url("http://onluguho9.bkt.clouddn.com/progressScoreBackground.png");
+	background-size:104% 104%;
+	background-position:-5px -70px;
+}
+
+.trajectoryLi{
+	color: white;
+	font-weight: bolder;
+	text-align: center;
+	font-size: 10px;
+	position: absolute;
+	width:20px;
+	height:20px;
+	/*background:url('http://onluguho9.bkt.clouddn.com/paper.png');*/
+	background-size:100% 100%;
+}
+
+
+.fromDom{
+	width:30px;
+	height: 30px;
+	left:15%;
+	top:1900px;
+	position:absolute;
+	border-radius:50px;
+}
+
+
+
+.progressScoreContainerHeaderMember{
+  width:50px;
+  height:70px;
+  position: relative;
+  display: inline-block;
+  margin: 3px;
+}
+
+.progressScoreContainerHeaderMemberBig{
+  width:100px;
+  height:120px;
+  position: relative;
+  display: inline-block;
+  margin: 3px;
+}
+
+.progressScoreContainerHeaderMemberBigImg{
+  width:100%;
+  height:80px;
+}
+
+.progressScoreContainerHeaderMemberImg{
+  width:100%;
+  height:50px;
+}
+
+.progressScoreContainerHeaderMemberRank{
+  font-size:10px;
+  text-align: center;
+  font-weight: bolder;
+  position: absolute;
+  top:50px;
+  left:50%;
+  margin-left: -15px;
+}
+
+.progressScoreContainerHeaderCooling{
+  width:50%;
+  height:50px;
+  background:RGBA(114,80,113,0.5);
+  position:relative;
+  margin: 0 auto;
+  border-radius:5px;
+}
+
+.progressScoreContainerHeaderCoolingLabel{
+  height:50px;
+  border-radius:5px;
+  background: RGBA(225,0,40,0.4);
+  position: absolute;
+  z-index:1;
+}
+.progressScoreContainerHeaderCoolingContent{
+  width:100%;
+  height:100%;
+  position: absolute;
+  z-index: 2;
+}
+.progressScoreContainerHeaderCoolingContent1{
+  color: white;
+  font-size:10px;
+}
+
+.progressScoreContainerHeaderCoolingContent2{
+  color:white;
+  font-size:10px;
+}

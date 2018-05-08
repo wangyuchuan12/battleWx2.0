@@ -1,0 +1,50 @@
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+
+<import src ="../assembly/attrPlug/attrPlug"/>
+<template is="attrPlug" data= "{{...attrPlugData}}" />
+
+
+<view class="mall" >
+  <view class="mallContent">
+    <view class="mallTabList">
+      <view class="mallTabItem" wx:if="{{type==1}}" 
+        style='background:rgba(239,85,3,1);'>
+        <view class="mallTabItemName">智慧豆</view>
+        <view class="mallTabItemIcon"></view>
+      </view>
+      <view class="mallTabItem" bindtap='beanClick' wx:else>
+        <view class="mallTabItemName">智慧豆</view>
+        <view class="mallTabItemIcon"></view>
+      </view>
+
+      <view class="mallTabItem" wx:if="{{type==3}}" 
+        style='background:rgba(239,85,3,1);'>
+        <view class="mallTabItemName">爱心</view>
+        <view class="mallTabItemIcon"></view>
+      </view>
+      <view class="mallTabItem" bindtap='loveClick' wx:else>
+        <view class="mallTabItemName">爱心</view>
+        <view class="mallTabItemIcon"></view>
+      </view>
+    </view>
+    <scroll-view class="mallGoods" scroll-y>
+      <view class="mallGood" wx:for="{{goods}}" wx:for-item="good" id="{{good.id}}" bindtap='goodItemClick'>
+        <view class="mallGoodBackground"></view>
+        <view class="mallGoodContent">
+          <image class="mallGoodImg" src="http://onlttr82i.bkt.clouddn.com/wisdon3.png" wx:if="{{good.type==1}}"></image>
+          <image class="mallGoodImg" src="http://otsnwem87.bkt.clouddn.com/e33bf825f5d9b459be556b4e16b9e011.png" wx:if="{{good.type==2}}"></image>
+
+          <image class="mallGoodImg" src="http://7xugu1.com1.z0.glb.clouddn.com/lifeLoveSolid.png" wx:if="{{good.type==3}}"></image>
+          <view class="mallGoodNum" src="">{{good.num}}</view>
+          <view class="mallGoodButton">
+            <view class="mallGoodIcon iconRMB" wx:if="{{good.costType==0}}"></view>
+            <view class="mallGoodIcon iconMasonry" wx:if="{{good.costType==2}}"></view>
+            <view class="mallGoodIcon iconBean" wx:if="{{good.costType==1}}"></view>
+            <view class="mallGoodPrice">{{good.cost}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

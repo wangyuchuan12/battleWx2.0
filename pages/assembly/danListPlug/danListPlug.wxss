@@ -1,0 +1,206 @@
+
+@import '../../battleHome/battleHome.wxss';
+@import '../baseLayerout/baseLayerout.wxss';
+
+.battleHomeHeader{
+}
+
+.battleHomeHeaderContent{
+  width:70%;
+  height:100%;
+  display: inline-block;
+  position: relative;
+  left:20px;
+  vertical-align: top;
+  color: white;
+}
+
+.battleHomeProgress{
+  width:100px;
+  display: inline-block;
+  position: relative;
+  left:10px;
+}
+
+.battleHomeHeaderContentItem1{
+  vertical-align: top;
+}
+
+.danList{
+  background: rgba(49,64,93,0.1);
+  width:100%;
+  height:100vh;
+
+  padding-top:50px;
+
+  position: fixed;
+
+  z-index: 1000000000000;
+  
+}
+
+.danItemSuccess{
+  font-size:20px;
+  color:red;
+  position: absolute;
+  left:20px;
+  top:70px;
+}
+
+.danItemFree{
+  font-size:20px;
+  color:black;
+  position: absolute;
+  left:20px;
+  top:70px;
+}
+
+.danItemIn{
+  font-size:20px;
+  color:white;
+  position: absolute;
+  left:20px;
+  top:70px;
+}
+
+.danItemFail{
+  font-size:20px;
+  color:green;
+  position: absolute;
+  left:20px;
+  top:70px;
+}
+
+.danListContent{
+  height: 70vh;
+  position: fixed;
+  margin-top:20px;
+}
+.danItem{
+  width:90%;
+  height:150px;
+  position: relative;
+  margin: 0 auto;
+  border-radius:10px;
+  background: RGBA(37,75,140,0.1);
+  margin-bottom:10px;
+}
+
+.danItemName{
+  color: white;
+  padding-left:20px;
+  padding-top:20px;
+  position: relative;
+  font-size:20px;
+  font-weight: bolder;
+}
+
+.danItemImg{
+  width:100px;
+  height:100px;
+  position: absolute;
+  right: 20px;
+  top:20px;
+}
+
+.danLock{
+  background:RGBA(82,82,82,0.7);
+  width:100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  z-index: 1000000;
+  text-align: center;
+}
+
+.danLockContent{
+  font-size:40px;
+  position: relative;
+  top:50px;
+  color: black;
+}
+
+.battleHomeHeaderContentItem3{
+  font-size:10px;
+}
+
+.battleHomeHeaderContentItem2{
+  font-size:10px;
+}
+
+.danListInfo{
+  width:80%;
+  height:350px;
+  position: fixed;
+  background:rgba(255,249,229,1);
+  z-index:10000000;
+  top:80px;
+  left:50%;
+  margin-left:-40%;
+  color: white;
+  border-radius:10px;
+}
+
+.danListInfoContent{
+  width:80%;
+  height:100px;
+  background:rgba(255,222,181,1);
+  border-radius: 5px;
+  margin: 0 auto;
+  position: relative;
+  top:20px;
+  text-align: center;
+  padding-top:10px;
+}
+
+.danListInfoContentRank{
+  color: rgba(117,58,23,1);
+}
+
+.danListInfoContentImg{
+  width:50px;
+  height:50px;
+}
+
+.danListAlertMask{
+  width:100%;
+  height:100%;
+  background:rgba(28,49,47,0.3);
+  position: fixed;
+  z-index: 100000;
+  top:0px;
+}
+
+.danListInfoHeader{
+  width:100%;
+  background:rgba(255,230,155,1);
+  border-radius:10px 10px 0px 0px;
+  color: rgba(117,58,23,1);
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.danListInfoButtons{
+  width:100%;
+  height: 50px;
+  position: absolute;
+  bottom:20px;
+  text-align: center;
+}
+
+.danListInfoButton{
+  padding-top: 5px;
+  padding-bottom:5px;
+  border-radius: 10px;
+  text-align: center;
+  background:rgba(255,181,0,1);
+  display: inline-block;
+  padding-left:30px;
+  padding-right:30px;
+  margin: 10px;
+  font-size:20px;
+  font-weight: bolder;
+}

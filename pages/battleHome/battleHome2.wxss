@@ -1,0 +1,57 @@
+@import 'battleHome.wxss';
+
+.battleHomeContentItem2{
+  width:100px;
+  height: 70px;
+  border-radius:10px;
+  position: relative;
+  left:10px;
+  display:inline-block;
+  margin-top:10px;
+}
+
+.battleHomeContentItem2Name{
+  font-size:20px;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  left:20px;
+  top:20px;
+  position: relative;
+
+  width:40%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.battleHomeContentItem2NameFooter{
+  color: white;
+  display: block;
+  float: right;
+  top:20px;
+  position: relative;
+  right:20px;
+  font-size:40px;
+}
+
+.battleHomeContentItem2Tool{
+  width:100%;
+  text-align: center;
+
+  padding-top:2px;
+
+  margin-bottom:20px;
+}
+
+.battleHomeContentItem2ToolItem{
+  display:inline-block;
+  width:31%;
+  color: white;
+  font-size:30px;
+  background:rgba(38,75,140,0.5);
+  border-radius:5px;
+  margin: 0.7%;
+  vertical-align: top;
+}

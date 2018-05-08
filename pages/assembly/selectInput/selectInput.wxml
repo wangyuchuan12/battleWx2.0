@@ -1,0 +1,18 @@
+<template name="selectInput">
+  <block wx:for="{{items}}" wx:for-item="item">
+    <view class="selectInput" wx:if="{{item.id==id}}" bindtap='inputClick'>
+      <image class="selectInputImg"></image>
+
+      <view class="selectInputContent">{{item.content}}</view>
+
+      <view class="selectInputIcon fa fa-chevron-right"></view>
+    </view>
+  </block>
+
+  <view class="selectInputList" wx:if="{{status==1}}">
+    <block wx:for="{{items}}" wx:for-item="item">
+      <view class="selectInputItem"  bindtap='itemClick' wx:if="{{item.status==0}}" id="{{item.id}}">{{item.content}}</view>
+      <view class="selectInputItem" style="background:black;color:white" bindtap='itemClick' wx:else>{{item.content}}</view>
+    </block>
+  </view>
+</template>

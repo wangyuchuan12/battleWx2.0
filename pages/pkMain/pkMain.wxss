@@ -1,0 +1,62 @@
+@import '../progressScore/progressScore.wxss';
+@import '../assembly/baseLayerout/baseLayerout.wxss';
+.pkMain{
+  width:100%;
+  height: 100vh;
+  background:url("http://ovqk5bop3.bkt.clouddn.com/6F20A8BD-D1A6-4F2B-A20B-F20FFF1E53B5.png");
+  background-size: 100% 100%;
+  
+}
+.pkMainList{
+  text-align: center;
+  padding-top:100px;
+}
+.pkMainItem{
+  width:100px;
+  height:150px;
+  background:rgba(109,183,255,1);
+  border-radius: 10px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.pkMainItemIcon{
+  width:100px;
+  height:110px;
+  background: url("http://ovqk5bop3.bkt.clouddn.com/03f48238549fee83ac1eb55fea6829f0.png");
+  background-size: 100% 100%;
+}
+
+.pkMainItemName{
+  text-align: center;
+  color: white;
+  font-size:20px;
+  font-weight: bolder;
+}
+
+.pkMainRoomNum{
+  width:300px;
+  background: rgba(110,183,23,1);
+  position: absolute;
+  top:20vh;
+  left:50%;
+  margin-left:-150px;
+  border-radius:5px;
+
+  padding-top:20px;
+  padding-bottom:30px;
+}
+
+.pkMainRoomNumItem{
+  width:40%;
+  height:20px;
+  color: white;
+  display: inline-block;
+  background:rgba(255,136,104,1);
+  text-align: center;
+  margin-left:6%;
+  padding-top:20px;
+  padding-bottom:20px;
+  border-radius: 5px;
+  margin-top:10px;
+}

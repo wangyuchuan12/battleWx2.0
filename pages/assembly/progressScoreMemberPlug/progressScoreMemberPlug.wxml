@@ -1,0 +1,74 @@
+<template name="progressScoreMemberPlug">
+  <scroll-view class="progressScoreContainerHeaderMembers" scroll-x="true" style="white-space:nowrap;display:flex;" wx:if="{{members.length>2}}">
+          <view class="progressScoreContainerHeaderMember" wx:for="{{members}}" wx:for-item="member" style="text-align:left;position:relative;">
+
+            <view class="progressScoreContainerHeaderMemberDeath" wx:if="{{member.loveResidule<=0}}">阵亡</view>
+
+            <view class="progressScoreContainerHeaderMemberImgLoves" style = "top:55px;left:0px;z-index:1000000">
+              <view class="progressScoreContainerHeaderMemberImgLove" wx:for="{{member.loveResidule}}">
+              </view>
+              
+            </view>
+
+
+            <image src="{{member.imgUrl}}" class="progressScoreContainerHeaderMemberImg gray" style="border-radius:10px;" wx:if="{{member.loveResidule<=0}}"></image>
+
+            <image src="{{member.imgUrl}}" class="progressScoreContainerHeaderMemberImg" style="border-radius:10px;" wx:else></image>
+            <progress percent="{{member.percent}}" class="progressScoreContainerHeaderMemberProgress"/>
+            <view class="progressScoreContainerHeaderMemberRank">第{{index+1}}名</view>
+          </view>
+  </scroll-view>
+
+  <scroll-view class="progressScoreContainerHeaderMembers" scroll-x="true" wx:if="{{members.length==2}}">
+          <view class="progressScoreContainerHeaderMemberBig" style="text-align:left;">
+          <view class="progressScoreContainerHeaderMemberBigDeath" wx:if="{{members[0].loveResidule<=0}}">阵亡</view>
+
+          <view class="progressScoreContainerHeaderMemberImgLoves">
+              <view class="progressScoreContainerHeaderMemberImgLove" wx:for="{{members[0].loveResidule}}">
+              </view>
+
+              <view class="progressScoreContainerHeaderMemberImgHollowLove" wx:for="{{members[0].loveCount-members[0].loveResidule}}">
+              </view>
+              
+            </view>
+
+
+            <image src="{{members[0].imgUrl}}" wx:if="{{members[0].loveResidule<=0}}" class="progressScoreContainerHeaderMemberBigImg gray" style="border-radius:10px;"></image>
+            <image src="{{members[0].imgUrl}}" wx:else class="progressScoreContainerHeaderMemberBigImg" style="border-radius:10px;"></image>
+
+            <progress percent="{{members[0].percent|Int}}" class="progressScoreContainerHeaderMemberProgress" color="red" style="top:70px;width:150%;" show-info='true'/>
+          </view>
+
+          <image src='http://ovqk5bop3.bkt.clouddn.com/8575c56292491e63a168bdd5e4694cf3.png' class="progressScoreContainerHeaderMembersVsImg"></image>
+
+          <view class="progressScoreContainerHeaderMemberBig" style="text-align:left;">
+
+            <view class="progressScoreContainerHeaderMemberBigDeath" wx:if="{{members[1].loveResidule<=0}}">阵亡</view>
+
+            <view class="progressScoreContainerHeaderMemberImgLoves">
+              <view class="progressScoreContainerHeaderMemberImgLove" wx:for="{{members[1].loveResidule}}">
+              </view>
+
+              <view class="progressScoreContainerHeaderMemberImgHollowLove" wx:for="{{members[1].loveCount-members[1].loveResidule}}">
+              </view>
+              
+            </view>
+            <image src="{{members[1].imgUrl}}" wx:if="{{members[1].loveResidule<=0}}"class="progressScoreContainerHeaderMemberBigImg gray" style="border-radius:10px;"></image>
+
+            <image src="{{members[1].imgUrl}}" wx:else class="progressScoreContainerHeaderMemberBigImg" style="border-radius:10px;"></image>
+
+            <progress percent="{{members[1].percent|Int}}" class="progressScoreContainerHeaderMemberProgress" color="red" style="top:70px;width:150%" show-info='true'/>
+          </view>
+  </scroll-view>    
+
+
+  <scroll-view class="progressScoreContainerHeaderMembers" scroll-x="true" wx:if="{{members.length==1}}">
+      <view class="progressScoreContainerHeaderMember">
+        <image src="{{members[0].imgUrl}}" class="progressScoreContainerHeaderMemberImg" style="border-radius:10px;"></image>
+        <progress percent="{{members[0].percent}}" class="progressScoreContainerHeaderMemberProgress"/>
+      </view>
+  </scroll-view>    
+  <view class="progressScoreContainerHeaderRoom" style='display:none;'>
+      <progress percent="{{roomPercent}}" class="progressScoreContainerHeaderRoomProcess" color='red'  stroke-width='10' show-info='true'/>
+  </view>
+</template>

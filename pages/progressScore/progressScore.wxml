@@ -1,0 +1,113 @@
+<import src="../assembly/progressScorePlug/progressScorePlug.wxml"/>
+<import src="../assembly/questionSelector/questionSelector.wxml"/>
+<import src="../assembly/questionSelector/questionSelector2.wxml"/>
+<import src="../assembly/progressScoreMemberPlug/progressScoreMemberPlug.wxml"/>
+<import src="../assembly/questionResult/questionResult.wxml"/>
+<import src="../assembly/beanNotEnoughAlertPlug/beanNotEnoughAlertPlug.wxml"/>
+<import src="../assembly/baseLayerout/baseLayerout.wxml"/>
+<import src="../assembly/attrPlug/attrPlug"/>
+<import src="../assembly/alertPlug/alertPlug.wxml"/>
+<import src="../assembly/aircraftPlug/aircraftPlug.wxml"/>
+<import src="../assembly/toastOutPlug/toastOutPlug.wxml"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view style="position:absolute;z-index:30000000000">
+  <template is="attrPlug" data="{{...attrPlugData}}"/>
+</view>
+
+<template is="alertPlug" data="{{...alertPlugData}}"/>
+
+<template is="aircraftPlug" data="{{...aircraftPlugData}}"/>
+
+<template is="toastOutPlug" data="{{...toastOutPlugData}}"/>
+<template is="beanNotEnoughAlertPlug" data="{{...beanNotEnoughAlertPlugData}}"/>
+
+<view class="shareAlertPlug" wx:if="{{shareAlert==1}}">
+  <view class="shareAlertPlugClose fa fa-times-circle" bindtap='closeShareAlertPlug'></view>
+  <view class="shareAlertPlugLove"></view>
+  <view class="shareAlertPlugContent">您的爱心不足，分享到微信群，补充一颗爱心</view>
+  <button class="shareAlertPlugButton" open-type='share'>分享</button>
+</view>
+
+
+<view class="rewardBean" style='top:{{rewardBeanTop}}px;display:{{rewardBeanDisplay}}'>
+  <view class="rewardBeanHead">第{{stageIndex}}关通过</view>
+  <image src="http://otsnwem87.bkt.clouddn.com/bean.png" class="rewardBeanImg"></image>
+  <span class="rewardBeanPlus">+{{rewardBean}}</span>
+</view>
+
+
+<view class="displayPanel" wx:if="{{displayPanel==1}}">
+ <view class="shareAlertPlugClose fa fa-times-circle" bindtap='closeDisplayPanel'></view>
+  <view class="">第{{stageIndex}}关</view>
+  <view class="">答对{{rightCount}}题</view>
+  <view class="">答错{{wrongCount}}题</view>
+  <view class="">前进{{process*10}}米</view>
+  <view class="">智慧豆:+{{rewardBean}}</view>
+  <view class="">经验:+{{addExp}}</view>
+    <block wx:if="{{selectorType==0}}">
+      <view class="" style="background:RGBA(255,255,255,0.5);margin:0 auto;margin-top:20px;width:80%;border-radius:10px;" bindtap="showQuestionResult">查看答题结果     </view>
+
+    <view class="" style="background:RGBA(4,190,2,1);;margin:0 auto;margin-top:10px;width:80%;border-radius:10px;" bindtap="startSelector" wx:if="{{isLast==0}}">下一关 </view>
+
+    <view class="gray" style="background:RGBA(4,190,2,0.5);;margin:0 auto;margin-top:10px;width:80%;border-radius:10px;" wx:if="{{isLast==1}}">已答完</view>
+   </block>
+  </view>
+
+<view>
+
+
+
+  <view style="position:absolute;width:100%;height:100%;z-index:10000000;display:{{questionResultDisplay}};">
+    <template is="questionResult" data="{{...questionResultPlugData}}"></template>
+   
+  </view>
+
+  <view style="position:absolute;width:100%;height:100%;z-index:100000000;display:{{questionSelectorDisplay}}">
+    <template is="questionSelector" data="{{...questionSelectorData}}" wx:if="{{selectorType==0}}">
+    </template>
+
+    <template is="questionSelector2" data="{{...questionSelectorData}}" wx:if="{{selectorType==1}}">
+    </template>
+  </view>
+
+  <view style="position:absolute;width:100%;height:100%;z-index:10000">
+  <template is="progressScoreMemberPlug" data="{{...progressScoreMemberData}}"></template>
+  </view>
+
+  <view style="position:absolute;width:100%;height:100%;">
+  <template is="progressScorePlug" data="{{...progressScoreData}}"></template>
+  </view>
+
+  <view class="progressScoreButtons" style="z-index:20000;" wx:if="{{isStart==1}}">
+    <view class="progressScoreStartButton" bindtap='startSelector' wx:if="{{isLast==0}}"></view>
+    <view class="progressScoreStartButton gray" style="background:RGBA(4,190,2,0.9);"  wx:if="{{isLast==1}}">开始</view>
+    <view class="progressScoreRankButton" style="" bindtap="skipToRank"></view>
+
+    <view class="progressPkButton" style="color:RGBA(35,57,86,1);" bindtap="skipToPk"></view>
+
+    <view class="progressRandomButton" style="color:RGBA(102,0,7,1);" bindtap="skipToLuck"></view>
+
+    <view class="progressPassButton" style="" bindtap="skipDanList"></view>
+    
+    <view class="progressScoreRecordButton" style="background:RGBA(255,255,255,0.5);color:black;display:none;">分享</view>
+
+    
+
+    <view class="progressScoreMallButton" style="background:RGBA(13,161,255,0.8);color:white;" bindtap='mallClick'>
+      <view class="fa fa-shopping-cart" style="font-size:30px;display:inline-block"></view>
+      <view style="font-size:10px;font-weight: bold">商城</view>
+    </view>
+
+    <view class="progressScoreHomeButton" style="background:RGBA(13,161,255,0.8);color:white;" bindtap='homeClick'>
+      <view class="fa fa-home" style="font-size:30px;display:inline-block"></view>
+      <view style="font-size:10px;font-weight: bold">主页</view>
+    </view>
+    
+    <view class="progressScoreBackButton" bindtap='skipToTakepart'></view>
+
+    <view class="redPackImgButton" bindtap='redPackButtonClick' style="width:{{redPackWidth}}px;height:{{redPackHeight}}px;display:none;">
+      <image src="http://7xugu1.com1.z0.glb.clouddn.com/e7369bcec70f77bccd1b9a6ee16cf1b6.png" class="redPackImgButtonImg"></image>
+      <view style="background:url('http://ovqk5bop3.bkt.clouddn.com/03bf965642aeb4a91f217597b4751207.png');width:50px;height:30px;background-size:100% 100%;position:relative;top:-30px;left:5px;"></view>
+    </view>
+  </view>
+</view>

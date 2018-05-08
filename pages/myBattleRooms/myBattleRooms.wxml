@@ -1,0 +1,43 @@
+<scroll-view class="battleHomeContentList" scroll-y>
+      <block wx:for="{{rooms}}" wx:for-item="room">
+        <view class="battleHomeContentItem" id="{{room.id}}" bindtap='itemClick'>
+          <image src="{{room.imgUrl}}" class="battleHomeContentItemImage"></image>
+          <image src="{{room.smallImgUrl}}" class="battleHomeContentItemSmallImage"></image>
+          <view class="battleHomeContentItemPersonalName">{{room.name}}</view>
+          <view class="battleHomeContentItemFooter">
+            等待中 {{room.num}}/{{room.maxNum}}
+          </view>
+
+          <view class="roomRedpack" style="margin-top:0px;top:-10px;" wx:if="{{room.isRedpack==1}}">
+            <view class="roomRedpackBackground">
+            </view>
+            <view class="roomRedPackRewards">
+
+                <view class="roomRedPackRewardsBackground">
+                   <view style="width:100%;height:50px;text-align:center;padding-top:5px;margin:0 auto;color:white;">总共{{room.redPackNum}}个红包</view>
+                </view>
+                <view class="roomRedPackRewardsBackground2"></view>
+                <view class="roomRedPackRewardsAmount">{{room.redpackAmount}}<span style="font-size:10px;">元</span></view>
+            </view>
+            <view class="roomRedpackContent">
+                <view style="color: RGBA(252,207,81,1);font-weight:bolder;font-size:15px;padding-left:10px;padding-right:10px;background:white;border-radius:5px;margin-top:10px;left:15px;position:relative;">
+                  <span wx:if="{{room.num<room.maxNum}}">火热进行中</span>
+                  <span wx:else>已爆满</span>
+                </view>
+                <view style="margin-top:5px;">
+                  <view style="text-align:left;color:white;padding-left:5px;">累计：</view>
+                  <view class="roomRedPackReward" style="display:inline-block;margin-top:0px;" wx:if="{{room.redpackMasonry>0}}">
+                      <view class="personalAttrDataHeader personalAttrDataHeaderMasonry"></view>
+                      <view class="roomRedPackRewardNum">×{{room.redpackMasonry}}</view>
+                  </view>
+
+                  <view class="roomRedPackReward" style="display:inline-block;margin-left:10px;margin-top:0px;" wx:if="{{room.redpackBean>0}}">
+                      <view class="personalAttrDataHeader personalAttrDataHeaderBean" style='background-size:30px 30px;background-position:1px 0px;'></view>
+                      <view class="roomRedPackRewardNum">×{{room.redpackBean}}</view>
+                  </view>
+                </view>
+            </view>
+          </view>
+        </view>
+      </block>
+</scroll-view>

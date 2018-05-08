@@ -1,0 +1,71 @@
+@import '../assembly/attrPlug/attrPlug.wxss';
+.takeoutMoney{
+  position: absolute;
+  width:100%;
+  height: 100vh;
+  background:white;
+}
+.takeoutMoneyHeader{
+  text-align: center;
+  width:100%;
+  background:RGBA(216,78,67,0.9);
+  padding-bottom:20px;
+}
+.takeoutMoneyHeaderImg{
+  width:60px;
+  height:60px;
+  border-radius:60px;
+}
+
+.takeoutMoneyHeaderInfoAmount{
+  color: white;
+}
+
+.takeoutMoneyContent{
+  width:250px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.takeoutMoneyCount{
+  font-size:10px;
+  float: right;
+  right: 10px;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding-right: 20px;
+}
+
+.takeoutMoneyContentRecord{
+  width:100px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align: center;
+  border:1px solid black;
+  display: inline-block;
+  margin: 10px;
+}
+
+.takeoutMoneyDetails{
+  padding-top:40px;
+}
+
+.takeoutMoneyDetailItem{
+
+ padding-top:10px;
+ border:1px solid RGBA(247,247,247,1);
+ padding-bottom:10px;
+}
+
+.takeoutMoneyDetailItemTime{
+  font-size:10px;
+}
+
+.takeoutMoneyDetailItemAmount{
+  display:inline-block;
+  vertical-align: top;
+  right:20px;
+  position: absolute;
+}
+

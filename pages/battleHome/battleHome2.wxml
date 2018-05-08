@@ -1,0 +1,44 @@
+<import src="../assembly/selectInput/selectInput.wxml"/>
+
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<import src="../assembly/attrPlug/attrPlug"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<template is="attrPlug" data="{{...attrPlugData}}"/>
+<scroll-view class="battleHome">
+  <view class="battleHomeTool" style="">
+
+    <view class="battleHomeToolItem" bindtap='takeoutClick'>
+      <span class="fa fa-get-pocket" style="font-size:30px;"></span>
+
+      <span style="display:block;font-size:10px;">提现</span>
+    </view>
+
+    <view class="battleHomeToolItem" bindtap='mallClick'>
+      <span class="fa fa-shopping-cart" style="font-size:30px;"></span>
+
+      <span style="display:block;font-size:10px;">商城</span>
+    </view>
+    
+  </view>
+  <view class="battleHomeContent">
+    <scroll-view class="battleHomeContentList" scroll-y>
+      <block wx:for="{{battles}}" wx:for-item="battle">
+        <view class="battleHomeContentItem" id="{{battle.id}}" bindtap='battleItemClick'>
+            <image src="{{battle.headImg}}" class="battleHomeContentItem2"></image>
+            <view class="battleHomeContentItem2Name">{{battle.content}}</view>
+
+            <view class="battleHomeContentItem2NameFooter fa fa-chevron-right" wx:if="{{battle.isOpen==0}}"></view>
+
+            <view class="battleHomeContentItem2NameFooter fa fa-chevron-down" wx:if="{{battle.isOpen==1}}"></view>
+        </view>
+
+        <view class="battleHomeContentItem2Tool" wx:if="{{battle.isOpen==1}}">
+          <view class="battleHomeContentItem2ToolItem" id="{{battle.id}}" bindtap='quickStart'><span class="fa fa-sign-in"></span><span style="font-size:10px;padding-left:5px;">快速开始</span></view>
+          <view class="battleHomeContentItem2ToolItem" bindtap='myRoomClick'><span class="fa fa-users"></span><span style="font-size:10px;padding-left:5px;">我参与的</span></view>
+          <view class="battleHomeContentItem2ToolItem" id="{{battle.id}}" bindtap='myPersonalRoomClick'><span class="fa fa-user-circle"></span><span style="font-size:10px;padding-left:5px;">与好友对战</span></view>
+        </view>
+
+      </block>
+    </scroll-view>
+  </view>
+</scroll-view>

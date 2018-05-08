@@ -1,0 +1,175 @@
+/* battleTakepart.wxss */
+@import '../assembly/attrPlug/attrPlug.wxss';
+@import '../assembly/baseLayerout/baseLayerout.wxss';
+
+@import '../progressScore/progressScore.wxss';
+
+.battleTakepart{
+  width:100%;
+  height: 95vh;
+	min-height:95vh;
+  max-height: 200vh;
+	/*background: url("http://oqcfht5ij.bkt.clouddn.com/bg2.jpg") no-repeat;
+	/background-size:100% 100%;*/
+  position:relative;
+  text-align:center;
+
+  padding-bottom:20px;
+
+ /* background:RGBA(50,54,74,1);*/
+  background:white;
+}
+
+.battleTakepartImg{
+  width:100%;
+  height:30vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.battleTakepartMembers{
+  width:100%;
+  max-height:30vh;
+  display:block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.battleTakepartMembersPk{
+  width:100%;
+  max-height:20vh;
+  display:block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.battleTakepartMembersPkMember{
+  width:30%;
+  height:100%;
+  display: inline-block;
+}
+
+.battleTakepartMembersPkMemberImg{
+  width:100%;
+  height:20vh;
+}
+
+.battleTakepartMembersPkMemberVsImg{
+  width:20%;
+  height:20vh;
+  display: inline-block;
+}
+
+.battleTakepartMember{
+  width:24%;
+  height:90px;
+  background:RGBA(228,238,249,1);
+  display:inline-block;
+  margin: 1px;
+}
+
+.battleTakepartMemberImg{
+  width:100%;
+  height:100%;
+}
+
+.battleTakepartButtons{
+  width:100%;
+  padding-top:20px;
+}
+
+.battleTakepartButton{
+  display: inline-block;
+  width:47%;
+  background-color:white;
+  color:black;
+
+  border:1px solid RGBA(235,235,235,1);
+
+}
+
+.battleTakepartInfo{
+  /*background-color:RGBA(82,82,123,1);*/
+  background:white;
+  width:95%;
+  max-height:30vh;
+  color:black;
+  padding-top:10px;
+  padding-bottom: 20px;
+  margin:0 auto;
+  border-radius:10px;
+  margin-top:20px;
+}
+
+.battleTakepartInfoTitle{
+  text-align:left;
+  font-size:20px;
+  position:relative;
+  display:block;
+  width:100%;
+  padding-left:10px;
+}
+
+.battleTakepartInfoContent{
+  display: block;
+  width:93%;
+  font-size:10px;
+  text-align: left;
+  padding-left:10px;
+  padding-top:10px;
+  max-height: 20vh;
+}
+
+.battleTakepartSecondButtons{
+  text-align: center;
+  padding-top:20px;
+}
+
+.battleTakepartSecondButton{
+  font-size:10px;
+  display:inline-block;
+  width:100px;
+}
+
+.battleTakepartChat{
+  padding-top:20px;
+}
+
+.battleTakepartChatItem1{
+  color:RGBA(241,6,135,1);
+  font-size:15px;
+}
+
+.battleTakepartChatItem2{
+  color:RGBA(133,133,133,1);
+  font-size:10px;
+}
+
+.battleTakepartChatItem3{
+  color:RGBA(133,133,133,1);
+  font-size:10px;
+}
+
+.battleTakepartChatItem4{
+  background:RGBA(255,240,1,1);
+  width:80%;
+  padding-top:5px;
+  padding-bottom:5px;
+  margin: 0 auto;
+  margin-top:10px;
+}
+
+.battleTakepartCostItem{
+  display:inline-block;
+  font-size:10px;
+}
+
+.battleTakepartSamllImg{
+  position: absolute;
+  top:10px;
+  left:10px;
+  width:50px;
+  height:50px;
+  border-radius:5px;
+}
+

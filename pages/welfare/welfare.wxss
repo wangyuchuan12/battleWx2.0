@@ -1,0 +1,207 @@
+@import '../assembly/redPackAlertPlug/redPackAlertPlug.wxss';
+@import '../manager/roomRedpacks/roomRedpacks.wxss';
+.welfare{
+  background:url("http://7xlw44.com1.z0.glb.clouddn.com/bg3.jpg");
+  background-size:100% 100%;
+  background-position: 0 0px;
+  width:100%;
+  height:100vh;
+  position: relative;
+}
+
+.welfareBody{
+  width:100%;
+  height:99vh;
+}
+
+.welfareContent{
+  width:100%;
+  padding-top:50px;
+  text-align: center;
+}
+
+.welfareHead{
+  text-align: left;
+  max-height:27vh;
+  margin: 0px auto;
+  position: relative;
+  padding-left:10px;
+}
+.welfareHeadItem{
+  display:inline-block;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:1px 1px 1px #333;
+  border-radius: 5px;
+  margin:0 20px 20px 0;
+  position: relative;
+  overflow: hidden;
+
+  background:RGBA(0,118,184,0.5);
+}
+
+.welfareHeadItemContent{
+  font-size:10px;
+  font-weight: bolder;
+  color:RGBA(254,231,164,1);
+  width:100%;
+  margin: 0  auto;
+  border-radius:5px;
+}
+
+.welfareHeadItemLabel{
+  font-size:20px;
+  color: white;
+}
+
+.welfareRedPaperList{
+
+  padding-left:20px;
+
+  padding-right:20px;
+
+  padding-top:20px;
+}
+
+.welfareRedPaperItem{
+  width:33%;
+  height:20vh;
+  background:url("http://oq4mi1sbl.bkt.clouddn.com/redPacketBackground.gif");
+  background-size:100% 100%;
+  display:inline-block;
+  text-align: center;
+  position: relative;
+  padding-top:5px;
+}
+
+.welfareRedPaperItemContent{
+  width:90%;
+  height:90%;
+  position: relative;
+  margin: 0 auto;
+  background:url('http://oq4mi1sbl.bkt.clouddn.com/redPacket.png');
+  background-size:100% 100%;
+}
+
+.welfareHeadItem{
+  width:22%;
+  margin: 2px;
+  border-radius:5px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.welfareRecord{
+  position: fixed;
+  height: 31vh;
+
+  padding-left:10px;
+}
+
+.welfareRecordImage{
+  width:15%;
+  height:60px;
+  display:inline-block;
+  border-radius:10px;
+}
+
+.welfareRecordTime{
+  font-size:10px;
+  display:inline-block;
+  vertical-align: top;
+  padding-top:15px;
+  width:25%;
+  padding-left:10px;
+}
+
+.welfareRecord{
+  font-size:10px;
+  vertical-align: top;
+  padding-top:15px;
+}
+
+.welfareRecordContent{
+  display:inline-block;
+  vertical-align: top;
+  padding-top:15px;
+  width:50%;
+  text-align: center;
+}
+
+.welfareContentButtons{
+  max-height:18vh;
+  padding-top:20px;
+}
+
+.welfareContentButton{
+  background:url('http://on3s1z2us.bkt.clouddn.com/2b9bf4e209d2ad2f341cb26f906775ec.png');
+  background-size:100% 100%;
+  display: inline-block;
+  width:70px;
+  height:70px;
+  font-size:15px;
+  color: RGBA(39,38,54,1);
+  line-height: 160px;
+  font-weight: bolder;
+  border:1px solid RGBA(39,38,54,1);
+  border-radius:70px;
+  margin: 0 auto;
+  position: relative;
+  left:50%;
+  margin-left:-35px;
+  text-align: center;
+}
+
+.welfareRedPaperItemImg{
+  width:30px;
+  height:30px;
+  position: absolute;
+  z-index: 100;
+  border-radius:20px;
+  left:50%;
+  top:25px;
+  margin-left:-15px;
+}
+
+.welfareRedPaperStage{
+  color:black;
+  font-weight: bolder;
+  font-size:10px;
+  position: relative;
+  text-align: center;
+  margin-top:0px;
+  margin-bottom:20px;
+}
+
+.welfareRedPaperStageItem{
+  position: relative;
+  height:110px;
+  width:104px;
+  display:inline-block;
+  margin: 0 auto;
+}
+
+.welfareRedPaperStageLabel{
+  border-radius:5px;
+  display:inline-block;
+  margin: 0 auto;
+  position:relative;
+  padding-top:20px;
+  padding-bottom:10px;
+  width:100%;
+}
+
+.welfareTakeout{
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  background:green;
+  border-radius:5px;
+  display: inline-block;
+  color:white;
+  position: relative;
+  left:20px;
+  top:10px;
+}

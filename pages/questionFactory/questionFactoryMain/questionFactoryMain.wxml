@@ -1,0 +1,8 @@
+<view class="questionFactoryMain">
+  <view class="questionFactoryMainItem" style="background:url('http://7xugu1.com1.z0.glb.clouddn.com/934245c318fbf1ce297bb8a7de15f14f.jpg');background-size:100% 100%;" bindtap='makeQuestionClick'>
+    <view class="questionFactoryMainItemType">我要出题</view>
+  </view>
+  <view class="questionFactoryMainItem" style="background:url('http://ovqk5bop3.bkt.clouddn.com/WechatIMG306.jpeg');background-size:100% 100%;margin-top:20px;" bindtap='questionListClick'>
+    <view class="questionFactoryMainItemType">我的题目</view>
+  </view>
+</view>

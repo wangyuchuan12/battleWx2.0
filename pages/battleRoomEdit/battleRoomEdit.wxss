@@ -1,0 +1,94 @@
+@import '../assembly/selectInput/selectInput.wxss';
+
+@import '../manager/roomRedpacks/roomRedpacks.wxss';
+
+@import '../manager/battlePeriodManager/battlePeriodManager.wxss';
+
+.battleRoomEdit{
+  background: RGBA(48,48,56,1);
+  height:100vh;
+}
+
+.battleRoomEditPeriods{
+  position: relative;
+  width:100%;
+  padding-top:20px;
+  max-height:60vh;
+}
+
+.battleRoomEditPeriod{
+  background:RGBA(252,207,81,1);
+  width:90%;
+  border-radius: 10px;
+  height:100px;
+  margin: 0 auto;
+  margin-top:10px;
+  position: relative;
+}
+
+.battleRoomEditPeriodHead{
+  width:20%;
+  height: 100%;
+  padding-left:20px;
+  padding-top:10px;
+  display:inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.battleRoomEditPeriodHeadImg{
+  height:40px;
+  width:40px;
+  border-radius:40px;
+}
+
+.battleRoomEditPeriodHeadLabel{
+  font-size:10px;
+}
+
+.battleRoomEditPeriodHeadNickname{
+  font-size:10px;
+}
+
+.battleRoomEditPeriodContent{
+  width:60%;
+  height:100%;
+  display:inline-block;
+  padding-top:10px;
+}
+
+.battleRoomEditPeriodContentItem{
+  font-size:15px;
+}
+
+.battleRoomEditPeriodCustomLabel{
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-size:30px;
+}
+
+.battleRoomEditPeriodCustomIcon{
+  text-align: center;
+  font-size:50px;
+  margin: 0 auto;
+  position: relative;
+  width:100%;
+}
+
+.isPublic{
+  padding-left:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.isPublicLable{
+  font-size:15px;
+  color: white;
+  display:inline-block;
+}
+
+.isPublicSwitch{
+  display: inline-block;
+  padding-left:10px;
+}

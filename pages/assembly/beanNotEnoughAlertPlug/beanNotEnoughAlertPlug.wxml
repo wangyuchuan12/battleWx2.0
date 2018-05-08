@@ -1,0 +1,15 @@
+<template name="beanNotEnoughAlertPlug">
+  <view class="beanNotEnoughAlertPlug" wx:if="{{isShow}}">
+    <view class="beanNotEnoughAlertPlugBrow"></view>
+    <view class="beanNotEnoughAlertPlugPanel">
+      <view class="beanNotEnoughAlertPlugPanelTitle">豆子不足啦</view>
+      <view class="beanNotEnoughAlertPlugPanelContent">您的豆豆太少，补充点豆豆再来吧</view>
+
+      <view class="beanNotEnoughAlertPlugPanelButtons">
+        <view class="beanNotEnoughAlertPlugPanelButton1" bindtap='beanNotEnoughAlertPlugGiveUp'>放弃</view>
+        <view class="beanNotEnoughAlertPlugPanelButton2" bindtap='rechargeBean'>充值</view>
+      </view>
+    </view>
+  
+  </view>
+</template>

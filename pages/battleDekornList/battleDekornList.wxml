@@ -1,0 +1,20 @@
+<import src="../assembly/baseLayerout/baseLayerout"/>
+<template is="baseLayerout" data="{{...baseData}}"/>
+<view class="battleDekornList">
+  <view class="battleDekornListContent">
+    <view class="battleDekornItem" wx:for="{{dekorns}}" wx:for-item="dekorn" bindtap='battleDekornItemClick' id="{{dekorn.id}}">
+      <view class="battleDekornItemPrice">
+        <image src="http://otsnwem87.bkt.clouddn.com/bean.png" class="battleDekornItemPriceImg" class="battleDekornItemPriceImg"></image>
+      </view>
+
+      <view class="battleDekornItemDetail1">
+        <view class="battleDekornItemDetail1Name">{{dekorn.name}}</view>
+        <view class="battleDekornItemDetail1Reward">
+          总奖励{{(dekorn.rewardBeanNo1+dekorn.rewardBeanNo2+dekorn.rewardBeanNo3+dekorn.rewardBeanNo4+dekorn.rewardBeanNo5+dekorn.rewardBeanNo6+dekorn.rewardBeanNo7+dekorn.rewardBeanNo8+dekorn.rewardBeanNo9+dekorn.rewardBeanNo10)}}豆子
+        </view>
+      </view>
+
+      <view class="battleDekornItemButton">参加</view>
+    </view>
+  </view>
+</view>
